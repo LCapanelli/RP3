@@ -22,7 +22,20 @@ SOURCES += main.cpp \
     paciente.cpp \
     resultesp.cpp \
     usuario.cpp \
-    admissao.cpp
+    admissao.cpp \
+    DATA/admissao.cpp \
+    DATA/classed.cpp \
+    DATA/classeinterv.cpp \
+    DATA/diagnostico.cpp \
+    DATA/dominiod.cpp \
+    DATA/dominiointerv.cpp \
+    DATA/evolucao.cpp \
+    DATA/histenf.cpp \
+    DATA/internacao.cpp \
+    DATA/intervencao.cpp \
+    DATA/paciente.cpp \
+    DATA/resultesp.cpp \
+    DATA/usuario.cpp
 
 HEADERS  += \
     classed.h \
@@ -41,4 +54,6 @@ HEADERS  += \
 
 FORMS    += \
     PrincipalForm.ui \
-    001_LogIn.ui
+    001_LogIn.ui \
+    GUI/PrincipalForm.ui \
+    GUI/001_LogIn.ui
