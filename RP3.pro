@@ -11,18 +11,6 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    classed.cpp \
-    classeinterv.cpp \
-    diagnostico.cpp \
-    dominiod.cpp \
-    dominiointerv.cpp \
-    evolucao.cpp \
-    histenf.cpp \
-    intervencao.cpp \
-    paciente.cpp \
-    resultesp.cpp \
-    usuario.cpp \
-    admissao.cpp \
     DATA/admissao.cpp \
     DATA/classed.cpp \
     DATA/classeinterv.cpp \
@@ -53,7 +41,5 @@ HEADERS  += \
     admissao.h
 
 FORMS    += \
-    PrincipalForm.ui \
-    001_LogIn.ui \
     GUI/PrincipalForm.ui \
     GUI/001_LogIn.ui
