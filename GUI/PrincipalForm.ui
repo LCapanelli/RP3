@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form_Principal_QW</class>
+ <class>MainWindow</class>
  <widget class="QWidget" name="Form_Principal_QW">
   <property name="geometry">
    <rect>
@@ -94,7 +94,7 @@
             </font>
            </property>
            <property name="currentIndex">
-            <number>0</number>
+            <number>5</number>
            </property>
            <widget class="QWidget" name="page_10">
             <layout class="QGridLayout" name="gridLayout_5">
@@ -3826,8 +3826,8 @@ p, li { white-space: pre-wrap; }
                  <rect>
                   <x>0</x>
                   <y>0</y>
-                  <width>523</width>
-                  <height>366</height>
+                  <width>875</width>
+                  <height>701</height>
                  </rect>
                 </property>
                 <attribute name="label">

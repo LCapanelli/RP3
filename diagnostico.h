@@ -1,22 +1,25 @@
 #ifndef DIAGNOSTICO_H
 #define DIAGNOSTICO_H
 #include "QString"
+#include <qdjango/QDjangoModel.h>
+#include <QObject>
+//#include "ui_mainwindow.h"
 
-class Diagnostico
-{
+class diagnostico : public QDjangoModel{
+        Q_OBJECT
+        //Q_PROPERTY(QString nomeDiag READ nomeDiag WRITE setNomeDiag)
+        //Q_PROPERTY(int numDiag READ numDiag WRITE setNumDiag)
+
 public:
-    Diagnostico();
+
+    //QString dominio, classe, nomeDiag, fatRel, caracDefin, definicao;
+    //int numDiag, numTax1, numTax2;
 
 private:
 
+private slots:
 
-QString nomeDiag;
-int numDiag;
-int numTax1;
-int numTax2;
-QString fatRel;
-QString caracDefin;
-QString definicao;
+
 };
 
 #endif // DIAGNOSTICO_H

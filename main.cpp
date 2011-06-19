@@ -1,18 +1,18 @@
 #include <QtGui/QApplication>
-#include "ui_PrincipalForm.h"
+#include "mainwindow.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    QWidget *widget = new QWidget;
-    widget->showMaximized();
+//    QWidget *widget = new QWidget;
+//    widget->showMaximized();
 
-    Ui::Form_Principal_QW ui;
-    ui.setupUi(widget);
-    ui.widgetPrincipal->showFullScreen();
+//    Ui::Form_Principal_QW ui;
+//    ui.setupUi(widget);
+//    ui.widgetPrincipal->showFullScreen();
 
+    //widget->show();
 
-    widget->show();
-
+    new MainWindow;
     return a.exec();
 }

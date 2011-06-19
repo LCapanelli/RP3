@@ -4,33 +4,29 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui \
+            sql
 
 TARGET = RP3
 TEMPLATE = app
 
+LIBS += -lqdjango
 
 SOURCES += main.cpp \
     DATA/admissao.cpp \
-    DATA/classed.cpp \
-    DATA/classeinterv.cpp \
     DATA/diagnostico.cpp \
-    DATA/dominiod.cpp \
-    DATA/dominiointerv.cpp \
     DATA/evolucao.cpp \
     DATA/histenf.cpp \
     DATA/internacao.cpp \
     DATA/intervencao.cpp \
     DATA/paciente.cpp \
     DATA/resultesp.cpp \
-    DATA/usuario.cpp
+    DATA/usuario.cpp \
+    DATA/datamodel.cpp \
+    mainwindow.cpp
 
 HEADERS  += \
-    classed.h \
-    classeinterv.h \
     diagnostico.h \
-    dominiod.h \
-    dominiointerv.h \
     evolucao.h \
     histenf.h \
     intervencao.h \
@@ -38,8 +34,15 @@ HEADERS  += \
     resultesp.h \
     usuario.h \
     internacao.h \
-    admissao.h
+    admissao.h \
+    DATA/datamodel.h \
+    mainwindow.h
 
 FORMS    += \
     GUI/PrincipalForm.ui \
-    GUI/001_LogIn.ui
+    GUI/001_LogIn.ui \
+    mainwindow.ui
+
+#DBUSER sae sae0192
+
+OTHER_FILES += \

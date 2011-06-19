@@ -9,4 +9,5 @@ O fim de uma Admissão (encerramento de todas evoluções) é considerado Alta.
 
 Admissao::Admissao()
 {
+
 }
