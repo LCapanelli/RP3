@@ -41,7 +41,7 @@ HEADERS  += \
 FORMS    += \
     GUI/PrincipalForm.ui \
     GUI/001_LogIn.ui \
-    mainwindow.ui
+    #mainwindow.ui
 
 #DBUSER sae sae0192
 

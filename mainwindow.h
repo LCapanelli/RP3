@@ -5,7 +5,7 @@
 #include <QMainWindow>
 
 namespace Ui {
-    class MainWindow;
+    class Form_Principal_QW;
 }
 
 class MainWindow : public QMainWindow
@@ -20,6 +20,7 @@ public:
 private:
     //Ui::MainWindow *ui;
     Ui::Form_Principal_QW *ui;
+
 };
 
 #endif // MAINWINDOW_H
