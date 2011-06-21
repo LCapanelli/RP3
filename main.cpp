@@ -13,6 +13,8 @@ int main(int argc, char *argv[])
 
     //widget->show();
 
-    new MainWindow;
+    MainWindow main;
+    main.showMaximized();
+
     return a.exec();
 }

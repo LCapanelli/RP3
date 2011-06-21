@@ -80,23 +80,23 @@ void Diagnostico::setFRelac(const QString &fRelac){
 void Diagnostico::on_le_FiltroCadDiag_returnPressed(){
 }
 void Diagnostico::on_pb_SalvarDiag_clicked(){
-    if(!ui.le_nomeDiag->text().isEmpty() && !ui.te_caractDefinidoras->toPlainText().isEmpty() && !ui.te_fatoresRelac->toPlainText().isEmpty()){
-    Diagnostico *u = new Diagnostico(this);
-    u->setNomeDiag(ui.le_nomeDiag->text());
-    u->setCDefin(ui.te_caractDefinidoras->toPlainText());
-    u->setFRelac(ui.te_fatoresRelac->toPlainText());
-    u->save();
-    ui.le_nomeDiag->clear();
-    ui.te_caractDefinidoras->clear();
-    ui.te_fatoresRelac->clear();
-    }
-    updateViewDiag();
+//    if(!ui.le_nomeDiag->text().isEmpty() && !ui.te_caractDefinidoras->toPlainText().isEmpty() && !ui.te_fatoresRelac->toPlainText().isEmpty()){
+//    Diagnostico *u = new Diagnostico(this);
+//    u->setNomeDiag(ui.le_nomeDiag->text());
+//    u->setCDefin(ui.te_caractDefinidoras->toPlainText());
+//    u->setFRelac(ui.te_fatoresRelac->toPlainText());
+//    u->save();
+//    ui.le_nomeDiag->clear();
+//    ui.te_caractDefinidoras->clear();
+//    ui.te_fatoresRelac->clear();
+//    }
+//    updateViewDiag();
 }
 void Diagnostico::updateViewDiag(){
-    ui.diagnosticos_adm->clear();
-    QDjangoQuerySet <Diagnostico> nomeD;
-    for (int i = 0; i < nomeD.count(); ++i){
-        QListWidgetItem * item = new QListWidgetItem(nomeD.at(i)->nomeDiag(), ui.diagnosticos_adm);
-        item->setData(Qt::UserRole, nomeD.at(i)->idDiag());
-    }
+//    ui.diagnosticos_adm->clear();
+//    QDjangoQuerySet <Diagnostico> nomeD;
+//    for (int i = 0; i < nomeD.count(); ++i){
+//        QListWidgetItem * item = new QListWidgetItem(nomeD.at(i)->nomeDiag(), ui.diagnosticos_adm);
+//        item->setData(Qt::UserRole, nomeD.at(i)->idDiag());
+//    }
 }

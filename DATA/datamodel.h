@@ -1,7 +1,7 @@
 #ifndef DATAMODEL_H
 #define DATAMODEL_H
-#import <qdjango/QDjango.h>
-#import <qdjango/QDjangoModel.h>
+#include <qdjango/QDjango.h>
+#include <qdjango/QDjangoModel.h>
 #include "diagnostico.h"
 
 class DataModel

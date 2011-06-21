@@ -23,7 +23,8 @@ SOURCES += main.cpp \
     DATA/resultesp.cpp \
     DATA/usuario.cpp \
     DATA/datamodel.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    GUI/reports.cpp
 
 HEADERS  += \
     diagnostico.h \
@@ -36,12 +37,14 @@ HEADERS  += \
     internacao.h \
     admissao.h \
     DATA/datamodel.h \
-    mainwindow.h
+    mainwindow.h \
+    GUI/reports.h
 
 FORMS    += \
     GUI/PrincipalForm.ui \
     GUI/001_LogIn.ui \
-    #mainwindow.ui
+    #mainwindow.ui \
+    GUI/reports.ui
 
 #DBUSER sae sae0192
 

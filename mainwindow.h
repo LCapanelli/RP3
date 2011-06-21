@@ -8,7 +8,7 @@ namespace Ui {
     class Form_Principal_QW;
 }
 
-class MainWindow : public QMainWindow
+class MainWindow : public QWidget
 
 {
     Q_OBJECT
@@ -18,7 +18,6 @@ public:
     ~MainWindow();
 
 private:
-    //Ui::MainWindow *ui;
     Ui::Form_Principal_QW *ui;
 
 };

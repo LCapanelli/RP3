@@ -2,7 +2,7 @@
 #define DIAGNOSTICO_H
 #include <qdjango/QDjangoModel.h>
 #include <QObject>
-#include "ui_mainwindow.h"
+//#include "ui_mainwindow.h"
 
 class Diagnostico : public QDjangoModel {
         Q_OBJECT
@@ -49,7 +49,7 @@ private:
         QString m_definicao;
         QString m_cDefin;
         QString m_fRelac;
-        Ui::Form_Principal_QW ui;
+        //Ui::Form_Principal_QW ui;
 
 private slots:
         void on_le_FiltroCadDiag_returnPressed();
