@@ -1,0 +1,1028 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Maintenance</class>
+ <widget class="QWidget" name="Maintenance">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>789</width>
+    <height>521</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label_manutencao_2">
+     <property name="text">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Droid Sans'; font-size:16pt; font-weight:600;&quot;&gt;MANUTENÇÃO DO SISTEMA&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QToolBox" name="toolBox_2">
+     <property name="palette">
+      <palette>
+       <active>
+        <colorrole role="Mid">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>170</red>
+           <green>170</green>
+           <blue>127</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>177</red>
+           <green>230</green>
+           <blue>162</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </active>
+       <inactive>
+        <colorrole role="Mid">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>170</red>
+           <green>170</green>
+           <blue>127</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>177</red>
+           <green>230</green>
+           <blue>162</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </inactive>
+       <disabled>
+        <colorrole role="Mid">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>170</red>
+           <green>170</green>
+           <blue>127</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>177</red>
+           <green>230</green>
+           <blue>162</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>177</red>
+           <green>230</green>
+           <blue>162</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </disabled>
+      </palette>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="currentIndex">
+      <number>3</number>
+     </property>
+     <widget class="QWidget" name="page_16">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>464</width>
+        <height>366</height>
+       </rect>
+      </property>
+      <attribute name="label">
+       <string>Cadastro de Diagnósticos - NANDA</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_29">
+       <item row="0" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_134">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Filtro </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="le_FiltroCadDiag"/>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_13">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_cadastroDominio_2">
+           <property name="text">
+            <string>Domínio</string>
+           </property>
+           <property name="buddy">
+            <cstring>comboBox_14</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cb_Dom_Diag">
+           <item>
+            <property name="text">
+             <string>DOM01</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>DOM02</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_cadastroClasse_2">
+           <property name="text">
+            <string>Classe</string>
+           </property>
+           <property name="buddy">
+            <cstring>comboBox_15</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cb_Classe_Diag">
+           <item>
+            <property name="text">
+             <string>Classe01</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Classe02</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_135">
+         <item>
+          <widget class="QLabel" name="label_nomeDiag_2">
+           <property name="text">
+            <string>Nome</string>
+           </property>
+           <property name="buddy">
+            <cstring>lineEdit_nomeDiag</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="le_nomeDiag"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_nroDiag_2">
+           <property name="text">
+            <string>Nº</string>
+           </property>
+           <property name="buddy">
+            <cstring>lineEdit_numeroDiag</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="le_nDiag_1">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="le_nDiag2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="placeholderText">
+            <string>(              )</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="2" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_133">
+         <item>
+          <widget class="QLabel" name="label_definicaoDiag_2">
+           <property name="text">
+            <string>Definição</string>
+           </property>
+           <property name="buddy">
+            <cstring>textEdit_definicaoDiag</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTextEdit" name="definicaoDiag"/>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="0">
+        <widget class="QTextEdit" name="te_caractDefinidoras">
+         <property name="toolTip">
+          <string>Características Definidoras</string>
+         </property>
+         <property name="html">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; font-size:12pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Características Definidoras&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="textInteractionFlags">
+          <set>Qt::TextEditorInteraction</set>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QTextEdit" name="te_fatoresRelac">
+         <property name="toolTip">
+          <string>Fatores Relacionados</string>
+         </property>
+         <property name="html">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; font-size:12pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Fatores Relacionados&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_136">
+         <item>
+          <spacer name="horizontalSpacer_8">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pb_SalvarDiag">
+           <property name="text">
+            <string>Salvar Diagnóstico</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_17">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>338</width>
+        <height>309</height>
+       </rect>
+      </property>
+      <attribute name="label">
+       <string>Cadastro de Resultados Esperados - Baseados no NOC</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_30">
+       <item row="0" column="0" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_137">
+         <item>
+          <widget class="QLabel" name="label_classeNoc_2">
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="text">
+            <string>Classe</string>
+           </property>
+           <property name="buddy">
+            <cstring>comboBox_classeNoc</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox_classeNoc_2">
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_domNoc_2">
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="text">
+            <string>Domínio</string>
+           </property>
+           <property name="buddy">
+            <cstring>comboBox_domNoc</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox_domNoc_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="sizeIncrement">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="baseSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0" rowspan="2">
+        <layout class="QVBoxLayout" name="verticalLayout_20">
+         <item>
+          <widget class="QLabel" name="label_re_6">
+           <property name="statusTip">
+            <string/>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="text">
+            <string>Resultado Esperado</string>
+           </property>
+           <property name="buddy">
+            <cstring>lineEdit_resultadoEsperado</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_resultadoEsperado_2"/>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="lineEdit_filtroDiag_2">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="placeholderText">
+          <string>Filtro de Diagnósticos</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1" rowspan="2">
+        <widget class="QListWidget" name="listWidget_listaRe_2">
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <item>
+          <property name="text">
+           <string>Lista de Resultados Esperados</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <layout class="QVBoxLayout" name="verticalLayout_21">
+         <item>
+          <widget class="QPushButton" name="pushButton_adicionarRe_2">
+           <property name="text">
+            <string>Adicionar &gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_removerRe_2">
+           <property name="text">
+            <string>Remover&lt;</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="4" column="0" rowspan="2">
+        <layout class="QVBoxLayout" name="verticalLayout_19">
+         <item>
+          <widget class="QLabel" name="label_indicadores_4">
+           <property name="statusTip">
+            <string/>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="text">
+            <string>Indicadores</string>
+           </property>
+           <property name="buddy">
+            <cstring>lineEdit_indicadores</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_indicadores_2"/>
+         </item>
+        </layout>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="lineEdit_filtroRe_2">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="placeholderText">
+          <string>Filtro de Resultados Esperados</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1" rowspan="2">
+        <widget class="QListWidget" name="listWidget_listaIndicadores_4">
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <item>
+          <property name="text">
+           <string>Lista de Indicadores</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <layout class="QVBoxLayout" name="verticalLayout_22">
+         <item>
+          <widget class="QPushButton" name="pushButton_adIndicadores_2">
+           <property name="text">
+            <string>Adicionar &gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_removerIndicadores_2">
+           <property name="text">
+            <string>Remover&lt;</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_18">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>338</width>
+        <height>288</height>
+       </rect>
+      </property>
+      <attribute name="label">
+       <string>Cadastro de Cuidados - Baseados no NIC</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_31">
+       <item row="0" column="0" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_138">
+         <item>
+          <widget class="QLabel" name="label_dominioNic_2">
+           <property name="text">
+            <string>Domínio</string>
+           </property>
+           <property name="buddy">
+            <cstring>comboBox_dominioNic</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox_dominioNic_2"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_classeNIc_2">
+           <property name="text">
+            <string>Classe</string>
+           </property>
+           <property name="buddy">
+            <cstring>comboBox_classeNic</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox_classeNic_2"/>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_139">
+         <item>
+          <widget class="QLabel" name="label_intervencao_2">
+           <property name="text">
+            <string>Intervenção</string>
+           </property>
+           <property name="buddy">
+            <cstring>lineEdit_intervencaoNic</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_intervencaoNic_2"/>
+         </item>
+        </layout>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_140">
+         <item>
+          <widget class="QLabel" name="label_definicao_2">
+           <property name="text">
+            <string>Definição</string>
+           </property>
+           <property name="buddy">
+            <cstring>lineEdit_definicaoNic</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_definicaoNic_2"/>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="0">
+        <layout class="QVBoxLayout" name="verticalLayout_23">
+         <item>
+          <widget class="QLabel" name="label_atividadesNic_2">
+           <property name="statusTip">
+            <string/>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="text">
+            <string>Atividades</string>
+           </property>
+           <property name="buddy">
+            <cstring>lineEdit_atividadesNIc</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_atividadesNIc_2"/>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="1" rowspan="2">
+        <widget class="QListWidget" name="listWidget_listaAtividadesNic_2">
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <item>
+          <property name="text">
+           <string>Lista de Atividades</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <layout class="QVBoxLayout" name="verticalLayout_24">
+         <item>
+          <widget class="QPushButton" name="pushButton_adAtividadesNic_2">
+           <property name="text">
+            <string>Adicionar &gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_removerAtividades_2">
+           <property name="text">
+            <string>Remover&lt;</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="5" column="0" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_141">
+         <item>
+          <spacer name="horizontalSpacer_9">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_cadastrarNic_2">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Cadastrar</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_19">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>771</width>
+        <height>339</height>
+       </rect>
+      </property>
+      <attribute name="label">
+       <string>Cadastro de Usuários do Sistema</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_32">
+       <item row="0" column="0" colspan="4">
+        <layout class="QHBoxLayout" name="horizontalLayout_151">
+         <item>
+          <widget class="QLabel" name="label_nomeUser_2">
+           <property name="text">
+            <string>Nome</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_nomeUser_2"/>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="4" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_154">
+         <item>
+          <widget class="QLabel" name="label_corenUser_2">
+           <property name="text">
+            <string>COREN</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_corenUser_2"/>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_152">
+         <item>
+          <widget class="QLabel" name="label_tipoUser_2">
+           <property name="text">
+            <string>Tipo</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox_tipoUser_2"/>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="1" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_153">
+         <item>
+          <widget class="QLabel" name="label_dataNascUser_2">
+           <property name="text">
+            <string>Data Nasc</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDateEdit" name="dateEdit_user_2"/>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="3" colspan="3">
+        <layout class="QHBoxLayout" name="horizontalLayout_155">
+         <item>
+          <widget class="QLabel" name="label_emailUser_2">
+           <property name="text">
+            <string>e-mail</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_emailUser_2"/>
+         </item>
+        </layout>
+       </item>
+       <item row="2" column="0" colspan="6">
+        <layout class="QHBoxLayout" name="horizontalLayout_142">
+         <item>
+          <widget class="QLabel" name="label_telefonesUser_2">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Telefones:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_telResUser_2">
+           <property name="toolTip">
+            <string>Residencial</string>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="inputMethodHints">
+            <set>Qt::ImhFormattedNumbersOnly</set>
+           </property>
+           <property name="inputMask">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="placeholderText">
+            <string>Residencial</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_telComUser_2">
+           <property name="toolTip">
+            <string>Comercial</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="placeholderText">
+            <string>Comercial</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_telCelUser_2">
+           <property name="toolTip">
+            <string>Celular</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="placeholderText">
+            <string>Celular</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="0" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_144">
+         <item>
+          <widget class="QLabel" name="label_usuario_2">
+           <property name="text">
+            <string>Usuário</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_usuario_2"/>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="2" colspan="3">
+        <layout class="QHBoxLayout" name="horizontalLayout_143">
+         <item>
+          <widget class="QLabel" name="label_senhaUser_2">
+           <property name="text">
+            <string>Senha</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_senhaUser_2"/>
+         </item>
+        </layout>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_endereco_2">
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Endereço</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="5">
+        <layout class="QHBoxLayout" name="horizontalLayout_145">
+         <item>
+          <widget class="QLabel" name="label_ruaUser_2">
+           <property name="text">
+            <string>Rua</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_60"/>
+         </item>
+        </layout>
+       </item>
+       <item row="5" column="5">
+        <layout class="QHBoxLayout" name="horizontalLayout_147">
+         <item>
+          <widget class="QLabel" name="label_nmeroEndUser_2">
+           <property name="text">
+            <string>Nº</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_nmroEndUser_2"/>
+         </item>
+        </layout>
+       </item>
+       <item row="6" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_146">
+         <item>
+          <widget class="QLabel" name="label_cepUser_2">
+           <property name="text">
+            <string>CEP</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_cepUser_2"/>
+         </item>
+        </layout>
+       </item>
+       <item row="6" column="1" colspan="4">
+        <layout class="QHBoxLayout" name="horizontalLayout_150">
+         <item>
+          <widget class="QLabel" name="label_cidadeUser_2">
+           <property name="text">
+            <string>Cidade</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_cidadeUser_2"/>
+         </item>
+        </layout>
+       </item>
+       <item row="6" column="5">
+        <layout class="QHBoxLayout" name="horizontalLayout_148">
+         <item>
+          <widget class="QLabel" name="label_ufUser_2">
+           <property name="text">
+            <string>UF</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_ufUser_2"/>
+         </item>
+        </layout>
+       </item>
+       <item row="7" column="0" colspan="4">
+        <layout class="QHBoxLayout" name="horizontalLayout_149">
+         <item>
+          <widget class="QLabel" name="label_bairroUser_2">
+           <property name="text">
+            <string>Bairro</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_bairroUser_2"/>
+         </item>
+        </layout>
+       </item>
+       <item row="8" column="0" colspan="6">
+        <layout class="QHBoxLayout" name="horizontalLayout_156">
+         <item>
+          <spacer name="horizontalSpacer_10">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_cadastrarUser_2">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Cadastrar</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -24,7 +24,12 @@ SOURCES += main.cpp \
     DATA/usuario.cpp \
     DATA/datamodel.cpp \
     mainwindow.cpp \
-    GUI/reports.cpp
+    GUI/reports.cpp \
+    GUI/intake.cpp \
+    GUI/discharged.cpp \
+    GUI/maintenance.cpp \
+    GUI/patient.cpp \
+    GUI/escorting.cpp
 
 HEADERS  += \
     diagnostico.h \
@@ -38,13 +43,22 @@ HEADERS  += \
     admissao.h \
     DATA/datamodel.h \
     mainwindow.h \
-    GUI/reports.h
+    GUI/reports.h \
+    GUI/intake.h \
+    GUI/discharged.h \
+    GUI/maintenance.h \
+    GUI/patient.h \
+    GUI/escorting.h
 
 FORMS    += \
     GUI/PrincipalForm.ui \
     GUI/001_LogIn.ui \
-    #mainwindow.ui \
-    GUI/reports.ui
+    GUI/reports.ui \
+    GUI/intake.ui \
+    GUI/discharged.ui \
+    GUI/maintenance.ui \
+    GUI/patient.ui \
+    GUI/escorting.ui
 
 #DBUSER sae sae0192
 

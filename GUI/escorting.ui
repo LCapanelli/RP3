@@ -1,0 +1,1716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Escorting</class>
+ <widget class="QWidget" name="Escorting">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>784</width>
+    <height>511</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="1">
+    <widget class="QTabWidget" name="tabWidget_4">
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="tabPosition">
+      <enum>QTabWidget::North</enum>
+     </property>
+     <property name="tabShape">
+      <enum>QTabWidget::Rounded</enum>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <property name="elideMode">
+      <enum>Qt::ElideNone</enum>
+     </property>
+     <widget class="QWidget" name="tab_Evolucao_2">
+      <attribute name="title">
+       <string>Evolução</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_16">
+       <item row="1" column="0">
+        <widget class="QTabWidget" name="tabWidget_acEvolucao_2">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="tabPosition">
+          <enum>QTabWidget::North</enum>
+         </property>
+         <property name="tabShape">
+          <enum>QTabWidget::Rounded</enum>
+         </property>
+         <property name="currentIndex">
+          <number>3</number>
+         </property>
+         <property name="elideMode">
+          <enum>Qt::ElideMiddle</enum>
+         </property>
+         <widget class="QWidget" name="tab_Busca_2">
+          <attribute name="title">
+           <string>Busca</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_14">
+           <item row="0" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_108">
+             <item>
+              <widget class="QLabel" name="label_nomeBuscaP_4">
+               <property name="text">
+                <string>Nome:</string>
+               </property>
+               <property name="buddy">
+                <cstring>lineEdit_nomeP_2</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_nomeP_5">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_prontP_7">
+               <property name="text">
+                <string>Prontuário</string>
+               </property>
+               <property name="buddy">
+                <cstring>lineEdit_prontP_2</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_prontP_8">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_buscarP_5">
+               <property name="text">
+                <string>Buscar</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="0">
+            <widget class="QSplitter" name="splitter">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <widget class="QListView" name="listView_listaPacientes_7"/>
+             <widget class="QTextEdit" name="textEdit_descricaoP_2">
+              <property name="html">
+               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Quando o Enfermeiro selecionar um paciente e confirmar, o sistema irá verificar se ele encontra-se admitido no hospital, se encontrado, passa para evolução, caso contrário exibe aviso de não admitido&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_109">
+             <item>
+              <spacer name="horizontalSpacer_4">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_cancelar_3">
+               <property name="text">
+                <string>Cancelar</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_confirmarAcomp_2">
+               <property name="text">
+                <string>Confirmar</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+          <widget class="QLabel" name="label_67">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>160</y>
+             <width>181</width>
+             <height>19</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Informações do Paciente:</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="tab_diagnosticos_2">
+          <attribute name="title">
+           <string>Diagnósticos</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_17">
+           <item row="0" column="0" colspan="3">
+            <layout class="QHBoxLayout" name="horizontalLayout_111">
+             <item>
+              <widget class="QLabel" name="label_paciente_7">
+               <property name="text">
+                <string>Paciente</string>
+               </property>
+               <property name="buddy">
+                <cstring>lineEdit_80</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_81">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_pront_4">
+               <property name="font">
+                <font>
+                 <pointsize>12</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Prontuário</string>
+               </property>
+               <property name="buddy">
+                <cstring>lineEdit_buscaP</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_buscaP_3">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_diagnosticos_4">
+             <property name="text">
+              <string>Diagnósticos</string>
+             </property>
+             <property name="buddy">
+              <cstring>listWidget_listaDiagnosticos</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <spacer name="horizontalSpacer_11">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>305</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="label_RE_4">
+             <property name="text">
+              <string>Resultados Esperados</string>
+             </property>
+             <property name="buddy">
+              <cstring>listWidget_reDiag</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0" colspan="3">
+            <widget class="QSplitter" name="splitter_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <widget class="QListWidget" name="listWidget_listaDiagnosticos_2">
+              <item>
+               <property name="text">
+                <string>Diagnóstico Tal</string>
+               </property>
+              </item>
+             </widget>
+             <widget class="QListWidget" name="listWidget_reDiag_2">
+              <item>
+               <property name="text">
+                <string>Resultado esperado tal</string>
+               </property>
+              </item>
+             </widget>
+            </widget>
+           </item>
+           <item row="3" column="0" rowspan="2">
+            <layout class="QFormLayout" name="formLayout_10">
+             <property name="fieldGrowthPolicy">
+              <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+             </property>
+             <item row="0" column="0">
+              <widget class="QRadioButton" name="radioButton_6">
+               <property name="text">
+                <string>1</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_mantido_2">
+               <property name="text">
+                <string>Mantido</string>
+               </property>
+               <property name="buddy">
+                <cstring>radioButton_01</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QRadioButton" name="radioButton_7">
+               <property name="text">
+                <string>2</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLabel" name="label_melhorado_2">
+               <property name="text">
+                <string>Melhorado</string>
+               </property>
+               <property name="buddy">
+                <cstring>radioButton_02</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QRadioButton" name="radioButton_8">
+               <property name="text">
+                <string>3</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLabel" name="label_piorado_2">
+               <property name="text">
+                <string>Piorado</string>
+               </property>
+               <property name="buddy">
+                <cstring>radioButton_03</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QRadioButton" name="radioButton_9">
+               <property name="text">
+                <string>4</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLabel" name="label_resolvido_2">
+               <property name="text">
+                <string>Resolvido</string>
+               </property>
+               <property name="buddy">
+                <cstring>radioButton_04</cstring>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="3" column="2">
+            <widget class="QLabel" name="label_obsDiag_2">
+             <property name="text">
+              <string>Observações</string>
+             </property>
+             <property name="buddy">
+              <cstring>textEdit_obsDiag</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <layout class="QVBoxLayout" name="verticalLayout_14">
+             <item>
+              <widget class="QLabel" name="label_horas_2">
+               <property name="text">
+                <string>Horário da Evolução</string>
+               </property>
+               <property name="buddy">
+                <cstring>dateTimeEdit_horasEvDiag</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDateTimeEdit" name="dateTimeEdit_horasEvDiag_2"/>
+             </item>
+            </layout>
+           </item>
+           <item row="4" column="2">
+            <widget class="QTextEdit" name="textEdit_obsDiag_2">
+             <property name="html">
+              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:11pt;&quot;&gt;Observações referentes ao diagnóstico tal&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1" colspan="2">
+            <layout class="QHBoxLayout" name="horizontalLayout_110">
+             <item>
+              <widget class="QPushButton" name="pushButton_excluirDiag_5">
+               <property name="text">
+                <string>Excluir</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_evoluirDiag_2">
+               <property name="text">
+                <string>Evoluir</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_RE_3">
+          <attribute name="title">
+           <string>Resultados Esperados</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_18">
+           <item row="0" column="0" colspan="3">
+            <layout class="QHBoxLayout" name="horizontalLayout_113">
+             <item>
+              <widget class="QLabel" name="label_paciente_8">
+               <property name="text">
+                <string>Paciente</string>
+               </property>
+               <property name="buddy">
+                <cstring>lineEdit_paciente</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_paciente_7">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_pront_5">
+               <property name="font">
+                <font>
+                 <pointsize>12</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Prontuário</string>
+               </property>
+               <property name="buddy">
+                <cstring>lineEdit_pront</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_pront_4">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_diagRE_2">
+             <property name="text">
+              <string>Diagnósticos</string>
+             </property>
+             <property name="buddy">
+              <cstring>listWidget_listaDiag</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="label_re_4">
+             <property name="text">
+              <string>Resultados Esperados</string>
+             </property>
+             <property name="buddy">
+              <cstring>listWidget_reDia</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0" colspan="3">
+            <widget class="QSplitter" name="splitter_3">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <widget class="QListWidget" name="listWidget_listaDiag_4">
+              <item>
+               <property name="text">
+                <string>Diagnóstico Tal</string>
+               </property>
+              </item>
+             </widget>
+             <widget class="QListWidget" name="listWidget_reDia_2">
+              <item>
+               <property name="text">
+                <string>Resultado Esperado do Diagnóstico Tal</string>
+               </property>
+              </item>
+             </widget>
+            </widget>
+           </item>
+           <item row="3" column="0" colspan="2">
+            <widget class="QLabel" name="label_indicadoresRE_2">
+             <property name="text">
+              <string>Indicadores do Resultado Esperado</string>
+             </property>
+             <property name="buddy">
+              <cstring>listWidget_listaIndicadores</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="QLabel" name="label_avaliacaoIndi_2">
+             <property name="text">
+              <string>Avaliação dos Indicadores</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0" colspan="2">
+            <widget class="QListWidget" name="listWidget_listaIndicadores_3">
+             <item>
+              <property name="text">
+               <string>Indicador Tal</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="4" column="2">
+            <layout class="QFormLayout" name="formLayout_11">
+             <item row="0" column="0">
+              <widget class="QRadioButton" name="radioButton_ind01_2">
+               <property name="text">
+                <string>1</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QRadioButton" name="radioButton_indi02_2">
+               <property name="text">
+                <string>2</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QRadioButton" name="radioButton_indi03_2">
+               <property name="text">
+                <string>3</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QRadioButton" name="radioButton_indi04_2">
+               <property name="text">
+                <string>4</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QRadioButton" name="radioButton_indi05_2">
+               <property name="text">
+                <string>5</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_exComprometido_2">
+               <property name="text">
+                <string>Extremamente Comprometido</string>
+               </property>
+               <property name="buddy">
+                <cstring>radioButton_ind01</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLabel" name="label_substComprometido_2">
+               <property name="text">
+                <string>Substancialmente Comprometido</string>
+               </property>
+               <property name="buddy">
+                <cstring>radioButton_indi02</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLabel" name="label_modeComprometido_2">
+               <property name="text">
+                <string>Moderadamente Comprometido</string>
+               </property>
+               <property name="buddy">
+                <cstring>radioButton_indi03</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QLabel" name="label_naoComprometido_3">
+               <property name="text">
+                <string>Não Comprometido</string>
+               </property>
+               <property name="buddy">
+                <cstring>radioButton_indi05</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLabel" name="label_leveComprometido_2">
+               <property name="text">
+                <string>Levemente Comprometido</string>
+               </property>
+               <property name="buddy">
+                <cstring>radioButton_indi04</cstring>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="5" column="1">
+            <layout class="QHBoxLayout" name="horizontalLayout_112">
+             <item>
+              <widget class="QPushButton" name="pushButton_avaliar_3">
+               <property name="text">
+                <string>Avaliar</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_cuidados_3">
+          <attribute name="title">
+           <string>Cuidados</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_19">
+           <item row="0" column="0" colspan="3">
+            <layout class="QHBoxLayout" name="horizontalLayout_114">
+             <item>
+              <widget class="QLabel" name="label_pacienteCuid_4">
+               <property name="text">
+                <string>Paciente</string>
+               </property>
+               <property name="buddy">
+                <cstring>lineEdit_paciente_2</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_paciente_8">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_prontCuid_4">
+               <property name="font">
+                <font>
+                 <pointsize>12</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Prontuário</string>
+               </property>
+               <property name="buddy">
+                <cstring>lineEdit_pront_2</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_pront_5">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_diagn_3">
+             <property name="text">
+              <string>Diagnósticos</string>
+             </property>
+             <property name="buddy">
+              <cstring>listWidget_listaDiag_2</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLabel" name="label_cuidados_2">
+             <property name="text">
+              <string>Cuidados</string>
+             </property>
+             <property name="buddy">
+              <cstring>listWidget_listaCuidados</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0" colspan="2">
+            <widget class="QSplitter" name="splitter_4">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <widget class="QListWidget" name="listWidget_listaDiag_5">
+              <item>
+               <property name="text">
+                <string>Diagnóstico Tal</string>
+               </property>
+              </item>
+             </widget>
+             <widget class="QListWidget" name="listWidget_listaCuidados_2">
+              <item>
+               <property name="text">
+                <string>Cuidado Tal</string>
+               </property>
+              </item>
+             </widget>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_peCuidados_2">
+             <property name="text">
+              <string>Prescrição de Enfermagem</string>
+             </property>
+             <property name="buddy">
+              <cstring>listWidget_atividadesSelecionadas</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2" rowspan="2">
+            <widget class="QPushButton" name="pushButton_excluiCuidado_2">
+             <property name="text">
+              <string>Excluir Cuidado</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0" rowspan="3">
+            <widget class="QSplitter" name="splitter_7">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <widget class="QListWidget" name="listWidget_atividadesSelecionadas_2">
+              <item>
+               <property name="text">
+                <string>Associa Atividade da intervenção à &quot;Atividades realizadas&quot;</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>*Aqui será exibido o que tinha pra fazer, e de quanto em quanto tempo, em forma de tabela
+ 
+
+Aqui é exibido o que já foi feito
+*Descrição dos cuidados
+
+***Aqui colocaremos um CBox para selecionar os Cuidados NIC com Aprazamento, que serão movidos para a direita para feedback
+
+</string>
+               </property>
+              </item>
+             </widget>
+             <widget class="QListView" name="listView_ativAfazer_2"/>
+            </widget>
+           </item>
+           <item row="5" column="1" colspan="2">
+            <layout class="QFormLayout" name="formLayout_12">
+             <property name="fieldGrowthPolicy">
+              <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_ativRealizadas_2">
+               <property name="text">
+                <string>Atividades Realizadas</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_horarioRealizado_2">
+               <property name="text">
+                <string>Horário Realizado</string>
+               </property>
+               <property name="buddy">
+                <cstring>dateTimeEdit_dataHoraAtividade</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QDateTimeEdit" name="dateTimeEdit_dataHoraAtividade_2"/>
+             </item>
+             <item row="0" column="1">
+              <widget class="QListView" name="listView_ativRealizadas_2"/>
+             </item>
+            </layout>
+           </item>
+           <item row="6" column="1" colspan="2">
+            <layout class="QHBoxLayout" name="horizontalLayout_115">
+             <item>
+              <widget class="QPushButton" name="pushButton_encerrarAtivid_2">
+               <property name="text">
+                <string>Encerrar Atividade</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_evoluirAtivid_2">
+               <property name="text">
+                <string>Evoluir Atividade</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_observacoes_2">
+          <attribute name="title">
+           <string>Observações</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_20">
+           <item row="0" column="0" colspan="2">
+            <layout class="QHBoxLayout" name="horizontalLayout_118">
+             <item>
+              <widget class="QLabel" name="label_pacienteOb_2">
+               <property name="text">
+                <string>Paciente</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_pacienteObs_2">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_prontPaciente_2">
+               <property name="font">
+                <font>
+                 <pointsize>12</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Prontuário</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_prontPaciente_2">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="0" colspan="2">
+            <layout class="QHBoxLayout" name="horizontalLayout_116">
+             <item>
+              <spacer name="horizontalSpacer_5">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_horarioObs_2">
+               <property name="text">
+                <string>Horário </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDateTimeEdit" name="dateTimeEdit_horarioObs_2"/>
+             </item>
+            </layout>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_ocorrencias_2">
+             <property name="text">
+              <string>Ocorrências</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0" colspan="2">
+            <widget class="QTextEdit" name="textEdit_campoObservacoes_2">
+             <property name="html">
+              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Observações gerais&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <layout class="QHBoxLayout" name="horizontalLayout_117">
+             <item>
+              <widget class="QPushButton" name="pushButton_confirmar_3">
+               <property name="text">
+                <string>Confirmar</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_concluirEvolucao_2">
+               <property name="text">
+                <string>Concluir Evolução</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_atDiag_2">
+      <attribute name="title">
+       <string>Atualizar Diagnósticos</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_22">
+       <item row="0" column="0">
+        <widget class="QTabWidget" name="tabWidget_atDiag_2">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="tabPosition">
+          <enum>QTabWidget::North</enum>
+         </property>
+         <property name="tabShape">
+          <enum>QTabWidget::Rounded</enum>
+         </property>
+         <property name="currentIndex">
+          <number>3</number>
+         </property>
+         <property name="elideMode">
+          <enum>Qt::ElideMiddle</enum>
+         </property>
+         <widget class="QWidget" name="tab_buscaPaciente_2">
+          <attribute name="title">
+           <string>Busca de Paciente</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_23">
+           <item row="0" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_120">
+             <item>
+              <widget class="QLabel" name="label_nomeP_6">
+               <property name="text">
+                <string>Nome:</string>
+               </property>
+               <property name="buddy">
+                <cstring>lineEdit_buscaP_2</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_buscaP_4">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_prontP_8">
+               <property name="font">
+                <font>
+                 <pointsize>12</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Prontuário</string>
+               </property>
+               <property name="buddy">
+                <cstring>lineEdit_prontP_3</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_prontP_9">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_buscar_2">
+               <property name="text">
+                <string>Buscar</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="0">
+            <widget class="QListView" name="listView_listaPacientes_8"/>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_infoPacientes_5">
+             <property name="text">
+              <string>Informações do Paciente:</string>
+             </property>
+             <property name="buddy">
+              <cstring>textEdit_infoPacientes</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QTextEdit" name="textEdit_infoPacientes_2"/>
+           </item>
+           <item row="4" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_119">
+             <item>
+              <widget class="QPushButton" name="pushButton_cancelar_4">
+               <property name="text">
+                <string>Cancelar</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_editarCad_2">
+               <property name="text">
+                <string>Editar Cadastro</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_novaAdmissao_2">
+               <property name="text">
+                <string>Nova Admissão</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_diag_2">
+          <attribute name="title">
+           <string>Diagnósticos</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_24">
+           <item row="0" column="0" colspan="7">
+            <layout class="QHBoxLayout" name="horizontalLayout_123">
+             <item>
+              <widget class="QLabel" name="label_paciente_9">
+               <property name="text">
+                <string>Paciente</string>
+               </property>
+               <property name="buddy">
+                <cstring>lineEdit_paciente_3</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_paciente_9">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_pront_6">
+               <property name="font">
+                <font>
+                 <pointsize>12</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Prontuário</string>
+               </property>
+               <property name="buddy">
+                <cstring>lineEdit_pront_3</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_pront_6">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_dominio_4">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Dominio</string>
+             </property>
+             <property name="buddy">
+              <cstring>listView_listaDominios</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0" colspan="3">
+            <widget class="QSplitter" name="splitter_8">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <widget class="QListView" name="listView_listaDominios_2"/>
+             <widget class="QListView" name="listView_listaClasses_2"/>
+             <widget class="QListView" name="listView_listaDiag_2"/>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_diagSelecionados_2">
+             <property name="text">
+              <string>Diagnósticos Selecionados</string>
+             </property>
+             <property name="buddy">
+              <cstring>listWidget_listaDiagSelecionados</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4" rowspan="2" colspan="3">
+            <layout class="QHBoxLayout" name="horizontalLayout_122">
+             <item>
+              <widget class="QPushButton" name="pushButton_visualizaDiag_2">
+               <property name="text">
+                <string>Visualizar</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_associaDiag_2">
+               <property name="text">
+                <string>Associar</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="4" column="0" colspan="5">
+            <widget class="QListWidget" name="listWidget_listaDiagSelecionados_2"/>
+           </item>
+           <item row="4" column="5" colspan="2">
+            <layout class="QVBoxLayout" name="verticalLayout_15">
+             <item>
+              <widget class="QLabel" name="label_horario_2">
+               <property name="text">
+                <string>Horário</string>
+               </property>
+               <property name="buddy">
+                <cstring>dateTimeEdit_horario</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDateTimeEdit" name="dateTimeEdit_horario_2"/>
+             </item>
+            </layout>
+           </item>
+           <item row="5" column="1" colspan="5">
+            <layout class="QHBoxLayout" name="horizontalLayout_121">
+             <item>
+              <widget class="QPushButton" name="pushButton_excluirDiag_6">
+               <property name="text">
+                <string>Excluir Diagnóstico</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_confirmaDiag_2">
+               <property name="text">
+                <string>Confirmar</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLabel" name="label_classe_4">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Classe</string>
+             </property>
+             <property name="buddy">
+              <cstring>listView_listaClasses</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="label_diag_2">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Diagnósticos</string>
+             </property>
+             <property name="buddy">
+              <cstring>listView_listaDiag</cstring>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_RE_4">
+          <attribute name="title">
+           <string>Resultados Esperados</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_25">
+           <item row="0" column="0" colspan="3">
+            <layout class="QHBoxLayout" name="horizontalLayout_124">
+             <item>
+              <widget class="QLabel" name="label_paciente_10">
+               <property name="text">
+                <string>Paciente</string>
+               </property>
+               <property name="buddy">
+                <cstring>lineEdit_paciente_4</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_paciente_10">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_paciente_11">
+               <property name="font">
+                <font>
+                 <pointsize>12</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Prontuário</string>
+               </property>
+               <property name="buddy">
+                <cstring>lineEdit_paciente_5</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_paciente_11">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_diagnostico_2">
+             <property name="text">
+              <string>Diagnósticos:</string>
+             </property>
+             <property name="buddy">
+              <cstring>listWidget_listaDiagosticos</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="label_re_5">
+             <property name="text">
+              <string>Resultados Esperados:</string>
+             </property>
+             <property name="buddy">
+              <cstring>listWidget_listaRE_2</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0" colspan="3">
+            <widget class="QSplitter" name="splitter_9">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <widget class="QListWidget" name="listWidget_listaDiagosticos_2"/>
+             <widget class="QListWidget" name="listWidget_listaRE_4">
+              <item>
+               <property name="text">
+                <string>NOC associa Resultados esperados à 
+diagnósticos, e cada Resultado 
+esperado possuí n Indicadores descritos, 
+e cada indicador é avaliado em uma 
+escala de cinco pontos. Cada Diagnóstico pode conter somente 1 resultado esperado</string>
+               </property>
+              </item>
+             </widget>
+            </widget>
+           </item>
+           <item row="3" column="0" colspan="2">
+            <widget class="QLabel" name="label_avaliacaoIndicadores_2">
+             <property name="text">
+              <string>Avaliação de Indicadores do Resultado Esperado:</string>
+             </property>
+             <property name="buddy">
+              <cstring>listView_listaIndicadoresAvaliados</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0" colspan="2">
+            <widget class="QListView" name="listView_listaIndicadoresAvaliados_2"/>
+           </item>
+           <item row="4" column="2">
+            <layout class="QFormLayout" name="formLayout_13">
+             <item row="0" column="0">
+              <widget class="QRadioButton" name="radioButton_10">
+               <property name="text">
+                <string>1</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QRadioButton" name="radioButton_11">
+               <property name="text">
+                <string>2</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QRadioButton" name="radioButton_12">
+               <property name="text">
+                <string>3</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QRadioButton" name="radioButton_13">
+               <property name="text">
+                <string>4</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QRadioButton" name="radioButton_14">
+               <property name="text">
+                <string>5</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_extComprometido_2">
+               <property name="text">
+                <string>Extremamente Comprometido</string>
+               </property>
+               <property name="buddy">
+                <cstring>radioButton_2</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLabel" name="label_subsComprometido_2">
+               <property name="text">
+                <string>Substancialmente Comprometido</string>
+               </property>
+               <property name="buddy">
+                <cstring>radioButton_3</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLabel" name="label_moderaComprometido_2">
+               <property name="text">
+                <string>Moderadamente Comprometido</string>
+               </property>
+               <property name="buddy">
+                <cstring>radioButton_4</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QLabel" name="label_naoComprometido_4">
+               <property name="text">
+                <string>Não Comprometido</string>
+               </property>
+               <property name="buddy">
+                <cstring>radioButton_05</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLabel" name="label_levementeComprometido_2">
+               <property name="text">
+                <string>Levemente Comprometido</string>
+               </property>
+               <property name="buddy">
+                <cstring>radioButton_5</cstring>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="5" column="1">
+            <widget class="QPushButton" name="pushButton_avaliar_4">
+             <property name="text">
+              <string>Avaliar</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="2">
+            <widget class="QPushButton" name="pushButton_confirmar_4">
+             <property name="text">
+              <string>Confirmar</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_cuidados_4">
+          <attribute name="title">
+           <string>Cuidados</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_10">
+           <item row="0" column="0" colspan="2">
+            <layout class="QHBoxLayout" name="horizontalLayout_126">
+             <item>
+              <widget class="QLabel" name="label_paciente_12">
+               <property name="text">
+                <string>Paciente</string>
+               </property>
+               <property name="buddy">
+                <cstring>lineEdit_paciente_6</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_paciente_12">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_prontuario_2">
+               <property name="font">
+                <font>
+                 <pointsize>12</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Prontuário</string>
+               </property>
+               <property name="buddy">
+                <cstring>lineEdit_prontuario</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_prontuario_2">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_diagn_4">
+             <property name="text">
+              <string>Diagnósticos:</string>
+             </property>
+             <property name="buddy">
+              <cstring>listWidget_listaDiag_3</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0" rowspan="3">
+            <widget class="QListWidget" name="listWidget_listaDiag_6"/>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLabel" name="label_intervencoes_2">
+             <property name="text">
+              <string>Intervenções</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <item>
+              <widget class="QLabel" name="label_dominiInterv_2">
+               <property name="text">
+                <string>Domínio</string>
+               </property>
+               <property name="buddy">
+                <cstring>comboBox_dominioInterv_2</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboBox_dominioInterv_4"/>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_classeInterv_2">
+               <property name="text">
+                <string>Classe</string>
+               </property>
+               <property name="buddy">
+                <cstring>comboBox_classeInterv_2</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboBox_classeInterv_4"/>
+             </item>
+            </layout>
+           </item>
+           <item row="4" column="1" rowspan="3">
+            <widget class="QListWidget" name="listWidget_listaAtividades_2">
+             <item>
+              <property name="text">
+               <string>Duplo clique para associar atividades à prescrição</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="label_ativid_2">
+             <property name="text">
+              <string>Atividades</string>
+             </property>
+             <property name="buddy">
+              <cstring>textEdit_blah</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0" rowspan="2">
+            <widget class="QTextEdit" name="textEdit_blah_2">
+             <property name="html">
+              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Quando o cuidado for finalizado, os aprazamentos serão associados ás atividades&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="1">
+            <layout class="QFormLayout" name="formLayout_14">
+             <property name="fieldGrowthPolicy">
+              <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+             </property>
+             <item row="0" column="0" colspan="2">
+              <layout class="QHBoxLayout" name="horizontalLayout_125">
+               <item>
+                <widget class="QLabel" name="label_who_2">
+                 <property name="text">
+                  <string>Quem Realiza</string>
+                 </property>
+                 <property name="buddy">
+                  <cstring>comboBox_whoCuid_2</cstring>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QComboBox" name="comboBox_whoCuid_4">
+                 <item>
+                  <property name="text">
+                   <string>Enfermeiro(a)</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Técnico de Enfermagem</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_aprazamentoCuid_4">
+               <property name="text">
+                <string>Aprazamento</string>
+               </property>
+               <property name="buddy">
+                <cstring>lineEdit_aprazamentoCuid_2</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="lineEdit_aprazamentoCuid_4"/>
+             </item>
+            </layout>
+           </item>
+           <item row="8" column="0" colspan="2">
+            <layout class="QHBoxLayout" name="horizontalLayout_128">
+             <item>
+              <spacer name="horizontalSpacer_6">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_finalizaCuidado_4">
+               <property name="text">
+                <string>Finalizar Cuidado</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLabel" name="label_acompanhamento_3">
+     <property name="text">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Droid Sans'; font-size:16pt; font-weight:600;&quot;&gt;ACOMPANHAMENTO&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+  <widget class="QLabel" name="label_acompanhamento_2">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>30</y>
+     <width>557</width>
+     <height>865</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Droid Sans'; font-size:16pt; font-weight:600;&quot;&gt;ACOMPANHAMENTO&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
