@@ -9,7 +9,7 @@ class Evolucao
 {
 public:
     Evolucao();
-    Diagnostico g;
+
 
 private:
 
