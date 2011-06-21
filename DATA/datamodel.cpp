@@ -1,8 +1,8 @@
 #include "datamodel.h"
-#include <QtSql/QSqlDatabase>
-#include <qdjango/QDjango.h>
+#include "qdjango/QDjango.h"
 
 DataModel::DataModel()
 {
-criarConexao();
+//criarConexao();
+DataModel::criarConexao();
 }

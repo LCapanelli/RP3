@@ -94,7 +94,7 @@
             </font>
            </property>
            <property name="currentIndex">
-            <number>1</number>
+            <number>5</number>
            </property>
            <widget class="QWidget" name="page_10">
             <layout class="QGridLayout" name="gridLayout_5">
@@ -3826,8 +3826,8 @@ p, li { white-space: pre-wrap; }
                  <rect>
                   <x>0</x>
                   <y>0</y>
-                  <width>464</width>
-                  <height>366</height>
+                  <width>875</width>
+                  <height>701</height>
                  </rect>
                 </property>
                 <attribute name="label">
@@ -3964,6 +3964,9 @@ p, li { white-space: pre-wrap; }
                  </item>
                  <item row="2" column="0">
                   <layout class="QHBoxLayout" name="horizontalLayout_133">
+                   <item>
+                    <widget class="QListWidget" name="listaDiag"/>
+                   </item>
                    <item>
                     <widget class="QLabel" name="label_definicaoDiag_2">
                      <property name="text">

@@ -21,6 +21,9 @@ private:
     //Ui::MainWindow *ui;
     Ui::Form_Principal_QW *ui;
 
+public slots:
+    //comentado na cpp
+    //void on_pb_SalvarDiag_clicked();
 };
 
 #endif // MAINWINDOW_H

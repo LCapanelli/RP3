@@ -1,7 +1,11 @@
-#include "diagnostico.h"
-#include <QString>
-#include <qdjango/QDjango.h>
+#include "mainwindow.h"
+#include "ui_PrincipalForm.h"
+#include "qdjango/QDjango.h"
 #include "qdjango/QDjangoQuerySet.h"
+#include "diagnostico.h"
+#include "qdjango/QDjangoScript.h"
+#include <QListWidget>
+#include <QString>
 
 /**
 Esta classe serve para criação de Diagnósticos,
@@ -78,25 +82,30 @@ void Diagnostico::setFRelac(const QString &fRelac){
 
 //SLOTS
 void Diagnostico::on_le_FiltroCadDiag_returnPressed(){
+    updateViewDiag();
 }
+
 void Diagnostico::on_pb_SalvarDiag_clicked(){
-    if(!ui.le_nomeDiag->text().isEmpty() && !ui.te_caractDefinidoras->toPlainText().isEmpty() && !ui.te_fatoresRelac->toPlainText().isEmpty()){
+    //if(!ui.le_nomeDiag->text().isEmpty() && !ui.te_caractDefinidoras->toPlainText().isEmpty() && !ui.te_fatoresRelac->toPlainText().isEmpty()){
+    if(!ui->le_nomeDiag->text().isEmpty()){
     Diagnostico *u = new Diagnostico(this);
-    u->setNomeDiag(ui.le_nomeDiag->text());
-    u->setCDefin(ui.te_caractDefinidoras->toPlainText());
-    u->setFRelac(ui.te_fatoresRelac->toPlainText());
+    u->setNomeDiag(ui->le_nomeDiag->text());
     u->save();
-    ui.le_nomeDiag->clear();
-    ui.te_caractDefinidoras->clear();
-    ui.te_fatoresRelac->clear();
+    ui->le_nomeDiag->clear();
+//    u->setCDefin(ui->te_caractDefinidoras->toPlainText());
+//    u->setFRelac(ui->te_fatoresRelac->toPlainText());
+//    ui->te_caractDefinidoras->clear();
+//    ui->te_fatoresRelac->clear();
     }
     updateViewDiag();
 }
+
 void Diagnostico::updateViewDiag(){
-    ui.diagnosticos_adm->clear();
+    ui->listaDiag->clear();
     QDjangoQuerySet <Diagnostico> nomeD;
+    nomeD = nomeD.filter(QDjangoWhere("nomeDiag", QDjangoWhere::Contains, ui->le_FiltroCadDiag->text()));
     for (int i = 0; i < nomeD.count(); ++i){
-        QListWidgetItem * item = new QListWidgetItem(nomeD.at(i)->nomeDiag(), ui.diagnosticos_adm);
+        QListWidgetItem * item = new QListWidgetItem(nomeD.at(i)->nomeDiag(), ui->listaDiag);
         item->setData(Qt::UserRole, nomeD.at(i)->idDiag());
     }
 }

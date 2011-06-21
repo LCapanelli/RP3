@@ -31,10 +31,10 @@ public:
 
         void setIdDiag(const qint32 & idDiag);
         void setNomeDiag(const QString & nomeDiag);
-        void setNum01(const int & num01);
-        void setNum02(const int & num02);
-        void setIdDom(const int & idDom);
-        void setIdClasse(const int & idClasse);
+        void setNum01(const int & num01 = 0);
+        void setNum02(const int & num02 = 0);
+        void setIdDom(const int & idDom = 0);
+        void setIdClasse(const int & idClasse = 0);
         void setDefinicao(const QString & definicao);
         void setCDefin(const QString & cDefin);
         void setFRelac(const QString & fRelac);
@@ -49,9 +49,9 @@ private:
         QString m_definicao;
         QString m_cDefin;
         QString m_fRelac;
-        Ui::Form_Principal_QW ui;
+        Ui::Form_Principal_QW *ui;
 
-private slots:
+public slots:
         void on_le_FiltroCadDiag_returnPressed();
         void on_pb_SalvarDiag_clicked();
         void updateViewDiag();

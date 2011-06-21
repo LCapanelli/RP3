@@ -1,5 +1,6 @@
 #include <QtGui/QApplication>
 #include "mainwindow.h"
+#include "DATA/datamodel.h"
 
 int main(int argc, char *argv[])
 {
@@ -10,9 +11,12 @@ int main(int argc, char *argv[])
 //    Ui::Form_Principal_QW ui;
 //    ui.setupUi(widget);
 //    ui.widgetPrincipal->showFullScreen();
-
     //widget->show();
-
+    new DataModel;
     new MainWindow;
+//    Diagnostico *u = new Diagnostico(u);
+//    u->setNomeDiag("blah");
+//    u->save();
+
     return a.exec();
 }

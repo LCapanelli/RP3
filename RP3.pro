@@ -13,28 +13,28 @@ TEMPLATE = app
 LIBS += -lqdjango
 
 SOURCES += main.cpp \
-    DATA/admissao.cpp \
+    #DATA/admissao.cpp \
     DATA/diagnostico.cpp \
-    DATA/evolucao.cpp \
-    DATA/histenf.cpp \
-    DATA/internacao.cpp \
-    DATA/intervencao.cpp \
-    DATA/paciente.cpp \
-    DATA/resultesp.cpp \
-    DATA/usuario.cpp \
+    #DATA/evolucao.cpp \
+    #DATA/histenf.cpp \
+    #DATA/internacao.cpp \
+    #DATA/intervencao.cpp \
+    #DATA/paciente.cpp \
+    #DATA/resultesp.cpp \
+    #DATA/usuario.cpp \
     DATA/datamodel.cpp \
     mainwindow.cpp
 
 HEADERS  += \
     diagnostico.h \
-    evolucao.h \
-    histenf.h \
-    intervencao.h \
-    paciente.h \
-    resultesp.h \
-    usuario.h \
-    internacao.h \
-    admissao.h \
+    #evolucao.h \
+    #histenf.h \
+    #intervencao.h \
+    #paciente.h \
+    #resultesp.h \
+    #usuario.h \
+    #internacao.h \
+    #admissao.h \
     DATA/datamodel.h \
     mainwindow.h
 
