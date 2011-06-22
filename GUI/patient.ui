@@ -23,7 +23,7 @@
       <enum>QFrame::Plain</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="Page1">
       <property name="geometry">
@@ -40,6 +40,13 @@
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0">
         <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="lb_nomeP">
+           <property name="text">
+            <string>Nome:</string>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QLineEdit" name="le_filtro_paciente"/>
          </item>
@@ -58,11 +65,18 @@
           <enum>Qt::Vertical</enum>
          </property>
          <widget class="QListView" name="lv_pacientesFiltrados"/>
-         <widget class="QPlainTextEdit" name="pt_InfoPacientes"/>
+         <widget class="QTableView" name="tv_selectedPatient"/>
         </widget>
        </item>
        <item row="2" column="0">
         <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QPushButton" name="pb_selPatient">
+           <property name="text">
+            <string>Selecionar</string>
+           </property>
+          </widget>
+         </item>
          <item>
           <spacer name="horizontalSpacer">
            <property name="orientation">
@@ -70,16 +84,23 @@
            </property>
            <property name="sizeHint" stdset="0">
             <size>
-             <width>468</width>
+             <width>40</width>
              <height>20</height>
             </size>
            </property>
           </spacer>
          </item>
          <item>
-          <widget class="QPushButton" name="pb_selPaciente">
+          <widget class="QPushButton" name="pb_EditPatient">
            <property name="text">
-            <string>Selecionar</string>
+            <string>Editar Paciente</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pb_NewPatient">
+           <property name="text">
+            <string>Novo Paciente</string>
            </property>
           </widget>
          </item>
@@ -629,14 +650,13 @@
             <set>Qt::ImhNone</set>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Plain</enum>
+            <enum>QFrame::Raised</enum>
            </property>
            <property name="horizontalScrollBarPolicy">
             <enum>Qt::ScrollBarAlwaysOff</enum>
            </property>
            <property name="plainText">
-            <string>
-</string>
+            <string/>
            </property>
            <property name="overwriteMode">
             <bool>true</bool>
@@ -670,14 +690,21 @@
        <item row="8" column="2">
         <layout class="QVBoxLayout" name="verticalLayout_4">
          <item>
-          <widget class="QPushButton" name="pushButton_salvarP_3">
+          <widget class="QPushButton" name="pb_saveCPatient">
            <property name="text">
             <string>Salvar</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_descartarP_3">
+          <widget class="QPushButton" name="pb_saveAndIntake">
+           <property name="text">
+            <string>Salvar e Admitir</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pb_discardPatient">
            <property name="text">
             <string>Descartar</string>
            </property>

@@ -1,6 +1,6 @@
 #include <QtGui/QApplication>
 #include "mainwindow.h"
-
+#include "DATA/datamodel.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -12,7 +12,8 @@ int main(int argc, char *argv[])
 //    ui.widgetPrincipal->showFullScreen();
 
     //widget->show();
-
+    DataModel data;
+    data.criarConexao();
     MainWindow main;
     main.showMaximized();
 

@@ -29,7 +29,9 @@ SOURCES += main.cpp \
     GUI/discharged.cpp \
     GUI/maintenance.cpp \
     GUI/patient.cpp \
-    GUI/escorting.cpp
+    GUI/escorting.cpp \
+    GUI/explorer.cpp \
+    DATA/model_diagnostable.cpp
 
 HEADERS  += \
     diagnostico.h \
@@ -48,7 +50,10 @@ HEADERS  += \
     GUI/discharged.h \
     GUI/maintenance.h \
     GUI/patient.h \
-    GUI/escorting.h
+    GUI/escorting.h \
+    GUI/explorer.h \
+    DATA/diagnostableview.h \
+    DATA/model_diagnostable.h
 
 FORMS    += \
     GUI/PrincipalForm.ui \
@@ -58,7 +63,8 @@ FORMS    += \
     GUI/discharged.ui \
     GUI/maintenance.ui \
     GUI/patient.ui \
-    GUI/escorting.ui
+    GUI/escorting.ui \
+    GUI/explorer.ui
 
 #DBUSER sae sae0192
 

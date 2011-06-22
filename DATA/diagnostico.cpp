@@ -27,17 +27,17 @@ void Diagnostico::setNomeDiag(const QString &nomeDiag){
     m_nomeDiag = nomeDiag;
 }
 
-int Diagnostico::num01() const {
+QString Diagnostico::num01() const {
     return m_num01;
 }
-void Diagnostico::setNum01(const int &num01){
+void Diagnostico::setNum01(const QString &num01){
     m_num01 = num01;
 }
 
-int Diagnostico::num02() const {
+QString Diagnostico::num02() const {
     return m_num02;
 }
-void Diagnostico::setNum02(const int &num02){
+void Diagnostico::setNum02(const QString &num02){
     m_num02 = num02;
 }
 
@@ -75,23 +75,19 @@ QString Diagnostico::fRelac() const{
 void Diagnostico::setFRelac(const QString &fRelac){
     m_fRelac = fRelac;
 }
+//Outros métodos
+//QVariant Diagnostico::data(const QModelIndex &index, int role) const{
+//    if(role == Qt::DisplayRole){
+//        return QString ("Row%1, Column%2")
+//                .arg(index.row() + 1)
+//                .arg(index.column() +1);
+//    }
+//    return QVariant();
+//}
+
 
 //SLOTS
-void Diagnostico::on_le_FiltroCadDiag_returnPressed(){
-}
-void Diagnostico::on_pb_SalvarDiag_clicked(){
-//    if(!ui.le_nomeDiag->text().isEmpty() && !ui.te_caractDefinidoras->toPlainText().isEmpty() && !ui.te_fatoresRelac->toPlainText().isEmpty()){
-//    Diagnostico *u = new Diagnostico(this);
-//    u->setNomeDiag(ui.le_nomeDiag->text());
-//    u->setCDefin(ui.te_caractDefinidoras->toPlainText());
-//    u->setFRelac(ui.te_fatoresRelac->toPlainText());
-//    u->save();
-//    ui.le_nomeDiag->clear();
-//    ui.te_caractDefinidoras->clear();
-//    ui.te_fatoresRelac->clear();
-//    }
-//    updateViewDiag();
-}
+
 void Diagnostico::updateViewDiag(){
 //    ui.diagnosticos_adm->clear();
 //    QDjangoQuerySet <Diagnostico> nomeD;

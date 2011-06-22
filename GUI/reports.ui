@@ -43,7 +43,7 @@
      <item>
       <widget class="QLabel" name="label_nomeP_8">
        <property name="text">
-        <string>Nome:</string>
+        <string>Nome Paciente</string>
        </property>
        <property name="buddy">
         <cstring>lineEdit_nomeP_3</cstring>

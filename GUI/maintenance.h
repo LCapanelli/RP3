@@ -17,6 +17,9 @@ public:
 
 private:
     Ui::Maintenance *ui;
+
+private slots:
+    void on_pb_SalvarDiag_clicked();
 };
 
 #endif // MAINTENANCE_H

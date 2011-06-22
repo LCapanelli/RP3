@@ -39,7 +39,7 @@ p, li { white-space: pre-wrap; }
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>5</number>
      </property>
      <property name="elideMode">
       <enum>Qt::ElideMiddle</enum>
@@ -102,7 +102,7 @@ p, li { white-space: pre-wrap; }
          <item row="2" column="0" colspan="2">
           <widget class="QLabel" name="label_infoPacientes_4">
            <property name="text">
-            <string>Informações do Paciente:</string>
+            <string>Informações do Paciente</string>
            </property>
           </widget>
          </item>
@@ -127,7 +127,7 @@ p, li { white-space: pre-wrap; }
            <item>
             <widget class="QPushButton" name="pushButton_cancelBusca_2">
              <property name="text">
-              <string>Cancelar</string>
+              <string>Novo Cadastro</string>
              </property>
             </widget>
            </item>
@@ -141,7 +141,7 @@ p, li { white-space: pre-wrap; }
            <item>
             <widget class="QPushButton" name="pushButton_novaAdmissPaciente_2">
              <property name="text">
-              <string>Nova Admissão</string>
+              <string>Admitir Paciente</string>
              </property>
             </widget>
            </item>
@@ -219,19 +219,6 @@ p, li { white-space: pre-wrap; }
          </item>
          <item>
           <widget class="QLineEdit" name="lineEdit_hgt_2"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_leitoP_2">
-           <property name="text">
-            <string>Leito</string>
-           </property>
-           <property name="buddy">
-            <cstring>lineEdit_leitoP</cstring>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="lineEdit_leitoP_2"/>
          </item>
          <item>
           <widget class="QLabel" name="label_pesoP_2">
@@ -584,7 +571,7 @@ Dosagem e Horários:
        <item row="3" column="0">
         <widget class="QLabel" name="label_diagSel_2">
          <property name="text">
-          <string>Diagnósticos Selecionados</string>
+          <string>Diagnósticos Associados</string>
          </property>
          <property name="buddy">
           <cstring>listView_diagSelecionados</cstring>
@@ -644,7 +631,7 @@ Dosagem e Horários:
          <item>
           <widget class="QPushButton" name="pushButton_excluirDiag_4">
            <property name="text">
-            <string>Excluir Diagnóstico</string>
+            <string>Excluir Diagnóstico Associado</string>
            </property>
           </widget>
          </item>
@@ -656,6 +643,19 @@ Dosagem e Horários:
           </widget>
          </item>
         </layout>
+       </item>
+       <item row="3" column="1">
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
        </item>
       </layout>
      </widget>
@@ -713,7 +713,7 @@ Dosagem e Horários:
          </item>
         </layout>
        </item>
-       <item row="1" column="0">
+       <item row="1" column="0" colspan="2">
         <widget class="QLabel" name="label_diagnosticosRE_2">
          <property name="text">
           <string>Diagnósticos</string>
@@ -733,22 +733,6 @@ Dosagem e Horários:
          </property>
         </widget>
        </item>
-       <item row="2" column="0" colspan="2">
-        <widget class="QListWidget" name="listWidget_diagnosticosRE_2"/>
-       </item>
-       <item row="2" column="2">
-        <widget class="QListWidget" name="listWidget_listaRE_3">
-         <item>
-          <property name="text">
-           <string>NOC associa Resultados esperados à 
-diagnósticos, e cada Resultado 
-esperado possuí n Indicadores descritos, 
-e cada indicador é avaliado em uma 
-escala de cinco pontos. Cada Diagnóstico pode conter somente 1 resultado esperado</string>
-          </property>
-         </item>
-        </widget>
-       </item>
        <item row="3" column="0" colspan="2">
         <widget class="QLabel" name="label_indicadores_3">
          <property name="text">
@@ -758,9 +742,6 @@ escala de cinco pontos. Cada Diagnóstico pode conter somente 1 resultado espera
           <cstring>listView_listaIndicadores</cstring>
          </property>
         </widget>
-       </item>
-       <item row="4" column="0" colspan="2">
-        <widget class="QListView" name="listView_listaIndicadores_2"/>
        </item>
        <item row="4" column="2">
         <layout class="QFormLayout" name="formLayout_8">
@@ -865,11 +846,20 @@ escala de cinco pontos. Cada Diagnóstico pode conter somente 1 resultado espera
          </property>
         </widget>
        </item>
+       <item row="2" column="2">
+        <widget class="QColumnView" name="cv_RlistwithCB"/>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <widget class="QListView" name="lv_Diag4RE"/>
+       </item>
+       <item row="4" column="0" colspan="2">
+        <widget class="QColumnView" name="cv_listIndicWithNumb"/>
+       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="cuidadosP_2">
       <attribute name="title">
-       <string>Cuidados</string>
+       <string>Intervenções</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_9">
        <item row="0" column="0" colspan="2">

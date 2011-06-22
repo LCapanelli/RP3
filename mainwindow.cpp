@@ -6,6 +6,7 @@
 #include "GUI/maintenance.h"
 #include "GUI/patient.h"
 #include "GUI/escorting.h"
+#include "GUI/explorer.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QWidget(parent),
@@ -23,6 +24,7 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->stackedWidget_Principal->insertWidget(3, new Discharged(this));
         ui->stackedWidget_Principal->insertWidget(4, new Reports(this));
         ui->stackedWidget_Principal->insertWidget(5, new Maintenance(this));
+        ui->stackedWidget_Principal->insertWidget(6, new Explorer(this));
 //        ui.widgetPrincipal->showFullScreen();
 //        widget->show();
 }
