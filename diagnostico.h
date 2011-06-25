@@ -17,9 +17,6 @@ class Diagnostico : public QDjangoModel{
         Q_CLASSINFO("idDiag", "primary_key=true auto_increment=true")
 
 public:
-//        int rowCount(const QModelIndex &parent = QModelIndex()) const;
-//        int columnCount(const QModelIndex &parent = QModelIndex) const;
-//        QVariant dataDiag(const QModelIndex &index, int role = Qt::DisplayRole) const;
         explicit Diagnostico(QObject *parent = 0);
         qint32 idDiag() const;
         QString nomeDiag() const;
@@ -53,8 +50,9 @@ private:
         QString m_fRelac;
         //Ui::Form_Principal_QW ui;
 
-private slots:
+public slots:
         void updateViewDiag();
+        void setExamples();
 };
 
 #endif // DIAGNOSTICO_H

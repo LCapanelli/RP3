@@ -1,16 +1,5 @@
 #include "model_diagnostable.h"
 
-MODEL_DiagnosTable::MODEL_DiagnosTable(QObject *parent):
-        QAbstractTableModel(parent)
-{
-}
-
-MODEL_DiagnosTable::MODEL_DiagnosTable(QList<QPair<QString, QString> > pairs, QObject *parent):
-        QAbstractTableModel(parent)
-{
-listOfPairs = pairs;
-}
-
 int MODEL_DiagnosTable::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);

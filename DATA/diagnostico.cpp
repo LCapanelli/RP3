@@ -76,6 +76,39 @@ void Diagnostico::setFRelac(const QString &fRelac){
     m_fRelac = fRelac;
 }
 //Outros métodos
+
+void Diagnostico::setExamples(){
+    Diagnostico *u = new Diagnostico();
+    u->setIdDiag(1);
+    u->setNomeDiag("Padrão Respiratório Ineficaz");
+    u->setNum01("(00032)");
+    u->setNum02("1980, 1996, 1998");
+    u->setIdDom(4);
+    u->setIdClasse(4);
+    u->setDefinicao("Definição: \n Inspiração e/ou expiração que não proporciona ventilação adequada.");
+    u->setCDefin("Características Definidoras: \n -Alteração na profundidade respiratória\n -Assumir uma posição de três pontos \n -Batimentos de asa do nariz");
+    u->setFRelac("Fatores Relacionados: \n -Ansiedade \n -Danos cognitivos \n -Dano de percepção ");
+    u->setIdDiag(2);
+    u->setNomeDiag("BLAH");
+    u->setNum01("(00032)");
+    u->setNum02("1980, 1996, 1998");
+    u->setIdDom(4);
+    u->setIdClasse(4);
+    u->setDefinicao("Definição: \n Inspiração e/ou expiração que não proporciona ventilação adequada.");
+    u->setCDefin("Características Definidoras: \n -Alteração na profundidade respiratória\n -Assumir uma posição de três pontos \n -Batimentos de asa do nariz");
+    u->setFRelac("Fatores Relacionados: \n -Ansiedade \n -Danos cognitivos \n -Dano de percepção ");
+    u->setIdDiag(3);
+    u->setNomeDiag("BLAH BLAH");
+    u->setNum01("(38473)");
+    u->setNum02("2011");
+    u->setIdDom(1);
+    u->setIdClasse(3);
+    u->setDefinicao("Definição: SEM DEF");
+    u->setCDefin("Características Definidoras: SEM CD");
+    u->setFRelac("Fatores Relacionados: SEM FR");
+    u->save();
+}
+
 //QVariant Diagnostico::data(const QModelIndex &index, int role) const{
 //    if(role == Qt::DisplayRole){
 //        return QString ("Row%1, Column%2")

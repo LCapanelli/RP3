@@ -15,12 +15,12 @@ public:
     explicit Explorer(QWidget *parent = 0);
     ~Explorer();
 
-
 private:
     Ui::Explorer *ui;
 
 public slots:
         void listUpdate();
+
 };
 
 #endif // EXPLORER_H

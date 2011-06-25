@@ -5,4 +5,6 @@
 DataModel::DataModel()
 {
 criarConexao();
+Diagnostico ex;
+ex.setExamples();
 }

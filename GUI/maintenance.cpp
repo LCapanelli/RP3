@@ -17,10 +17,10 @@ Maintenance::~Maintenance()
 //System Maintenance - NANDA Recorder
 void Maintenance::on_pb_SalvarDiag_clicked()
 {
-        if(!ui->le_nomeDiag->text().isEmpty() && !ui->le_taxDiag->text().isEmpty() &&
+        if(!ui->le_nomeDiag->text().isEmpty() /*&& !ui->le_taxDiag->text().isEmpty() &&
            !ui->le_YearDiag->text().isEmpty() && !ui->te_DiagDefinition->toPlainText().isEmpty()
             && !ui->te_caractDef->toPlainText().isEmpty() &&
-                    !ui->te_Rfactor->toPlainText().isEmpty()){
+                    !ui->te_Rfactor->toPlainText().isEmpty()*/){
         Diagnostico *u = new Diagnostico(this);
         u->setNomeDiag(ui->le_nomeDiag->text());
         u->setNum01(ui->le_taxDiag->text());
@@ -30,7 +30,7 @@ void Maintenance::on_pb_SalvarDiag_clicked()
         u->setFRelac(ui->te_Rfactor->toPlainText());
         u->save();
         QMessageBox aviso;
-        aviso.setText("Diagnostico salvo");
+        aviso.setText("Diagnostico salvo com sucesso!");
         aviso.setStandardButtons(QMessageBox::Ok);
         aviso.exec();
         ui->le_nomeDiag->clear();

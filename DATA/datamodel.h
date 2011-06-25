@@ -19,7 +19,6 @@ public:
     QDjango::registerModel<Diagnostico>();
     QDjango::createTables();
 
-
 //    if (!db.open()) {
 //    return false; }
 //    return true;

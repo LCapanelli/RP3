@@ -8,8 +8,7 @@ class MODEL_DiagnosTable : QAbstractTableModel
         Q_OBJECT
 
 public:
-    MODEL_DiagnosTable(QObject *parent=0);
-    MODEL_DiagnosTable(QList< QPair< QString, QString> > listOfPairs, QObject *parent=0);
+    explicit MODEL_DiagnosTable(QObject *parent=0) : QAbstractTableModel(parent) {}
 
     int rowCount(const QModelIndex &parent) const;
     int columnCount(const QModelIndex &parent) const;

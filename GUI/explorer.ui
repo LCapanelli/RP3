@@ -94,7 +94,7 @@
         </widget>
        </item>
        <item row="2" column="0" colspan="2">
-        <widget class="QTableView" name="tv_showDiagnosReadyOnly"/>
+        <widget class="QTableWidget" name="tW_showDiagnosReadyOnly"/>
        </item>
       </layout>
      </widget>
@@ -103,8 +103,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>614</width>
-        <height>359</height>
+        <width>277</width>
+        <height>163</height>
        </rect>
       </property>
       <attribute name="label">
