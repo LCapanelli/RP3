@@ -132,22 +132,22 @@ p, li { white-space: pre-wrap; }
       <bool>false</bool>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="page_16">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>771</width>
-        <height>339</height>
+        <width>758</width>
+        <height>342</height>
        </rect>
       </property>
       <attribute name="label">
        <string>Cadastro de Diagnósticos - NANDA</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0">
+       <item row="0" column="0" colspan="2">
         <layout class="QHBoxLayout" name="horizontalLayout_134">
          <item>
           <widget class="QLabel" name="label">
@@ -240,7 +240,7 @@ p, li { white-space: pre-wrap; }
          </item>
         </layout>
        </item>
-       <item row="1" column="0">
+       <item row="1" column="0" colspan="2">
         <layout class="QHBoxLayout" name="horizontalLayout_135">
          <item>
           <widget class="QLabel" name="label_nomeDiag_2">
@@ -318,7 +318,57 @@ p, li { white-space: pre-wrap; }
          </item>
         </layout>
        </item>
-       <item row="2" column="0">
+       <item row="2" column="0" rowspan="2" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Definição</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>388</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_5">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Características Definidoras</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" colspan="2">
         <widget class="QSplitter" name="splitter">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
@@ -335,8 +385,10 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Definição:&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="overwriteMode">
+           <bool>false</bool>
           </property>
          </widget>
          <widget class="QTextEdit" name="te_caractDef">
@@ -360,14 +412,44 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Características Definidoras:&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
         </widget>
        </item>
-       <item row="3" column="0">
+       <item row="5" column="0" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="label_6">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Fatores Relacionados</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>568</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item row="6" column="0" colspan="2">
         <widget class="QTextEdit" name="te_Rfactor">
          <property name="toolTip">
           <string>Fatores Relacionados</string>
@@ -377,13 +459,11 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; font-size:12pt; font-weight:600; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Fatores Relacionados:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:400;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:400;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="0">
+       <item row="7" column="0">
         <layout class="QHBoxLayout" name="horizontalLayout_136">
          <item>
           <spacer name="horizontalSpacer_8">
@@ -785,40 +865,104 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
-        <width>771</width>
-        <height>339</height>
+        <y>-5</y>
+        <width>758</width>
+        <height>375</height>
        </rect>
       </property>
       <attribute name="label">
        <string>Cadastro de Usuários do Sistema</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout_32">
-       <item row="0" column="0" colspan="4">
-        <layout class="QHBoxLayout" name="horizontalLayout_151">
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0" colspan="5">
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
-          <widget class="QLabel" name="label_nomeUser_2">
-           <property name="text">
-            <string>Nome</string>
-           </property>
-          </widget>
+          <layout class="QHBoxLayout" name="horizontalLayout_151">
+           <item>
+            <widget class="QLabel" name="label_nomeUser_2">
+             <property name="font">
+              <font>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Nome</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_nomeUser_2"/>
+           </item>
+          </layout>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_nomeUser_2"/>
+          <layout class="QHBoxLayout" name="horizontalLayout_153">
+           <item>
+            <widget class="QLabel" name="label_dataNascUser_2">
+             <property name="font">
+              <font>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Data Nasc</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDateEdit" name="dateEdit_user_2">
+             <property name="displayFormat">
+              <string>dd/MM/yyyy</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
         </layout>
        </item>
-       <item row="0" column="4" colspan="2">
-        <layout class="QHBoxLayout" name="horizontalLayout_154">
+       <item row="0" column="8" rowspan="9">
+        <layout class="QVBoxLayout" name="verticalLayout">
          <item>
-          <widget class="QLabel" name="label_corenUser_2">
-           <property name="text">
-            <string>COREN</string>
-           </property>
-          </widget>
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>Usuários</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_corenUser_2"/>
+          <widget class="QListWidget" name="listWidget"/>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </item>
@@ -826,6 +970,12 @@ p, li { white-space: pre-wrap; }
         <layout class="QHBoxLayout" name="horizontalLayout_152">
          <item>
           <widget class="QLabel" name="label_tipoUser_2">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
            <property name="text">
             <string>Tipo</string>
            </property>
@@ -836,24 +986,16 @@ p, li { white-space: pre-wrap; }
          </item>
         </layout>
        </item>
-       <item row="1" column="1" colspan="2">
-        <layout class="QHBoxLayout" name="horizontalLayout_153">
-         <item>
-          <widget class="QLabel" name="label_dataNascUser_2">
-           <property name="text">
-            <string>Data Nasc</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QDateEdit" name="dateEdit_user_2"/>
-         </item>
-        </layout>
-       </item>
-       <item row="1" column="3" colspan="3">
+       <item row="1" column="1" colspan="5">
         <layout class="QHBoxLayout" name="horizontalLayout_155">
          <item>
           <widget class="QLabel" name="label_emailUser_2">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
            <property name="text">
             <string>e-mail</string>
            </property>
@@ -864,17 +1006,105 @@ p, li { white-space: pre-wrap; }
          </item>
         </layout>
        </item>
-       <item row="2" column="0" colspan="6">
+       <item row="2" column="0" colspan="8">
+        <layout class="QHBoxLayout" name="horizontalLayout_154">
+         <item>
+          <widget class="QLabel" name="label_corenUser_2">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>COREN</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_corenUser_2"/>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_11">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="0" colspan="3">
+        <layout class="QHBoxLayout" name="horizontalLayout_144">
+         <item>
+          <widget class="QLabel" name="label_usuario_2">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Usuário</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_usuario_2"/>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="3" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QLabel" name="label_senhaUser_2">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Senha</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_senhaUser_2"/>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="5" colspan="3">
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>71</width>
+           <height>28</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="4" column="0" colspan="8">
         <layout class="QHBoxLayout" name="horizontalLayout_142">
          <item>
           <widget class="QLabel" name="label_telefonesUser_2">
            <property name="font">
             <font>
              <pointsize>12</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
             </font>
            </property>
            <property name="text">
-            <string>Telefones:</string>
+            <string>Telefones</string>
            </property>
           </widget>
          </item>
@@ -901,19 +1131,6 @@ p, li { white-space: pre-wrap; }
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_telComUser_2">
-           <property name="toolTip">
-            <string>Comercial</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="placeholderText">
-            <string>Comercial</string>
-           </property>
-          </widget>
-         </item>
-         <item>
           <widget class="QLineEdit" name="lineEdit_telCelUser_2">
            <property name="toolTip">
             <string>Celular</string>
@@ -926,52 +1143,61 @@ p, li { white-space: pre-wrap; }
            </property>
           </widget>
          </item>
+         <item>
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
         </layout>
        </item>
-       <item row="3" column="0" colspan="2">
-        <layout class="QHBoxLayout" name="horizontalLayout_144">
+       <item row="5" column="0" colspan="8">
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
          <item>
-          <widget class="QLabel" name="label_usuario_2">
+          <widget class="QLabel" name="label_9">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
            <property name="text">
-            <string>Usuário</string>
+            <string>Endereço</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_usuario_2"/>
-         </item>
-        </layout>
-       </item>
-       <item row="3" column="2" colspan="3">
-        <layout class="QHBoxLayout" name="horizontalLayout_143">
-         <item>
-          <widget class="QLabel" name="label_senhaUser_2">
-           <property name="text">
-            <string>Senha</string>
+          <spacer name="horizontalSpacer_7">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
            </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="lineEdit_senhaUser_2"/>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="label_endereco_2">
-         <property name="font">
-          <font>
-           <pointsize>15</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Endereço</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0" colspan="5">
+       <item row="6" column="0" rowspan="2" colspan="3">
         <layout class="QHBoxLayout" name="horizontalLayout_145">
          <item>
           <widget class="QLabel" name="label_ruaUser_2">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
            <property name="text">
             <string>Rua</string>
            </property>
@@ -982,24 +1208,73 @@ p, li { white-space: pre-wrap; }
          </item>
         </layout>
        </item>
-       <item row="5" column="5">
-        <layout class="QHBoxLayout" name="horizontalLayout_147">
+       <item row="6" column="4" rowspan="3" colspan="3">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
-          <widget class="QLabel" name="label_nmeroEndUser_2">
-           <property name="text">
-            <string>Nº</string>
-           </property>
-          </widget>
+          <layout class="QHBoxLayout" name="horizontalLayout_147">
+           <item>
+            <widget class="QLabel" name="label_nmeroEndUser_2">
+             <property name="font">
+              <font>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Nº</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_nmroEndUser_2"/>
+           </item>
+          </layout>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_nmroEndUser_2"/>
+          <layout class="QHBoxLayout" name="horizontalLayout_148">
+           <item>
+            <widget class="QLabel" name="label_ufUser_2">
+             <property name="font">
+              <font>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>UF</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="comboBox"/>
+           </item>
+          </layout>
          </item>
         </layout>
        </item>
-       <item row="6" column="0">
+       <item row="7" column="7" rowspan="2">
+        <spacer name="horizontalSpacer_6">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>53</width>
+           <height>29</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="8" column="0" colspan="2">
         <layout class="QHBoxLayout" name="horizontalLayout_146">
          <item>
           <widget class="QLabel" name="label_cepUser_2">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
            <property name="text">
             <string>CEP</string>
            </property>
@@ -1010,10 +1285,16 @@ p, li { white-space: pre-wrap; }
          </item>
         </layout>
        </item>
-       <item row="6" column="1" colspan="4">
+       <item row="8" column="2" colspan="2">
         <layout class="QHBoxLayout" name="horizontalLayout_150">
          <item>
           <widget class="QLabel" name="label_cidadeUser_2">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
            <property name="text">
             <string>Cidade</string>
            </property>
@@ -1024,24 +1305,16 @@ p, li { white-space: pre-wrap; }
          </item>
         </layout>
        </item>
-       <item row="6" column="5">
-        <layout class="QHBoxLayout" name="horizontalLayout_148">
-         <item>
-          <widget class="QLabel" name="label_ufUser_2">
-           <property name="text">
-            <string>UF</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="lineEdit_ufUser_2"/>
-         </item>
-        </layout>
-       </item>
-       <item row="7" column="0" colspan="4">
+       <item row="9" column="0" colspan="5">
         <layout class="QHBoxLayout" name="horizontalLayout_149">
          <item>
           <widget class="QLabel" name="label_bairroUser_2">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
            <property name="text">
             <string>Bairro</string>
            </property>
@@ -1050,9 +1323,38 @@ p, li { white-space: pre-wrap; }
          <item>
           <widget class="QLineEdit" name="lineEdit_bairroUser_2"/>
          </item>
+         <item>
+          <widget class="QLabel" name="label_7">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>País</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="le_userCountry"/>
+         </item>
         </layout>
        </item>
-       <item row="8" column="0" colspan="6">
+       <item row="10" column="2">
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>26</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="10" column="6" colspan="3">
         <layout class="QHBoxLayout" name="horizontalLayout_156">
          <item>
           <spacer name="horizontalSpacer_10">
@@ -1080,7 +1382,33 @@ p, li { white-space: pre-wrap; }
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QPushButton" name="pb_cleanUserReg">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Limpar</string>
+           </property>
+          </widget>
+         </item>
         </layout>
+       </item>
+       <item row="9" column="8">
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
        </item>
       </layout>
      </widget>

@@ -3,6 +3,7 @@
 #include <qdjango/QDjango.h>
 #include <qdjango/QDjangoModel.h>
 #include "diagnostico.h"
+#include "usuario.h"
 
 class DataModel
 {
@@ -17,6 +18,7 @@ public:
 
     QDjango::setDatabase(db);
     QDjango::registerModel<Diagnostico>();
+    QDjango::registerModel<Usuario>();
     QDjango::createTables();
 
 //    if (!db.open()) {

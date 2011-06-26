@@ -17,7 +17,7 @@ Maintenance::~Maintenance()
 //System Maintenance - NANDA Recorder
 void Maintenance::on_pb_SalvarDiag_clicked()
 {
-        if(!ui->le_nomeDiag->text().isEmpty() /*&& !ui->le_taxDiag->text().isEmpty() &&
+    if(!ui->le_nomeDiag->text().isEmpty() /*&& !ui->le_taxDiag->text().isEmpty() &&
            !ui->le_YearDiag->text().isEmpty() && !ui->te_DiagDefinition->toPlainText().isEmpty()
             && !ui->te_caractDef->toPlainText().isEmpty() &&
                     !ui->te_Rfactor->toPlainText().isEmpty()*/){
@@ -39,5 +39,6 @@ void Maintenance::on_pb_SalvarDiag_clicked()
         ui->te_DiagDefinition->clear();
         ui->te_caractDef->clear();
         ui->te_Rfactor->clear();
-}
+
     }
+}
