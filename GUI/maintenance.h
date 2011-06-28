@@ -19,6 +19,7 @@ private:
     Ui::Maintenance *ui;
 
 private slots:
+    void on_pb_UserSAVE_clicked();
     void on_pb_SalvarDiag_clicked();
 };
 

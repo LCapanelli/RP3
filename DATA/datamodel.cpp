@@ -5,6 +5,7 @@
 DataModel::DataModel()
 {
 criarConexao();
-Diagnostico ex;
-ex.setExamples();
+Diagnostico exD; Usuario exUs;
+exD.setExamples();
+exUs.setUserExamples();
 }

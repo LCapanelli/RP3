@@ -88,6 +88,7 @@ void Diagnostico::setExamples(){
     u->setDefinicao("Inspiração e/ou expiração que não proporciona ventilação adequada.");
     u->setCDefin("-Alteração na profundidade respiratória\n -Assumir uma posição de três pontos \n -Batimentos de asa do nariz");
     u->setFRelac("-Ansiedade \n -Danos cognitivos \n -Dano de percepção ");
+    u->save();
     u->setIdDiag(2);
     u->setNomeDiag("BLAH");
     u->setNum01("(00032)");
@@ -97,6 +98,7 @@ void Diagnostico::setExamples(){
     u->setDefinicao(" # - Inspiração e/ou expiração que não proporciona ventilação adequada.");
     u->setCDefin("-Alteração na profundidade respiratória\n -Assumir uma posição de três pontos \n -Batimentos de asa do nariz");
     u->setFRelac("-Ansiedade \n -Danos cognitivos \n -Dano de percepção ");
+    u->save();
     u->setIdDiag(3);
     u->setNomeDiag("BLAH BLAH");
     u->setNum01("(38473)");

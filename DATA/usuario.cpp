@@ -28,7 +28,7 @@ void Usuario::setUsername(const QString &username){
 }
 
 QString Usuario::emailUser() const{
-    return m_username;
+    return m_emailUser;
 }
 void Usuario::setEmailUser(const QString &emailUser){
     m_emailUser = emailUser;
@@ -59,7 +59,7 @@ QString Usuario::streetNUser() const{
     return m_streetNUser;
 }
 void Usuario::setStreetNUser(const QString &streetNUser){
-    m_streetUser = streetNUser;
+    m_streetNUser = streetNUser;
 }
 
 QString Usuario::cepUser() const{
@@ -132,5 +132,24 @@ void Usuario::setDborn(const QDate &dBorn){
     m_dBorn = dBorn;
 }
 void Usuario::setUserExamples(){
-
+    Usuario *u = new Usuario();
+    u->setIdUser(1);
+    u->setUsername("admin");
+    u->setEmailUser("admin@adm.com");
+    u->setLogin("admin");
+    u->setPassW("admin");
+    u->setStreetUser("Foo Street");
+    u->setStreetNUser("555");
+    u->setCepUser("55055");
+    u->setCityUser("Townsville");
+    u->setBlockUser("Foo square");
+    u->setUfUser("OO");
+    u->setCountryUser("QtLand");
+    u->setUtype(1);
+    u->setTelResUser("55979797");
+    u->setCellUser("557878787");
+    u->setCoren(837847384);
+    QDate data = QDate::currentDate();
+    u->setDborn(data);
+    u->save();
 }

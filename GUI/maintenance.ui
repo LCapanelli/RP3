@@ -139,7 +139,7 @@ p, li { white-space: pre-wrap; }
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>758</width>
+        <width>549</width>
         <height>342</height>
        </rect>
       </property>
@@ -500,8 +500,8 @@ p, li { white-space: pre-wrap; }
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>771</width>
-        <height>339</height>
+        <width>338</width>
+        <height>309</height>
        </rect>
       </property>
       <attribute name="label">
@@ -703,8 +703,8 @@ p, li { white-space: pre-wrap; }
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>771</width>
-        <height>339</height>
+        <width>338</width>
+        <height>288</height>
        </rect>
       </property>
       <attribute name="label">
@@ -865,7 +865,7 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-5</y>
+        <y>0</y>
         <width>758</width>
         <height>375</height>
        </rect>
@@ -892,7 +892,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_nomeUser_2"/>
+            <widget class="QLineEdit" name="le_userName"/>
            </item>
           </layout>
          </item>
@@ -912,7 +912,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item>
-            <widget class="QDateEdit" name="dateEdit_user_2">
+            <widget class="QDateEdit" name="dateEdit_user">
              <property name="displayFormat">
               <string>dd/MM/yyyy</string>
              </property>
@@ -982,7 +982,7 @@ p, li { white-space: pre-wrap; }
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="comboBox_tipoUser_2"/>
+          <widget class="QComboBox" name="cb_userType"/>
          </item>
         </layout>
        </item>
@@ -1002,7 +1002,7 @@ p, li { white-space: pre-wrap; }
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_emailUser_2"/>
+          <widget class="QLineEdit" name="le_emailUser"/>
          </item>
         </layout>
        </item>
@@ -1022,7 +1022,7 @@ p, li { white-space: pre-wrap; }
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_corenUser_2"/>
+          <widget class="QLineEdit" name="le_coren"/>
          </item>
          <item>
           <spacer name="horizontalSpacer_11">
@@ -1055,7 +1055,7 @@ p, li { white-space: pre-wrap; }
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_usuario_2"/>
+          <widget class="QLineEdit" name="le_userLOG"/>
          </item>
         </layout>
        </item>
@@ -1075,7 +1075,7 @@ p, li { white-space: pre-wrap; }
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_senhaUser_2"/>
+          <widget class="QLineEdit" name="le_passW"/>
          </item>
         </layout>
        </item>
@@ -1109,7 +1109,7 @@ p, li { white-space: pre-wrap; }
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_telResUser_2">
+          <widget class="QLineEdit" name="le_rTEL">
            <property name="toolTip">
             <string>Residencial</string>
            </property>
@@ -1131,7 +1131,7 @@ p, li { white-space: pre-wrap; }
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_telCelUser_2">
+          <widget class="QLineEdit" name="le_Cell">
            <property name="toolTip">
             <string>Celular</string>
            </property>
@@ -1204,7 +1204,7 @@ p, li { white-space: pre-wrap; }
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_60"/>
+          <widget class="QLineEdit" name="le_streetUser"/>
          </item>
         </layout>
        </item>
@@ -1226,7 +1226,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_nmroEndUser_2"/>
+            <widget class="QLineEdit" name="le_NumStreet"/>
            </item>
           </layout>
          </item>
@@ -1246,7 +1246,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="comboBox"/>
+            <widget class="QComboBox" name="cb_UF"/>
            </item>
           </layout>
          </item>
@@ -1281,7 +1281,7 @@ p, li { white-space: pre-wrap; }
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_cepUser_2"/>
+          <widget class="QLineEdit" name="le_CEP"/>
          </item>
         </layout>
        </item>
@@ -1301,7 +1301,7 @@ p, li { white-space: pre-wrap; }
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_cidadeUser_2"/>
+          <widget class="QLineEdit" name="le_cityUser"/>
          </item>
         </layout>
        </item>
@@ -1321,7 +1321,7 @@ p, li { white-space: pre-wrap; }
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_bairroUser_2"/>
+          <widget class="QLineEdit" name="le_blockUser"/>
          </item>
          <item>
           <widget class="QLabel" name="label_7">
@@ -1370,7 +1370,7 @@ p, li { white-space: pre-wrap; }
           </spacer>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_cadastrarUser_2">
+          <widget class="QPushButton" name="pb_UserSAVE">
            <property name="font">
             <font>
              <weight>50</weight>
