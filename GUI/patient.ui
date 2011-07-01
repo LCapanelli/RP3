@@ -10,6 +10,11 @@
     <height>646</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
@@ -23,7 +28,7 @@
       <enum>QFrame::Plain</enum>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="Page1">
       <property name="geometry">
@@ -31,7 +36,7 @@
         <x>0</x>
         <y>0</y>
         <width>754</width>
-        <height>566</height>
+        <height>562</height>
        </rect>
       </property>
       <attribute name="label">
@@ -43,7 +48,7 @@
          <item>
           <widget class="QLabel" name="lb_nomeP">
            <property name="text">
-            <string>Nome:</string>
+            <string>Nome</string>
            </property>
           </widget>
          </item>
@@ -114,7 +119,7 @@
         <x>0</x>
         <y>0</y>
         <width>754</width>
-        <height>566</height>
+        <height>562</height>
        </rect>
       </property>
       <attribute name="label">

@@ -48,12 +48,12 @@ void Diagnostico::setIdDom(const int &idDom){
         m_idDom = idDom;
 }
 
-int Diagnostico::idClasse() const {
-    return m_idClasse;
-}
-void Diagnostico::setIdClasse(const int &idClasse){
-    m_idClasse = idClasse;
-}
+//int Diagnostico::idClasse() const {
+//    return m_idClasse;
+//}
+//void Diagnostico::setIdClasse(const int &idClasse){
+//    m_idClasse = idClasse;
+//}
 
 QString Diagnostico::definicao() const{
     return m_definicao;
@@ -84,7 +84,7 @@ void Diagnostico::setExamples(){
     u->setNum01("(00032)");
     u->setNum02("1980, 1996, 1998");
     u->setIdDom(4);
-    u->setIdClasse(4);
+    //u->setIdClasse(4);
     u->setDefinicao("Inspiração e/ou expiração que não proporciona ventilação adequada.");
     u->setCDefin("-Alteração na profundidade respiratória\n -Assumir uma posição de três pontos \n -Batimentos de asa do nariz");
     u->setFRelac("-Ansiedade \n -Danos cognitivos \n -Dano de percepção ");
@@ -94,7 +94,7 @@ void Diagnostico::setExamples(){
     u->setNum01("(00032)");
     u->setNum02("1980, 1996, 1998");
     u->setIdDom(4);
-    u->setIdClasse(4);
+    //u->setIdClasse(4);
     u->setDefinicao(" # - Inspiração e/ou expiração que não proporciona ventilação adequada.");
     u->setCDefin("-Alteração na profundidade respiratória\n -Assumir uma posição de três pontos \n -Batimentos de asa do nariz");
     u->setFRelac("-Ansiedade \n -Danos cognitivos \n -Dano de percepção ");
@@ -104,8 +104,8 @@ void Diagnostico::setExamples(){
     u->setNum01("(38473)");
     u->setNum02("2011");
     u->setIdDom(1);
-    u->setIdClasse(3);
-    u->setDefinicao("SEM DEF");
+    //u->setIdClasse(3);
+    u->setDefinicao("SEM DEFINICAO");
     u->setCDefin("SEM CD");
     u->setFRelac("SEM FR");
     u->save();

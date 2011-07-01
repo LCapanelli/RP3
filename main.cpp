@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
 //    ui.widgetPrincipal->showFullScreen();
 
     //widget->show();
+    a.setStyleSheet("QLineEdit{color: #806600; background-color: #F6FFD5; }");
     DataModel data;
     data.criarConexao();
     MainWindow main;

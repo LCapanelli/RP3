@@ -10,6 +10,11 @@
     <height>467</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
@@ -61,7 +66,7 @@
    <item row="1" column="0">
     <widget class="QToolBox" name="toolBox">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="page">
       <property name="geometry">
@@ -69,7 +74,7 @@
         <x>0</x>
         <y>0</y>
         <width>614</width>
-        <height>359</height>
+        <height>355</height>
        </rect>
       </property>
       <attribute name="label">
@@ -103,8 +108,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>277</width>
-        <height>163</height>
+        <width>614</width>
+        <height>355</height>
        </rect>
       </property>
       <attribute name="label">
@@ -116,22 +121,12 @@
          <item>
           <widget class="QLabel" name="label_4">
            <property name="text">
-            <string>Domínio</string>
+            <string>Diagnóstico</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QLineEdit" name="lineEdit_3"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_5">
-           <property name="text">
-            <string>Classe</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="lineEdit_4"/>
          </item>
          <item>
           <widget class="QLabel" name="label_6">

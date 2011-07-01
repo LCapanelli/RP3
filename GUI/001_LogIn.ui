@@ -9,9 +9,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>876</width>
-    <height>543</height>
+    <width>689</width>
+    <height>384</height>
    </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>12</pointsize>
+   </font>
   </property>
   <property name="windowTitle">
    <string>LogIn</string>
@@ -72,13 +77,16 @@
      <layout class="QGridLayout" name="gridLayout_2">
       <item row="1" column="1">
        <layout class="QFormLayout" name="formLayout">
+        <property name="fieldGrowthPolicy">
+         <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+        </property>
         <item row="0" column="0">
          <widget class="QLabel" name="label_Nome">
           <property name="styleSheet">
            <string notr="true">background-color: rgba(223, 223, 223, 200);</string>
           </property>
           <property name="text">
-           <string>Nome:</string>
+           <string>Nome de Usuário</string>
           </property>
          </widget>
         </item>
@@ -88,7 +96,7 @@
         <item row="1" column="0">
          <widget class="QLabel" name="label_Senha">
           <property name="text">
-           <string>Senha:</string>
+           <string>Senha</string>
           </property>
          </widget>
         </item>

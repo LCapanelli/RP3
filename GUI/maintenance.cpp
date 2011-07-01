@@ -2,13 +2,16 @@
 #include "ui_maintenance.h"
 #include "diagnostico.h"
 #include "usuario.h"
+#include "intervencao.h"
 #include <QMessageBox>
-
+#include "qdjango/QDjangoQuerySet.h"
+#include <QList>
 Maintenance::Maintenance(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Maintenance)
 {
     ui->setupUi(this);
+    nic_updateDiagView();
 }
 
 Maintenance::~Maintenance()
@@ -44,6 +47,7 @@ void Maintenance::on_pb_SalvarDiag_clicked()
     }
 }
 
+//SAVE User Reg
 void Maintenance::on_pb_UserSAVE_clicked()
 {//terminar restricoes
     Usuario *usr = new Usuario(this);
@@ -64,4 +68,50 @@ void Maintenance::on_pb_UserSAVE_clicked()
     usr->setBlockUser(ui->le_blockUser->text());
     usr->setCountryUser(ui->le_userCountry->text());
     usr->save();
+}
+
+//Update DiagName_list for NIC
+void Maintenance::nic_updateDiagView(){
+    ui->lw_DiagNIC->clear();
+    QDjangoQuerySet <Diagnostico> nomeD;
+    if (!ui->le_FILTER_DIAGonNIC->text().isEmpty())
+        nomeD = nomeD.filter(QDjangoWhere("nomeDiag", QDjangoWhere::Contains, ui->le_FILTER_DIAGonNIC->text()));
+
+    for (int i = 0; i < nomeD.count(); ++i){
+        QListWidgetItem * item = new QListWidgetItem(nomeD.at(i)->nomeDiag(), ui->lw_DiagNIC);
+        item->setData(Qt::UserRole, nomeD.at(i)->idDiag());
+    }
+}
+
+void Maintenance::on_le_FILTER_DIAGonNIC_returnPressed()
+{
+nic_updateDiagView();
+}
+
+void Maintenance::on_pq_NICSAVE_clicked()
+{//implementar o FK e salvar o NIC
+
+}
+
+void Maintenance::on_pb_SEARCH_DIAGonNIC_clicked()
+{
+    nic_updateDiagView();
+}
+
+void Maintenance::on_pb_NICRemove_clicked()
+{
+
+}
+
+void Maintenance::on_lw_DiagNIC_itemClicked(QListWidgetItem* item)
+{
+//    QDjangoQuerySet<Diagnostico> idDiag;
+//    for (int i = 0; i < idDiag.count(); ++i){
+//        QListWidgetItem * item = new QListWidgetItem(idDiag.at(i)->idDiag());
+//        item->setData(Qt::UserRole, idDiag.at(i)->idDiag());
+//    }
+    //idDiag = idDiag.filter(QDjangoWhere("idDiag", QDjangoWhere::Equals, item->text()));
+    //int id = idDiag.get(QDjangoWhere("idDiag"));
+
+    qDebug() << item;
 }
