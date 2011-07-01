@@ -28,7 +28,7 @@
       <enum>QFrame::Plain</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="Page1">
       <property name="geometry">
@@ -136,7 +136,7 @@
             </font>
            </property>
            <property name="text">
-            <string>Nome:</string>
+            <string>Nome</string>
            </property>
            <property name="buddy">
             <cstring>lineEdit_nomeP_4</cstring>
@@ -144,7 +144,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_nomeP_9"/>
+          <widget class="QLineEdit" name="le_patNAME"/>
          </item>
          <item>
           <widget class="QLabel" name="label_prontP_11">
@@ -162,7 +162,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_prontP_12">
+          <widget class="QLineEdit" name="le_patPRONT">
            <property name="enabled">
             <bool>false</bool>
            </property>
@@ -188,7 +188,7 @@
               </font>
              </property>
              <property name="text">
-              <string>Profissão:</string>
+              <string>Profissão</string>
              </property>
              <property name="buddy">
               <cstring>lineEdit_profissP</cstring>
@@ -196,7 +196,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_profissP_3"/>
+            <widget class="QLineEdit" name="le_patJOB"/>
            </item>
           </layout>
          </item>
@@ -210,7 +210,7 @@
               </font>
              </property>
              <property name="text">
-              <string>RG:</string>
+              <string>RG</string>
              </property>
              <property name="buddy">
               <cstring>lineEdit_rgP</cstring>
@@ -218,7 +218,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_rgP_3"/>
+            <widget class="QLineEdit" name="le_patRG"/>
            </item>
           </layout>
          </item>
@@ -236,7 +236,7 @@
               </font>
              </property>
              <property name="text">
-              <string>Procedência:</string>
+              <string>Procedência</string>
              </property>
              <property name="buddy">
               <cstring>lineEdit_procedP</cstring>
@@ -244,7 +244,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_procedP_3"/>
+            <widget class="QLineEdit" name="le_patPROCED"/>
            </item>
           </layout>
          </item>
@@ -258,7 +258,7 @@
               </font>
              </property>
              <property name="text">
-              <string>Proveniência:</string>
+              <string>Proveniência</string>
              </property>
              <property name="buddy">
               <cstring>lineEdit_provP</cstring>
@@ -266,7 +266,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_provP_3"/>
+            <widget class="QLineEdit" name="le_patPROVEN"/>
            </item>
           </layout>
          </item>
@@ -284,7 +284,7 @@
               </font>
              </property>
              <property name="text">
-              <string>Sexo:</string>
+              <string>Sexo</string>
              </property>
              <property name="buddy">
               <cstring>comboBox_sexoP</cstring>
@@ -292,7 +292,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="comboBox_sexoP_3">
+            <widget class="QComboBox" name="cb_patSEX">
              <property name="currentIndex">
               <number>-1</number>
              </property>
@@ -316,7 +316,7 @@
               </font>
              </property>
              <property name="text">
-              <string> Tipo Sang.:</string>
+              <string> Tipo Sang.</string>
              </property>
              <property name="buddy">
               <cstring>comboBox_tpSangP</cstring>
@@ -324,7 +324,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="comboBox_tpSangP_3">
+            <widget class="QComboBox" name="cb_patSang">
              <property name="currentIndex">
               <number>-1</number>
              </property>
@@ -375,6 +375,19 @@
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_69">
            <item>
+            <spacer name="horizontalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
             <widget class="QLabel" name="label_dataNP_7">
              <property name="font">
               <font>
@@ -382,7 +395,7 @@
               </font>
              </property>
              <property name="text">
-              <string>Data de Nascimento:</string>
+              <string>Data de Nascimento</string>
              </property>
              <property name="buddy">
               <cstring>lineEdit_dataNP_2</cstring>
@@ -390,40 +403,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_dataNP_7">
-             <property name="echoMode">
-              <enum>QLineEdit::Normal</enum>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_72">
-           <item>
-            <widget class="QLabel" name="label_IdadeP_7">
-             <property name="font">
-              <font>
-               <pointsize>12</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Idade:</string>
-             </property>
-             <property name="buddy">
-              <cstring>lineEdit_idadeP_2</cstring>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="lineEdit_idadeP_7">
-             <property name="enabled">
-              <bool>false</bool>
-             </property>
-             <property name="readOnly">
-              <bool>true</bool>
-             </property>
-            </widget>
+            <widget class="QDateEdit" name="dateEdit_pat"/>
            </item>
           </layout>
          </item>
@@ -441,7 +421,7 @@
               </font>
              </property>
              <property name="text">
-              <string> Raça: </string>
+              <string> Raça</string>
              </property>
              <property name="buddy">
               <cstring>lineEdit_racaP_2</cstring>
@@ -449,7 +429,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_racaP_3">
+            <widget class="QLineEdit" name="le_patRace">
              <property name="echoMode">
               <enum>QLineEdit::Normal</enum>
              </property>
@@ -467,7 +447,7 @@
               </font>
              </property>
              <property name="text">
-              <string>Crença/Religião:</string>
+              <string>Crença/Religião</string>
              </property>
              <property name="buddy">
               <cstring>lineEdit_religiaoP</cstring>
@@ -475,7 +455,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_religiaoP_3"/>
+            <widget class="QLineEdit" name="le_patRELIG"/>
            </item>
           </layout>
          </item>
@@ -489,7 +469,7 @@
               </font>
              </property>
              <property name="text">
-              <string>Estado civil:</string>
+              <string>Estado civil</string>
              </property>
              <property name="buddy">
               <cstring>comboBox_estadoCivP</cstring>
@@ -497,7 +477,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="comboBox_estadoCivP_3">
+            <widget class="QComboBox" name="cb_patCIVILS">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -520,7 +500,7 @@
             </font>
            </property>
            <property name="text">
-            <string>Endereço:</string>
+            <string>Endereço</string>
            </property>
            <property name="buddy">
             <cstring>lineEdit_enderecoP</cstring>
@@ -528,7 +508,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_enderecoP_3"/>
+          <widget class="QLineEdit" name="le_patMAIL"/>
          </item>
         </layout>
        </item>
@@ -542,7 +522,7 @@
             </font>
            </property>
            <property name="text">
-            <string>Telefones:</string>
+            <string>Telefones</string>
            </property>
            <property name="buddy">
             <cstring>lineEdit_telRP_2</cstring>
@@ -550,7 +530,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_telRP_3">
+          <widget class="QLineEdit" name="le_patTELR">
            <property name="toolTip">
             <string>Residencial</string>
            </property>
@@ -572,7 +552,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_telRCP_3">
+          <widget class="QLineEdit" name="le_patTELC">
            <property name="toolTip">
             <string>Comercial</string>
            </property>
@@ -585,7 +565,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_telRCellP_3">
+          <widget class="QLineEdit" name="le_patCELL">
            <property name="toolTip">
             <string>Celular</string>
            </property>
@@ -609,7 +589,7 @@
             </font>
            </property>
            <property name="text">
-            <string>Alergias:</string>
+            <string>Alergias</string>
            </property>
            <property name="buddy">
             <cstring>lineEdit_alergiaP</cstring>
@@ -617,7 +597,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_alergiaP_3"/>
+          <widget class="QLineEdit" name="le_patALERG"/>
          </item>
         </layout>
        </item>
@@ -631,7 +611,7 @@
             </font>
            </property>
            <property name="text">
-            <string>Observações:</string>
+            <string>Observações</string>
            </property>
            <property name="buddy">
             <cstring>lineEdit_alergiaP</cstring>

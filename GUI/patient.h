@@ -17,6 +17,9 @@ public:
 
 private:
     Ui::Patient *ui;
+
+private slots:
+    void on_pb_saveCPatient_clicked();
 };
 
 #endif // PATIENT_H

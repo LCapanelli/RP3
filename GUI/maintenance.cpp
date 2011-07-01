@@ -5,7 +5,8 @@
 #include "intervencao.h"
 #include <QMessageBox>
 #include "qdjango/QDjangoQuerySet.h"
-#include <QList>
+#include <QSqlQuery>
+
 Maintenance::Maintenance(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Maintenance)
@@ -103,15 +104,15 @@ void Maintenance::on_pb_NICRemove_clicked()
 
 }
 
+//terminar este método
 void Maintenance::on_lw_DiagNIC_itemClicked(QListWidgetItem* item)
 {
-//    QDjangoQuerySet<Diagnostico> idDiag;
-//    for (int i = 0; i < idDiag.count(); ++i){
-//        QListWidgetItem * item = new QListWidgetItem(idDiag.at(i)->idDiag());
-//        item->setData(Qt::UserRole, idDiag.at(i)->idDiag());
-//    }
-    //idDiag = idDiag.filter(QDjangoWhere("idDiag", QDjangoWhere::Equals, item->text()));
-    //int id = idDiag.get(QDjangoWhere("idDiag"));
 
-    qDebug() << item;
+//    QSqlQuery query("SELECT idDiag FROM diagnostico");
+//    while (query.next()) {
+//             QString idDiag = query.value(0).toString();
+
+//             qDebug() << idDiag;
+//         }
+qDebug()<< ui->lw_AtivityOnNIC->currentRow();
 }

@@ -5,6 +5,7 @@
 #include "diagnostico.h"
 #include "usuario.h"
 #include "intervencao.h"
+#include "paciente.h"
 
 class DataModel
 {
@@ -21,6 +22,7 @@ public:
     QDjango::registerModel<Diagnostico>();
     QDjango::registerModel<Usuario>();
     QDjango::registerModel<Intervencao>();
+    QDjango::registerModel<Paciente>();
     QDjango::createTables();
 
 //    if (!db.open()) {
