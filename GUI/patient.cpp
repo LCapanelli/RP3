@@ -2,6 +2,7 @@
 #include "ui_patient.h"
 #include "paciente.h"
 
+
 Patient::Patient(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Patient)
@@ -40,5 +41,22 @@ void Patient::on_pb_saveCPatient_clicked()
     p->save();
 
     ui->le_patNAME->clear();
+    ui->le_patJOB->clear();
+    ui->le_patPROCED->clear();
+    ui->le_patRG->clear();
+    ui->le_patPROVEN->clear();
+    ui->cb_patSEX->clear();
+    ui->cb_patSang->clear();
+    ui->le_patRELIG->clear();
+    ui->cb_patCIVILS->clear();
+    ui->le_patMAIL->clear();
+    ui->le_patTELC->clear();
+    ui->le_patTELR->clear();
+    ui->le_patCELL->clear();
+    ui->le_patALERG->clear();
+    ui->pT_obsP_2->clear();
+    ui->le_patRace->clear();
 }
 }
+
+

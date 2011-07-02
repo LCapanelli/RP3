@@ -33,14 +33,20 @@
         <layout class="QGridLayout" name="gridLayout_2">
          <item row="1" column="0" colspan="2">
           <widget class="QFrame" name="frame">
+           <property name="maximumSize">
+            <size>
+             <width>200</width>
+             <height>16777215</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true">background-color: rgb(40, 171, 73)</string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Panel</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
+            <enum>QFrame::Sunken</enum>
            </property>
           </widget>
          </item>
@@ -74,7 +80,7 @@
              </property>
              <property name="maximumSize">
               <size>
-               <width>160</width>
+               <width>180</width>
                <height>170</height>
               </size>
              </property>

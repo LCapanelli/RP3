@@ -144,8 +144,8 @@ p, li { white-space: pre-wrap; }
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>771</width>
-        <height>372</height>
+        <width>536</width>
+        <height>342</height>
        </rect>
       </property>
       <attribute name="label">
@@ -680,7 +680,7 @@ p, li { white-space: pre-wrap; }
             <widget class="QLineEdit" name="le_NIC_register"/>
            </item>
            <item>
-            <widget class="QPushButton" name="pq_NICSAVE">
+            <widget class="QPushButton" name="pb_NICSAVE">
              <property name="font">
               <font>
                <weight>50</weight>

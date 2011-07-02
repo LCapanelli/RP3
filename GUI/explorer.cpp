@@ -59,6 +59,6 @@ void Explorer::listUpdate(){
     }
 
 
-qDebug("====== OK - listUpdate está executando ======" );
+qDebug("====== OK - listUpdate estah executando ======" );
 qDebug()<<nameList << idDomList;
 }

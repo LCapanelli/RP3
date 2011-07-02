@@ -18,10 +18,10 @@ void Intervencao::setIdInter(const qint32 &idInter){
      m_idInter = idInter;
  }
 
-qint32 Intervencao::idDiagFK() const {
+QString Intervencao::idDiagFK() const {
     return m_idDiagFK;
 }
-void Intervencao::setIdDiagFK(const qint32 &idDiagFK){
+void Intervencao::setIdDiagFK(const QString &idDiagFK){
     m_idDiagFK = idDiagFK;
 }
 

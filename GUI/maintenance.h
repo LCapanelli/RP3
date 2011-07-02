@@ -20,11 +20,11 @@ private:
     Ui::Maintenance *ui;
 
 private slots:
+    void on_pb_NICSAVE_clicked();
     void on_lw_DiagNIC_itemClicked(QListWidgetItem* item);
     void on_pb_NICRemove_clicked();
     void on_pb_SEARCH_DIAGonNIC_clicked();
     void on_le_FILTER_DIAGonNIC_returnPressed();
-    void on_pq_NICSAVE_clicked();
     void on_pb_UserSAVE_clicked();
     void on_pb_SalvarDiag_clicked();
     void nic_updateDiagView();

@@ -35,8 +35,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>754</width>
-        <height>562</height>
+        <width>371</width>
+        <height>246</height>
        </rect>
       </property>
       <attribute name="label">
@@ -403,7 +403,11 @@
             </widget>
            </item>
            <item>
-            <widget class="QDateEdit" name="dateEdit_pat"/>
+            <widget class="QDateEdit" name="dateEdit_pat">
+             <property name="displayFormat">
+              <string>dd/MM/yyyy</string>
+             </property>
+            </widget>
            </item>
           </layout>
          </item>

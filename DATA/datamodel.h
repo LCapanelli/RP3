@@ -6,6 +6,7 @@
 #include "usuario.h"
 #include "intervencao.h"
 #include "paciente.h"
+#include <QtSql/QSqlDatabase>
 
 class DataModel
 {
@@ -14,8 +15,12 @@ public:
     QSqlDatabase db;
 
     void criarConexao(){
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("sae.db");
+    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
+    db.setHostName("localhost");
+    db.setDatabaseName("sae");
+    db.setUserName("sae");
+    db.setPassword("sae0192");
+    db.setPort(3306);
     db.open();
 
     QDjango::setDatabase(db);

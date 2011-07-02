@@ -6,6 +6,7 @@
 #include <QMessageBox>
 #include "qdjango/QDjangoQuerySet.h"
 #include <QSqlQuery>
+#include <QSqlRelationalTableModel>
 
 Maintenance::Maintenance(QWidget *parent) :
     QWidget(parent),
@@ -13,13 +14,14 @@ Maintenance::Maintenance(QWidget *parent) :
 {
     ui->setupUi(this);
     nic_updateDiagView();
+
 }
 
 Maintenance::~Maintenance()
 {
     delete ui;
 }
-//System Maintenance - NANDA Recorder
+//! System Maintenance - NANDA Recorder
 void Maintenance::on_pb_SalvarDiag_clicked()
 {
     if(!ui->le_nomeDiag->text().isEmpty() /*&& !ui->le_taxDiag->text().isEmpty() &&
@@ -45,10 +47,11 @@ void Maintenance::on_pb_SalvarDiag_clicked()
         ui->te_caractDef->clear();
         ui->te_Rfactor->clear();
 
+        nic_updateDiagView();
     }
 }
 
-//SAVE User Reg
+//! System Maintenance - User Recorder
 void Maintenance::on_pb_UserSAVE_clicked()
 {//terminar restricoes
     Usuario *usr = new Usuario(this);
@@ -71,7 +74,7 @@ void Maintenance::on_pb_UserSAVE_clicked()
     usr->save();
 }
 
-//Update DiagName_list for NIC
+//! Update DiagName_list for NIC_view
 void Maintenance::nic_updateDiagView(){
     ui->lw_DiagNIC->clear();
     QDjangoQuerySet <Diagnostico> nomeD;
@@ -89,11 +92,6 @@ void Maintenance::on_le_FILTER_DIAGonNIC_returnPressed()
 nic_updateDiagView();
 }
 
-void Maintenance::on_pq_NICSAVE_clicked()
-{//implementar o FK e salvar o NIC
-
-}
-
 void Maintenance::on_pb_SEARCH_DIAGonNIC_clicked()
 {
     nic_updateDiagView();
@@ -101,18 +99,36 @@ void Maintenance::on_pb_SEARCH_DIAGonNIC_clicked()
 
 void Maintenance::on_pb_NICRemove_clicked()
 {
+    if (ui->lw_AtivityOnNIC->count() == 0)
+        return;
 
+    QDjangoQuerySet <Intervencao> remIn;
+    qint32 id = ui->lw_AtivityOnNIC->currentItem()->data(Qt::UserRole).toInt();
+    remIn = remIn.filter(QDjangoWhere("idInter", QDjangoWhere::Equals, id));
+    //Itera nos resultados
+         for (int i = 0 ; i < remIn.count(); ++i)
+             remIn.at(i)->remove(); //remove
 }
 
 //terminar este método
 void Maintenance::on_lw_DiagNIC_itemClicked(QListWidgetItem* item)
 {
+    ui->lw_AtivityOnNIC->clear();
+    QDjangoQuerySet<Intervencao> idDiagFK;
+    idDiagFK = idDiagFK.filter(QDjangoWhere("idDiagFK", QDjangoWhere::Equals, ui->lw_DiagNIC->currentItem()->text()));
 
-//    QSqlQuery query("SELECT idDiag FROM diagnostico");
-//    while (query.next()) {
-//             QString idDiag = query.value(0).toString();
+    for (int i = 0; i < idDiagFK.count(); ++i){
+        QListWidgetItem * item = new QListWidgetItem(idDiagFK.at(i)->interName(), ui->lw_AtivityOnNIC);
+        item->setData(Qt::UserRole, idDiagFK.at(i)->idInter());
+    }
+}
 
-//             qDebug() << idDiag;
-//         }
-qDebug()<< ui->lw_AtivityOnNIC->currentRow();
+void Maintenance::on_pb_NICSAVE_clicked()
+{
+    Intervencao *in = new Intervencao(this);
+    if(!ui->le_NIC_register->text().isEmpty()){
+        in->setInterName(ui->le_NIC_register->text());
+        in->setIdDiagFK(ui->lw_DiagNIC->currentItem()->text());
+        in->save();
+    }
 }

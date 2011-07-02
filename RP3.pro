@@ -4,8 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui \
-            sql
+QT       += core gui sql
 
 TARGET = RP3
 TEMPLATE = app
