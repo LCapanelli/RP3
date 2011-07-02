@@ -15,11 +15,8 @@ SOURCES += main.cpp \
     DATA/admissao.cpp \
     DATA/diagnostico.cpp \
     DATA/evolucao.cpp \
-    DATA/histenf.cpp \
-    DATA/internacao.cpp \
     DATA/intervencao.cpp \
     DATA/paciente.cpp \
-    DATA/resultesp.cpp \
     DATA/usuario.cpp \
     DATA/datamodel.cpp \
     mainwindow.cpp \
@@ -30,17 +27,16 @@ SOURCES += main.cpp \
     GUI/patient.cpp \
     GUI/escorting.cpp \
     GUI/explorer.cpp \
-    DATA/model_diagnostable.cpp
+    DATA/model_diagnostable.cpp \
+    DATA/diagass.cpp \
+    DATA/actass.cpp
 
 HEADERS  += \
     diagnostico.h \
     evolucao.h \
-    histenf.h \
     intervencao.h \
     paciente.h \
-    resultesp.h \
     usuario.h \
-    internacao.h \
     admissao.h \
     DATA/datamodel.h \
     mainwindow.h \
@@ -52,7 +48,9 @@ HEADERS  += \
     GUI/escorting.h \
     GUI/explorer.h \
     DATA/diagnostableview.h \
-    DATA/model_diagnostable.h
+    DATA/model_diagnostable.h \
+    DATA/diagass.h \
+    DATA/actass.h
 
 FORMS    += \
     GUI/PrincipalForm.ui \

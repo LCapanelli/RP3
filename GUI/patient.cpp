@@ -1,19 +1,33 @@
 #include "patient.h"
 #include "ui_patient.h"
 #include "paciente.h"
-
+#include <qdjango/QDjangoQuerySet.h>
 
 Patient::Patient(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Patient)
 {
     ui->setupUi(this);
+    filtred_Patients();
 }
 
 Patient::~Patient()
 {
     delete ui;
 }
+
+void Patient::filtred_Patients(){
+    ui->lw_filtredPatients->clear();
+    QDjangoQuerySet <Paciente> pat;
+    if (!ui->le_patFILTER->text().isEmpty())
+        pat = pat.filter(QDjangoWhere("nameP", QDjangoWhere::Contains, ui->le_patFILTER->text()));
+
+    for (int i = 0; i < pat.count(); ++i){
+        QListWidgetItem * itemP = new QListWidgetItem(pat.at(i)->nameP(), ui->lw_filtredPatients);
+        itemP->setData(Qt::UserRole, pat.at(i)->pront());
+    }
+}
+
 //terminar de limpar os campos
 void Patient::on_pb_saveCPatient_clicked()
 {
@@ -60,3 +74,13 @@ void Patient::on_pb_saveCPatient_clicked()
 }
 
 
+
+void Patient::on_le_patFILTER_returnPressed()
+{
+    filtred_Patients();
+}
+
+void Patient::on_pb_paciente_clicked()
+{
+    filtred_Patients();
+}

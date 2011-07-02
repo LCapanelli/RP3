@@ -6,6 +6,9 @@
 #include "usuario.h"
 #include "intervencao.h"
 #include "paciente.h"
+#include "admissao.h"
+#include "diagass.h"
+#include "actass.h"
 #include <QtSql/QSqlDatabase>
 
 class DataModel
@@ -28,6 +31,9 @@ public:
     QDjango::registerModel<Usuario>();
     QDjango::registerModel<Intervencao>();
     QDjango::registerModel<Paciente>();
+    QDjango::registerModel<Admissao>();
+    QDjango::registerModel<DiagAss>();
+    QDjango::registerModel<ActAss>();
     QDjango::createTables();
 
 //    if (!db.open()) {

@@ -44,7 +44,7 @@ p, li { white-space: pre-wrap; }
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>5</number>
+      <number>1</number>
      </property>
      <property name="elideMode">
       <enum>Qt::ElideMiddle</enum>
@@ -210,50 +210,7 @@ p, li { white-space: pre-wrap; }
          </item>
         </layout>
        </item>
-       <item row="1" column="0" colspan="2">
-        <layout class="QHBoxLayout" name="horizontalLayout_97">
-         <item>
-          <widget class="QLabel" name="label_hgt_2">
-           <property name="text">
-            <string>HGT</string>
-           </property>
-           <property name="buddy">
-            <cstring>lineEdit_hgt</cstring>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="lineEdit_hgt_2"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_pesoP_2">
-           <property name="text">
-            <string>Peso</string>
-           </property>
-           <property name="buddy">
-            <cstring>lineEdit_pesoP</cstring>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="lineEdit_pesoP_2"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_alturaP_2">
-           <property name="text">
-            <string>Altura</string>
-           </property>
-           <property name="buddy">
-            <cstring>lineEdit_alturaP</cstring>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="lineEdit_alturaP_2"/>
-         </item>
-        </layout>
-       </item>
-       <item row="2" column="0">
+       <item row="1" column="0">
         <widget class="QLabel" name="label_outrosFisicos_2">
          <property name="text">
           <string>OUTROS EXAMES:</string>
@@ -263,10 +220,12 @@ p, li { white-space: pre-wrap; }
          </property>
         </widget>
        </item>
-       <item row="3" column="0" colspan="2">
+       <item row="2" column="0" colspan="2">
         <widget class="QPlainTextEdit" name="plainTextEdit_outrosFisicos_2">
          <property name="plainText">
-          <string>PERCEPÇÃO DOS SENTIDOS 
+          <string>HGT:			PESO:			Altura:
+
+PERCEPÇÃO DOS SENTIDOS 
 SUBJETIVO
 Visão:	(   ) sem alteração     (   ) alterada
 Audição:	(   ) sem alteração     (   ) alterada
@@ -326,7 +285,7 @@ OBS:</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="0" colspan="2">
+       <item row="3" column="0" colspan="2">
         <layout class="QHBoxLayout" name="horizontalLayout_96">
          <item>
           <spacer name="horizontalSpacer_3">

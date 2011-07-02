@@ -1,7 +1,6 @@
 #ifndef EVOLUCAO_H
 #define EVOLUCAO_H
 #include "diagnostico.h"
-#include "resultesp.h"
 #include "QDate"
 #include "QString"
 

@@ -19,6 +19,9 @@ private:
     Ui::Patient *ui;
 
 private slots:
+    void on_pb_paciente_clicked();
+    void on_le_patFILTER_returnPressed();
+    void filtred_Patients();
     void on_pb_saveCPatient_clicked();
 };
 
