@@ -13,10 +13,10 @@ void DiagAss::setIdDiagAss(const qint32 & idDiagAss){
     m_idDiagAss = idDiagAss;
 }
 
-qint32 DiagAss::idIntakeFK() const{
+QString DiagAss::idIntakeFK() const{
     return m_idIntakeFK;
 }
-void DiagAss::setIdIntakeFK(const qint32 & idIntakeFK){
+void DiagAss::setIdIntakeFK(const QString & idIntakeFK){
     m_idIntakeFK = idIntakeFK;
 }
 
@@ -27,3 +27,9 @@ void DiagAss::setDhour(const QDateTime & dHour){
     m_dHour = dHour;
 }
 
+QString DiagAss::diagAssNAME() const {
+    return m_diagAssNAME;
+}
+void DiagAss::setDiagAssNAME(const QString &diagAssNAME){
+    m_diagAssNAME = diagAssNAME;
+}

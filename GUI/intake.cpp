@@ -4,6 +4,8 @@
 #include "paciente.h"
 #include "admissao.h"
 #include "diagnostico.h"
+#include "DATA/diagass.h"
+#include <QMessageBox>
 
 Intake::Intake(QWidget *parent) :
     QWidget(parent),
@@ -48,6 +50,7 @@ void Intake::on_le_SEARCHpatByID_returnPressed()
 {
     updatePatList_OnIntake();
 }
+
     Admissao *intake = new Admissao();
 //! NEW INTAKE -- get the Name of the selected Patient to a new Table Intake
 void Intake::on_pb_NEWINTAKE_clicked()
@@ -92,9 +95,30 @@ void Intake::update_DiagListOnIntake(){
 }
 
 void Intake::on_pq_SAVEassociatedDIAG_clicked()
-{   //Admissao *intake2 = new Admissao();
-    intake->setAssocDiag(ui->lw_diaAssociated->currentItem()->text());
-    intake->setAssocDiagTime(ui->dateb_DateHourFromDiag->dateTime());
-    intake->save();
+{
+    DiagAss *assD = new DiagAss(this);
+    assD->setIdDiagAss(0);
+    assD->setIdIntakeFK(tempNameP);
+    assD->setDiagAssNAME(ui->lw_diaAssociated->currentItem()->text());
+    assD->setDhour(ui->dateb_DateHourFromDiag->dateTime());
+    assD->save();
 }
 
+
+void Intake::on_pb_InterventionOK_clicked()
+{
+    QMessageBox alertDiagMsg;
+    alertDiagMsg.setText("Deseja Prosseguir para Intervencoes?");
+    alertDiagMsg.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+    int ret = alertDiagMsg.exec();
+    switch (ret) {
+      case QMessageBox::Ok:
+          // Save was clicked
+        ui->tabWidget_admissao_2->setTabEnabled(3, false);
+          break;
+      case QMessageBox::Cancel:
+          // Cancel was clicked
+                  ui->tabWidget_admissao_2->setTabEnabled(3, true);
+          break;
+    }
+}

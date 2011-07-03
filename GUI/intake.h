@@ -24,6 +24,7 @@ public slots:
     void updatePatList_OnIntake();
 
 private slots:
+    void on_pb_InterventionOK_clicked();
     void on_pq_SAVEassociatedDIAG_clicked();
     void on_pb_SAVEAnamnese_clicked();
     void on_pb_SAVEexFIS_clicked();
