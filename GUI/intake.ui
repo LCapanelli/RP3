@@ -44,7 +44,7 @@ p, li { white-space: pre-wrap; }
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>3</number>
      </property>
      <property name="elideMode">
       <enum>Qt::ElideMiddle</enum>
@@ -67,7 +67,7 @@ p, li { white-space: pre-wrap; }
           </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QLineEdit" name="lineEdit_BuscaNomeP_2"/>
+          <widget class="QLineEdit" name="le_SEARCHpatbyName"/>
          </item>
          <item row="0" column="2">
           <widget class="QLabel" name="label_prontBuscaP_2">
@@ -85,7 +85,7 @@ p, li { white-space: pre-wrap; }
           </widget>
          </item>
          <item row="0" column="3">
-          <widget class="QLineEdit" name="lineEdit_buscaProntP_2">
+          <widget class="QLineEdit" name="le_SEARCHpatByID">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
              <horstretch>0</horstretch>
@@ -95,14 +95,11 @@ p, li { white-space: pre-wrap; }
           </widget>
          </item>
          <item row="0" column="4">
-          <widget class="QPushButton" name="pushButton_buscarP_4">
+          <widget class="QPushButton" name="pb_SEARCHpatGO">
            <property name="text">
             <string>Buscar</string>
            </property>
           </widget>
-         </item>
-         <item row="1" column="0" colspan="5">
-          <widget class="QListView" name="listView_listaPacientes_6"/>
          </item>
          <item row="2" column="0" colspan="2">
           <widget class="QLabel" name="label_infoPacientes_4">
@@ -144,13 +141,16 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_novaAdmissPaciente_2">
+            <widget class="QPushButton" name="pb_NEWINTAKE">
              <property name="text">
               <string>Admitir Paciente</string>
              </property>
             </widget>
            </item>
           </layout>
+         </item>
+         <item row="1" column="0" colspan="5">
+          <widget class="QListWidget" name="lw_PatList_INTAKE"/>
          </item>
         </layout>
        </item>
@@ -210,82 +210,7 @@ p, li { white-space: pre-wrap; }
          </item>
         </layout>
        </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_outrosFisicos_2">
-         <property name="text">
-          <string>OUTROS EXAMES:</string>
-         </property>
-         <property name="buddy">
-          <cstring>plainTextEdit_outrosFisicos</cstring>
-         </property>
-        </widget>
-       </item>
        <item row="2" column="0" colspan="2">
-        <widget class="QPlainTextEdit" name="plainTextEdit_outrosFisicos_2">
-         <property name="plainText">
-          <string>HGT:			PESO:			Altura:
-
-PERCEPÇÃO DOS SENTIDOS 
-SUBJETIVO
-Visão:	(   ) sem alteração     (   ) alterada
-Audição:	(   ) sem alteração     (   ) alterada
-Olfato:      	(   ) sem alteração     (   ) alterada
-Tato:        	(   ) sem alteração     (   ) alterada
-Dor:
-OBS:
-
-OBJETIVO
-Olhos/pupilas:
-(   ) fotoreagentes       	 (   ) não fotoreagente	(   ) isocórica              	(   ) anisocórica
-
-Ouvidos:
-(   ) sem alteração   	    (   ) com alteração	(   ) surdez             	(   ) diminuição audição
-(   ) prótese
-
-Nariz:
-(   ) sem alteração      	 (   ) com alteração	(   ) desvio de septo    	(   ) secreção
-
-Facies:
-Pescoço: (   ) sem alteração       (   ) com alteração
-OBS:
-
-
-OXIGENAÇÃO
-SUBJETIVO
-(   ) sem alteração    	 (   ) com alteração	(   ) dispnéia             	 (   ) tosse                   
-(   ) expectoração   	(   ) dor ventilatório dependente
-OBS: 
-
-
-OBJETIVO
-Expansão torácica
-(   ) simétrica    	(   ) assimétrica	(   ) diminuída 	 (   )aumentada
-
-Condições respiratórias
-(   ) eupneico 		 (   ) dispneico
-
-Exame físico do tórax:
-
-
-REGULAÇÃO TÉRMICA E VASCULAR
-SUBJETIVO
-(   ) apirético      	(   ) febre        	    (   ) cansaço
-(   ) cianose        	(   ) sudorese	(   ) palidez	
-(   ) taquicardia    	(   ) bradicardia   	
-(   ) arritmia
-OBS:
-
-OBJETIVO
-Pulsos: (   ) cheios    (   ) débeis
-Enchimento capilar: (   ) lento     (   ) rápido
-Extremidades:  (   ) sem alteração   (   ) com alteração
-Citar:
-Sinais vitais: TAX:	FC:	TA:	FR:
-OBS:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0" colspan="2">
         <layout class="QHBoxLayout" name="horizontalLayout_96">
          <item>
           <spacer name="horizontalSpacer_3">
@@ -308,13 +233,82 @@ OBS:</string>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_confirmarFisico_2">
+          <widget class="QPushButton" name="pb_SAVEexFIS">
            <property name="text">
             <string>Confirmar</string>
            </property>
           </widget>
          </item>
         </layout>
+       </item>
+       <item row="1" column="0" colspan="2">
+        <widget class="QTextEdit" name="qtext_exFisics">
+         <property name="html">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;HGT:			PESO:			Altura:&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;PERCEPÇÃO DOS SENTIDOS &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;SUBJETIVO&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Visão:	(   ) sem alteração     (   ) alterada&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Audição:	(   ) sem alteração     (   ) alterada&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Olfato:      	(   ) sem alteração     (   ) alterada&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tato:        	(   ) sem alteração     (   ) alterada&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Dor:&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;OBS:&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;OBJETIVO&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Olhos/pupilas:&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(   ) fotoreagentes       	 (   ) não fotoreagente	(   ) isocórica              	(   ) anisocórica&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ouvidos:&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(   ) sem alteração   	    (   ) com alteração	(   ) surdez             	(   ) diminuição audição&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(   ) prótese&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Nariz:&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(   ) sem alteração      	 (   ) com alteração	(   ) desvio de septo    	(   ) secreção&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Facies:&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Pescoço: (   ) sem alteração       (   ) com alteração&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;OBS:&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;OXIGENAÇÃO&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;SUBJETIVO&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(   ) sem alteração    	 (   ) com alteração	(   ) dispnéia             	 (   ) tosse                   &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(   ) expectoração   	(   ) dor ventilatório dependente&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;OBS: &lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;OBJETIVO&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Expansão torácica&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(   ) simétrica    	(   ) assimétrica	(   ) diminuída 	 (   )aumentada&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Condições respiratórias&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(   ) eupneico 		 (   ) dispneico&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Exame físico do tórax:&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;REGULAÇÃO TÉRMICA E VASCULAR&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;SUBJETIVO&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(   ) apirético      	(   ) febre        	    (   ) cansaço&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(   ) cianose        	(   ) sudorese	(   ) palidez	&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(   ) taquicardia    	(   ) bradicardia   	&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(   ) arritmia&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;OBS:&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;OBJETIVO&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Pulsos: (   ) cheios    (   ) débeis&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Enchimento capilar: (   ) lento     (   ) rápido&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Extremidades:  (   ) sem alteração   (   ) com alteração&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Citar:&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Sinais vitais: TAX:	FC:	TA:	FR:&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;OBS:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -366,30 +360,6 @@ OBS:</string>
          </item>
         </layout>
        </item>
-       <item row="1" column="0">
-        <widget class="QPlainTextEdit" name="plainTextEdit_anamnese_2">
-         <property name="plainText">
-          <string>História Prévia:
-Problemas de saúde pré-existentes: 
-
-Tratamentos Anteriores: 
-
-Antecedentes Familiares de problemas de saúde: 
-
-
-
-História Atual:
-Motivo da internação: 
-
-Fatores de Risco: 
-
-Medicação Utilizada em Casa: 
-
-Dosagem e Horários: 
-</string>
-         </property>
-        </widget>
-       </item>
        <item row="2" column="0">
         <layout class="QHBoxLayout" name="horizontalLayout_98">
          <item>
@@ -413,13 +383,41 @@ Dosagem e Horários:
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_confirmarAnamnese_2">
+          <widget class="QPushButton" name="pb_SAVEAnamnese">
            <property name="text">
             <string>Confirmar</string>
            </property>
           </widget>
          </item>
         </layout>
+       </item>
+       <item row="1" column="0">
+        <widget class="QTextEdit" name="pt_anamnese">
+         <property name="html">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;História Prévia:&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Problemas de saúde pré-existentes: &lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tratamentos Anteriores: &lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Antecedentes Familiares de problemas de saúde: &lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;História Atual:&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Motivo da internação: &lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Fatores de Risco: &lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Medicação Utilizada em Casa: &lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Dosagem e Horários: &lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -526,7 +524,7 @@ Dosagem e Horários:
           <enum>Qt::Horizontal</enum>
          </property>
          <widget class="QListView" name="listView_dominio_2"/>
-         <widget class="QListWidget" name="diagnosticos_adm"/>
+         <widget class="QListWidget" name="lw_IntakeDiag"/>
         </widget>
        </item>
        <item row="3" column="0" colspan="2">
@@ -562,7 +560,7 @@ Dosagem e Horários:
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_associarDiagnostico_2">
+          <widget class="QPushButton" name="pb_ASSDIAG">
            <property name="text">
             <string>Associar</string>
            </property>
@@ -570,10 +568,7 @@ Dosagem e Horários:
          </item>
         </layout>
        </item>
-       <item row="4" column="0" colspan="3">
-        <widget class="QListView" name="listView_diagSelecionados_2"/>
-       </item>
-       <item row="4" column="3" colspan="2">
+       <item row="6" column="3" colspan="2">
         <layout class="QVBoxLayout" name="verticalLayout_13">
          <item>
           <spacer name="verticalSpacer_3">
@@ -596,11 +591,11 @@ Dosagem e Horários:
           </widget>
          </item>
          <item>
-          <widget class="QDateTimeEdit" name="dateTimeEdit_dataHoraDiag_2"/>
+          <widget class="QDateTimeEdit" name="dateb_DateHourFromDiag"/>
          </item>
         </layout>
        </item>
-       <item row="5" column="2">
+       <item row="7" column="2">
         <layout class="QHBoxLayout" name="horizontalLayout_100">
          <item>
           <widget class="QPushButton" name="pushButton_excluirDiag_4">
@@ -610,13 +605,19 @@ Dosagem e Horários:
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_confirmarDiag_2">
+          <widget class="QPushButton" name="pq_SAVEassociatedDIAG">
            <property name="text">
             <string>Confirmar</string>
            </property>
           </widget>
          </item>
         </layout>
+       </item>
+       <item row="6" column="0" colspan="3">
+        <widget class="QListWidget" name="lw_diaAssociated"/>
+       </item>
+       <item row="5" column="0" colspan="2">
+        <widget class="QTextEdit" name="textEdit"/>
        </item>
       </layout>
      </widget>

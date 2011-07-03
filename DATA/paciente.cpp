@@ -159,4 +159,25 @@ void Paciente::setPatExamples(){
     p->setAlerg("NOT detected");
     p->setObsP("No observations");
     p->save();
+
+    p->setPront(2);
+    p->setNameP("Patient 2");
+    p->setJobP("Unemployed TO");
+    p->setProced("UNKNOW");
+    p->setRg("XXXXX");
+    p->setProven("From Job");
+    p->setSex(1);
+    p->setBlood(2);
+    QDate data2 = QDate::currentDate();
+    p->setDbornP(data2);
+    p->setRace("Indian");
+    p->setRelig("Undefined");
+    p->setCivilS(1);
+    p->setMailP("StreetView, 112, FuuTown");
+    p->setTelR("NO");
+    p->setTelC("NO");
+    p->setCellP("NO");
+    p->setAlerg("Skin alergy");
+    p->setObsP("No observations");
+    p->save();
 }

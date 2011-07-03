@@ -2,6 +2,7 @@
 #define ADMISSAO_H
 #include <qdjango/QDjangoModel.h>
 #include <QObject>
+#include <QDateTime>
 
 class Admissao : public QDjangoModel{
     Q_OBJECT
@@ -11,8 +12,14 @@ class Admissao : public QDjangoModel{
             Q_PROPERTY (QString Fis READ Fis WRITE setFis)
             Q_PROPERTY (QString anam READ anam WRITE setAnam)
             Q_PROPERTY (QString prescr READ prescr WRITE setPrescr)
+            Q_PROPERTY (bool hasFinished READ hasFinished WRITE setHasFinished)
+            //work-around
+            Q_PROPERTY (QString assocDiag READ assocDiag WRITE setAssocDiag)
+            Q_PROPERTY (QDateTime assocDiagTime READ assocDiagTime WRITE setAssocDiagTime)
+            //end w-a
             Q_CLASSINFO("idIntake", "primary_key=true auto_increment=true")
-
+            Q_CLASSINFO("assocDiag", "primary_key=false auto_increment=true")
+            Q_CLASSINFO("associDiagTime", "primary_key=false auto_increment=true")
 public:
             explicit Admissao(QObject *parent = 0);
         qint32 idIntake() const;
@@ -21,6 +28,9 @@ public:
         QString Fis() const;
         QString anam() const;
         QString prescr() const;
+        bool hasFinished() const;
+        QString assocDiag() const;
+        QDateTime assocDiagTime() const;
 
         void setIdIntake(const qint32 & idIntake);
         void setProntFK(const qint32 & prontFK);
@@ -28,6 +38,9 @@ public:
         void setFis(const QString & Fis);
         void setAnam(const QString & anam);
         void setPrescr(const QString & prescr);
+        void setHasFinished(const bool & hasFinished);
+        void setAssocDiag(const QString & assocDiag);
+        void setAssocDiagTime(const QDateTime & assocDiagTime);
 
 private:
         qint32 m_idIntake;
@@ -36,6 +49,9 @@ private:
         QString m_Fis;
         QString m_anam;
         QString m_prescr;
+        bool m_hasFinished;
+        QString m_assocDiag;
+        QDateTime m_assocDiagTime;
 };
 
 #endif // ADMISSAO_H

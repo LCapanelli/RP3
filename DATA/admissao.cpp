@@ -54,3 +54,24 @@ QString Admissao::patNameFK() const{
 void Admissao::setPatNameFK(const QString & patNameFK){
     m_patNameFK = patNameFK;
 }
+
+bool Admissao::hasFinished() const{
+    return m_hasFinished;
+}
+void Admissao::setHasFinished(const bool & hasFinished){
+    m_hasFinished = hasFinished;
+}
+
+QString Admissao::assocDiag() const {
+    return m_assocDiag;
+}
+void Admissao::setAssocDiag(const QString & assocDiag){
+    m_assocDiag = assocDiag;
+}
+
+QDateTime Admissao::assocDiagTime() const{
+    return m_assocDiagTime;
+}
+void Admissao::setAssocDiagTime(const QDateTime & assocDiagTime){
+    m_assocDiagTime = assocDiagTime;
+}
