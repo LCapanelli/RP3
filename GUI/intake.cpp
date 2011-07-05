@@ -20,6 +20,9 @@ Intake::~Intake()
 {
     delete ui;
 }
+
+QListWidgetItem * itemFoo = new QListWidgetItem();
+
 //! Refresh patient list and provide filter by ID or Name
 void Intake::updatePatList_OnIntake(){
 ui->lw_PatList_INTAKE->clear();
@@ -31,8 +34,12 @@ if (!ui->le_SEARCHpatbyName->text().isEmpty())
          pat = pat.filter(QDjangoWhere("pront", QDjangoWhere::Contains, ui->le_SEARCHpatByID->text()));
 
     for (int i = 0; i < pat.count(); ++i){
+        //Atribuindo valores a view pelo modelo
     QListWidgetItem * itemP = new QListWidgetItem(pat.at(i)->nameP(), ui->lw_PatList_INTAKE);
     itemP->setData(Qt::UserRole, pat.at(i)->pront());
+
+    qDebug()<< "DEBUG UserRole " <<itemP;
+    //itemFoo = itemP;
 }
 }
 
@@ -56,7 +63,13 @@ void Intake::on_le_SEARCHpatByID_returnPressed()
 void Intake::on_pb_NEWINTAKE_clicked()
 {
     intake->setPatNameFK(ui->lw_PatList_INTAKE->currentItem()->text());
-    tempNameP = ui->lw_PatList_INTAKE->currentItem()->text();
+    tempNameP = ui->lw_PatList_INTAKE->currentItem()->type();
+    QListWidgetItem* item = ui->lw_PatList_INTAKE->takeItem(ui->lw_PatList_INTAKE->currentRow());
+    intake->setProntPK(ui->lw_PatList_INTAKE->currentItem()->type());
+
+
+    qDebug()<<" NOVO ITEM    "<< tempNameP << item;
+
     intake->setHasFinished(false);
     ui->tabWidget_admissao_2->setTabEnabled(0, false);
     intake->save();
@@ -98,7 +111,7 @@ void Intake::on_pq_SAVEassociatedDIAG_clicked()
 {
     DiagAss *assD = new DiagAss(this);
     assD->setIdDiagAss(0);
-    assD->setIdIntakeFK(tempNameP);
+    assD->setPatientNameIntakeFK(tempNameP);
     assD->setDiagAssNAME(ui->lw_diaAssociated->currentItem()->text());
     assD->setDhour(ui->dateb_DateHourFromDiag->dateTime());
     assD->save();

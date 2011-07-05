@@ -7,7 +7,7 @@
 class Admissao : public QDjangoModel{
     Q_OBJECT
     Q_PROPERTY (qint32 idIntake READ idIntake WRITE setIdIntake)
-            Q_PROPERTY (qint32 prontFK READ prontFK WRITE setProntFK)
+            Q_PROPERTY (qint32 prontPK READ prontPK WRITE setProntPK)
             Q_PROPERTY (QString patNameFK READ patNameFK WRITE setPatNameFK)
             Q_PROPERTY (QString Fis READ Fis WRITE setFis)
             Q_PROPERTY (QString anam READ anam WRITE setAnam)
@@ -18,12 +18,11 @@ class Admissao : public QDjangoModel{
             Q_PROPERTY (QDateTime assocDiagTime READ assocDiagTime WRITE setAssocDiagTime)
             //end w-a
             Q_CLASSINFO("idIntake", "primary_key=true auto_increment=true")
-            Q_CLASSINFO("assocDiag", "primary_key=false auto_increment=true")
-            Q_CLASSINFO("associDiagTime", "primary_key=false auto_increment=true")
+
 public:
             explicit Admissao(QObject *parent = 0);
         qint32 idIntake() const;
-        qint32 prontFK() const;
+        qint32 prontPK() const;
         QString patNameFK() const;
         QString Fis() const;
         QString anam() const;
@@ -33,7 +32,7 @@ public:
         QDateTime assocDiagTime() const;
 
         void setIdIntake(const qint32 & idIntake);
-        void setProntFK(const qint32 & prontFK);
+        void setProntPK(const qint32 & prontPK);
         void setPatNameFK(const QString & patNameFK);
         void setFis(const QString & Fis);
         void setAnam(const QString & anam);
@@ -44,7 +43,7 @@ public:
 
 private:
         qint32 m_idIntake;
-        qint32 m_prontFK;
+        qint32 m_prontPK;
         QString m_patNameFK;
         QString m_Fis;
         QString m_anam;

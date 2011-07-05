@@ -58,7 +58,6 @@ void Explorer::listUpdate(){
         ui->tW_showDiagnosReadyOnly->setItem(i, 7, new QTableWidgetItem(fRelList.at(i)));
     }
 
-
 qDebug("====== OK - listUpdate estah executando ======" );
 qDebug()<<nameList << idDomList;
 }

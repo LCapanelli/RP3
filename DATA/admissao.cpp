@@ -20,11 +20,11 @@ void Admissao::setIdIntake(const qint32 & idIntake){
     m_idIntake = idIntake;
 }
 
-qint32 Admissao::prontFK() const{
-    return m_prontFK;
+qint32 Admissao::prontPK() const{
+    return m_prontPK;
 }
-void Admissao::setProntFK(const qint32 & prontFK){
-    m_prontFK = prontFK;
+void Admissao::setProntPK(const qint32 & prontPK){
+    m_prontPK = prontPK;
 }
 
 QString Admissao::Fis() const{

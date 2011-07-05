@@ -180,4 +180,25 @@ void Paciente::setPatExamples(){
     p->setAlerg("Skin alergy");
     p->setObsP("No observations");
     p->save();
+
+    p->setPront(3);
+    p->setNameP("Mr. Panda");
+    p->setJobP("Fighter");
+    p->setProced("Animalia");
+    p->setRg("77777");
+    p->setProven("From a Fight");
+    p->setSex(0);
+    p->setBlood(0);
+    QDate data3 = QDate::currentDate();
+    p->setDbornP(data3);
+    p->setRace("Animal");
+    p->setRelig("Unrage");
+    p->setCivilS(0);
+    p->setMailP("PandaHood");
+    p->setTelR("NO");
+    p->setTelC("NO");
+    p->setCellP("Yes");
+    p->setAlerg("Breez alergies");
+    p->setObsP("Nothign detected");
+    p->save();
 }
