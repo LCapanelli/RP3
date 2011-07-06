@@ -50,7 +50,7 @@ p, li { white-space: pre-wrap; }
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>0</number>
      </property>
      <property name="elideMode">
       <enum>Qt::ElideMiddle</enum>
@@ -392,7 +392,7 @@ p, li { white-space: pre-wrap; }
       <attribute name="title">
        <string>Intervenções</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout_8">
+      <layout class="QGridLayout" name="gridLayout_5">
        <item row="0" column="0">
         <widget class="QLabel" name="label_pacienteCuid_4">
          <property name="text">
@@ -410,7 +410,7 @@ p, li { white-space: pre-wrap; }
          </property>
         </widget>
        </item>
-       <item row="0" column="2">
+       <item row="0" column="2" colspan="3">
         <widget class="QLabel" name="label_prontCuid_4">
          <property name="font">
           <font>
@@ -425,7 +425,7 @@ p, li { white-space: pre-wrap; }
          </property>
         </widget>
        </item>
-       <item row="0" column="3" colspan="2">
+       <item row="0" column="5">
         <widget class="QLineEdit" name="lineEdit_pront_5">
          <property name="enabled">
           <bool>false</bool>
@@ -438,73 +438,114 @@ p, li { white-space: pre-wrap; }
          </property>
         </widget>
        </item>
-       <item row="1" column="0" colspan="4">
-        <widget class="QLabel" name="label_diagCuid_2">
-         <property name="text">
-          <string>Diagnósticos</string>
-         </property>
-         <property name="buddy">
-          <cstring>listWidget_diagCuid</cstring>
-         </property>
+       <item row="1" column="0" colspan="6">
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <widget class="QLabel" name="label_diagCuid_2">
+           <property name="text">
+            <string>Diagnósticos Associados</string>
+           </property>
+           <property name="buddy">
+            <cstring>listWidget_diagCuid</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_6">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>568</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item row="2" column="0" colspan="3">
+        <widget class="QListWidget" name="lw_diagASS4interv"/>
+       </item>
+       <item row="2" column="3" colspan="3">
+        <widget class="QTableWidget" name="tableW_PrescAndApraz">
+         <column>
+          <property name="text">
+           <string>Prescrição</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Aprazamento</string>
+          </property>
+         </column>
         </widget>
        </item>
-       <item row="2" column="0" colspan="4">
-        <widget class="QListWidget" name="listWidget_diagCuid_2"/>
+       <item row="3" column="0" colspan="6">
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <item>
+          <widget class="QLabel" name="label_ativiCuid_2">
+           <property name="text">
+            <string>Lista de Atividades</string>
+           </property>
+           <property name="buddy">
+            <cstring>textEdit_atividEscolhidasCuid</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_7">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>608</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
        </item>
-       <item row="2" column="4" rowspan="3">
-        <widget class="QListWidget" name="listWidget_listaAtividadesCuidados_2"/>
+       <item row="4" column="0" colspan="4">
+        <widget class="QListWidget" name="lw_Activities4diag"/>
        </item>
-       <item row="3" column="0" colspan="4">
-        <widget class="QLabel" name="label_ativiCuid_2">
-         <property name="text">
-          <string>Lista de Atividades</string>
-         </property>
-         <property name="buddy">
-          <cstring>textEdit_atividEscolhidasCuid</cstring>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0" rowspan="2" colspan="4">
-        <widget class="QListWidget" name="listWidget"/>
-       </item>
-       <item row="5" column="4">
-        <layout class="QFormLayout" name="formLayout_9">
+       <item row="4" column="4" colspan="2">
+        <layout class="QFormLayout" name="formLayout">
          <property name="fieldGrowthPolicy">
           <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
          </property>
-         <item row="0" column="0">
+         <item row="1" column="0">
           <widget class="QLabel" name="label_aprazamentoCuid_3">
            <property name="text">
-            <string>Aprazamento</string>
+            <string>Prescrever</string>
            </property>
            <property name="buddy">
             <cstring>lineEdit_aprazamentoCuid</cstring>
            </property>
           </widget>
          </item>
-         <item row="0" column="1">
-          <widget class="QLineEdit" name="lineEdit_aprazamentoCuid_3"/>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="le_aprazInterv"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Aprazamento</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QTextEdit" name="td_PrescrInt"/>
          </item>
         </layout>
        </item>
-       <item row="6" column="0" colspan="5">
-        <layout class="QHBoxLayout" name="horizontalLayout_9">
+       <item row="5" column="0" colspan="6">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
-          <widget class="QPushButton" name="pushButton_4">
-           <property name="text">
-            <string>Excluir Atividade &lt;&lt;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pushButton_5">
-           <property name="text">
-            <string>&gt;&gt; Escolher Atividade</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_9">
+          <spacer name="horizontalSpacer_8">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
@@ -516,20 +557,27 @@ p, li { white-space: pre-wrap; }
            </property>
           </spacer>
          </item>
+         <item>
+          <widget class="QPushButton" name="pb_CANCEL_INTERV">
+           <property name="text">
+            <string>Cancelar</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pb_aprazingInterv">
+           <property name="text">
+            <string>Aprazar e Prescrever</string>
+           </property>
+          </widget>
+         </item>
         </layout>
-       </item>
-       <item row="1" column="4">
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>Atividades Escolhidas</string>
-         </property>
-        </widget>
        </item>
       </layout>
      </widget>
      <widget class="QWidget" name="tab_observacoes_2">
       <attribute name="title">
-       <string>Atualizar Prescrição</string>
+       <string>Observações</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_20">
        <item row="0" column="0" colspan="2">

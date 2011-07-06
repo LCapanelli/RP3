@@ -80,7 +80,7 @@ void Diagnostico::setFRelac(const QString &fRelac){
 void Diagnostico::setExamples(){
     Diagnostico *u = new Diagnostico();
     u->setIdDiag(1);
-    u->setNomeDiag("Padrão Respiratório Ineficaz");
+    u->setNomeDiag(tr("Padrão Respiratório Ineficaz"));
     u->setNum01("(00032)");
     u->setNum02("1980, 1996, 1998");
     u->setIdDom(4);

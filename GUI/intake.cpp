@@ -130,7 +130,6 @@ void Intake::update_DiagListOnIntake(){
 
 DiagAss *assD = new DiagAss();
 //! SAVE and Associates a list of Diagnosis
-//Fazer boolean para garantir integridade (if started)
 void Intake::on_pb_SAVEassociatedDIAG_clicked()
 {
         ui->pb_SAVEassociatedDIAG->setEnabled(true);
@@ -148,7 +147,7 @@ void Intake::on_pb_SAVEassociatedDIAG_clicked()
         assD->setIdIntakeFK(tempIdFromIntake);
         assD->save();
         QMessageBox info;
-        info.setText("INTERVENCAO " + ui->lw_diaAssociated->currentItem()->text() + " ASSOCIADO AO " + tempNameP);
+        info.setText("DIAGNOSTICO " + ui->lw_diaAssociated->currentItem()->text() + " ASSOCIADO AO " + tempNameP);
         info.setButtonText(1, "OK");
         info.exec();
 }
@@ -223,8 +222,17 @@ void Intake::update_PresAndAprazList(){
 
 void Intake::on_pb_aprazingInterv_clicked()
 {
+    QSqlQuery q;
+    q.prepare("SELECT idIntake FROM admissao WHERE patNameFK = :name");
+    q.bindValue(":name", tempNameP);
+    q.exec();
+    while(q.next()){
+        tempIdFromIntake = q.value(0).toInt();
+    }
     //NEW OBJECT
     ActAss *act= new ActAss(this);
+    act->setIdAt(0);
+    act->setIdIntakeFK(tempIdFromIntake);
     act->setApraz(ui->le_aprazInterv->text());
     act->setPrescr(ui->td_PrescrInt->toPlainText());
     ui->le_aprazInterv->clear();
@@ -266,7 +274,7 @@ void Intake::update_Act4IntervAndApraz(){
 void Intake::on_pb_CANCEL_FIS_clicked()
 {
     QMessageBox alertDiagMsg;
-    alertDiagMsg.setText(tr("Deseja Realmente CANCELAR o Exame Físico?"));
+    alertDiagMsg.setText(tr("Deseja Realmente CANCELAR o Exame Fisico?"));
     alertDiagMsg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
     int ret = alertDiagMsg.exec();
     switch (ret) {
@@ -306,7 +314,7 @@ void Intake::on_pb_CANCEL_anam_clicked()
 void Intake::on_pb_CANCEL_Diag_clicked()
 {
     QMessageBox alertDiagMsg;
-    alertDiagMsg.setText(tr("Deseja Realmente CANCELAR associações?"));
+    alertDiagMsg.setText(tr("Deseja Realmente CANCELAR associacoes?"));
     alertDiagMsg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
     int ret = alertDiagMsg.exec();
     switch (ret) {
@@ -332,11 +340,41 @@ void Intake::on_pb_EXCLUDE_DIAG_clicked()
 void Intake::on_pb_CANCEL_INTERV_clicked()
 {
     QMessageBox alertDiagMsg;
-    alertDiagMsg.setText(tr("Deseja Realmente CANCELAR a prescrição?"));
+    alertDiagMsg.setText(tr("Deseja Realmente CANCELAR a prescricao?"));
     alertDiagMsg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
     int ret = alertDiagMsg.exec();
     switch (ret) {
       case QMessageBox::Yes:
+        ui->tabWidget_admissao_2->setTabEnabled(0, true);
+        ui->tabWidget_admissao_2->setTabEnabled(1, false);
+        ui->tabWidget_admissao_2->setTabEnabled(2, false);
+        ui->tabWidget_admissao_2->setTabEnabled(3, false);
+        ui->tabWidget_admissao_2->setTabEnabled(4, false);
+          break;
+      case QMessageBox::No:
+
+          break;
+    }
+}
+
+void Intake::on_pb_Intake_finished_clicked()
+{
+    ui->lw_diagASS4interv->clear();
+    ui->lw_diaAssociated->clear();
+    ui->lw_Activities4diag->clear();
+    update_DiagListOnIntake();
+    QMessageBox alertDiagMsg;
+    alertDiagMsg.setText(tr("Deseja CONCLUIR a evolucao?"));
+    alertDiagMsg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    int ret = alertDiagMsg.exec();
+    switch (ret) {
+      case QMessageBox::Yes:
+        tempAnam.clear();
+        tempExFis.clear();
+        tempNameP.clear();
+
+        intake->setHasFinished(true);
+        intake->save();
         ui->tabWidget_admissao_2->setTabEnabled(0, true);
         ui->tabWidget_admissao_2->setTabEnabled(1, false);
         ui->tabWidget_admissao_2->setTabEnabled(2, false);

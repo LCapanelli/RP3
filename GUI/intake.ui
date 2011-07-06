@@ -44,7 +44,7 @@ p, li { white-space: pre-wrap; }
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>4</number>
+      <number>3</number>
      </property>
      <property name="elideMode">
       <enum>Qt::ElideMiddle</enum>
@@ -823,7 +823,7 @@ p, li { white-space: pre-wrap; }
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_2">
+          <widget class="QPushButton" name="pb_Intake_finished">
            <property name="text">
             <string>Concluir Admissão</string>
            </property>

@@ -15,8 +15,8 @@ Explorer::Explorer(QWidget *parent) :
     ui->tW_showDiagnosReadyOnly->setColumnCount(8);
     QStringList labelList;
 
-    labelList << tr("ID") << tr("Cadastro") << tr("Título") << tr("Ano") << tr("Domínio")
-            << tr("Definição") << tr("Características Definidoras") << tr("Fatores Relacionados");
+    labelList << tr("ID") << tr("Cadastro") << tr("Titulo") << tr("Ano") << tr("Dominio")
+            << tr("Definicao") << tr("Caracteristicas Definidoras") << tr("Fatores Relacionados");
     ui->tW_showDiagnosReadyOnly->setHorizontalHeaderLabels(labelList);
     listUpdate();
     }

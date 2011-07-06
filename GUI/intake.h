@@ -30,6 +30,7 @@ public slots:
     void updatePatList_OnIntake();
 
 private slots:
+    void on_pb_Intake_finished_clicked();
     void on_pb_CANCEL_INTERV_clicked();
     void on_pb_EXCLUDE_DIAG_clicked();
     void on_pb_CANCEL_Diag_clicked();
