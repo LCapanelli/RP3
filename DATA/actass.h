@@ -28,6 +28,9 @@ private:
     qint32 m_idIntakeFK;
     QString m_prescr;
     QString m_apraz;
+
+public slots:
+    void setExamplesOfActivitiesAndApraz();
 };
 
 #endif // ACTASS_H

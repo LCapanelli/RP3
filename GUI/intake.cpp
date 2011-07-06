@@ -4,10 +4,13 @@
 #include "paciente.h"
 #include "admissao.h"
 #include "diagnostico.h"
+#include "intervencao.h"
 #include "DATA/diagass.h"
 #include "DATA/actass.h"
 #include <QMessageBox>
 #include <QtSql/qsql.h>
+#include <QTableWidgetItem>
+//#include <QHeaderView>
 
 Intake::Intake(QWidget *parent) :
     QWidget(parent),
@@ -15,14 +18,16 @@ Intake::Intake(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QStringList labelList;
-    labelList << "ID" << "Prescrição" << "Aprazamento";
-    ui->tableW_PrescAndApraz->setHorizontalHeaderLabels(labelList);
+//    ui->tableW_PrescAndApraz->setColumnCount(3);
+//    QStringList labelList;
+//    labelList << tr("ID") << tr("Prescrição") << tr("Aprazamento");
+//    ui->tableW_PrescAndApraz->setHorizontalHeaderLabels(labelList);
 
     updatePatList_OnIntake();
     update_DiagListOnIntake();
     update_DiagList4interv();
     update_PresAndAprazList();
+
 }
 
 Intake::~Intake()
@@ -82,6 +87,10 @@ void Intake::on_pb_NEWINTAKE_clicked()
     intake->setHasFinished(false);
     intake->setHasStarted(true);
     ui->tabWidget_admissao_2->setTabEnabled(0, false);
+    ui->tabWidget_admissao_2->setTabEnabled(1, true);
+    ui->tabWidget_admissao_2->setTabEnabled(2,true);
+        ui->tabWidget_admissao_2->setTabEnabled(3,true);
+            ui->tabWidget_admissao_2->setTabEnabled(4,true);
     intake->save();
 }
 
@@ -120,23 +129,28 @@ void Intake::update_DiagListOnIntake(){
 }
 
 DiagAss *assD = new DiagAss();
-//! Associates a list of Diagnosis
+//! SAVE and Associates a list of Diagnosis
 //Fazer boolean para garantir integridade (if started)
 void Intake::on_pb_SAVEassociatedDIAG_clicked()
 {
-    assD->setIdDiagAss(0);
-    assD->setPatientNameIntakeFK(tempNameP);
-    assD->setDhour(ui->dateb_DateHourFromDiag->dateTime());
-    assD->setDiagAssNAME(ui->lw_diaAssociated->currentItem()->text());
-    QSqlQuery q;
-    q.prepare("SELECT idIntake FROM admissao WHERE patNameFK = :name");
-    q.bindValue(":name", tempNameP);
-    q.exec();
-    while(q.next()){
-        tempIdFromIntake = q.value(0).toInt();
-    }
-    assD->setIdIntakeFK(tempIdFromIntake);
-    assD->save();
+        ui->pb_SAVEassociatedDIAG->setEnabled(true);
+        assD->setIdDiagAss(0);
+        assD->setPatientNameIntakeFK(tempNameP);
+        assD->setDhour(ui->dateb_DateHourFromDiag->dateTime());
+        assD->setDiagAssNAME(ui->lw_diaAssociated->currentItem()->text());
+        QSqlQuery q;
+        q.prepare("SELECT idIntake FROM admissao WHERE patNameFK = :name");
+        q.bindValue(":name", tempNameP);
+        q.exec();
+        while(q.next()){
+            tempIdFromIntake = q.value(0).toInt();
+        }
+        assD->setIdIntakeFK(tempIdFromIntake);
+        assD->save();
+        QMessageBox info;
+        info.setText("INTERVENCAO " + ui->lw_diaAssociated->currentItem()->text() + " ASSOCIADO AO " + tempNameP);
+        info.setButtonText(1, "OK");
+        info.exec();
 }
 
 
@@ -183,32 +197,154 @@ void Intake::update_DiagList4interv(){
 
 //! UPDATE list of Prescriptions and Time
 void Intake::update_PresAndAprazList(){
+
     QDjangoQuerySet<ActAss> idAct, acPrescr, acApraz;
     QStringList acPrescrList, acAprazList;
     QList<qint32> idActList;
 
-    //Fills QLists withe content from ActAss ORM table
-    for (int i = 0; i < idAct.count() && acPrescr.count() && acApraz.count(); ++i){
+    //Fills QLists with content from ActAss ORM table
+    for (int i = 0; i < idAct.count() /*&& acPrescr.count() && acApraz.count()*/; ++i){
         idActList << idAct.at(i)->idAt();
         acPrescrList << acPrescr.at(i)->prescr();
         acAprazList << acApraz.at(i)->apraz();
     }
 
     //Fills the GUI TableWidget by column from QLists
-    for (int i = 0; i < acPrescr.count(); ++i){
-        ui->tableW_PrescAndApraz->setRowCount(acPrescr.count());
-        ui->tableW_PrescAndApraz->setItem(i, 0, new QTableWidgetItem(idActList.at(i)));
-        ui->tableW_PrescAndApraz->setItem(i, 1, new QTableWidgetItem(acPrescrList.at(i)));
-        ui->tableW_PrescAndApraz->setItem(i, 2, new QTableWidgetItem(acAprazList.at(i)));
+    for (int i = 0; i < idActList.count(); ++i){
+        ui->tableW_PrescAndApraz->setRowCount(idActList.count());
+        //ui->tableW_PrescAndApraz->setItem(i, 0, new QTableWidgetItem(idActList.at(i)));
+        ui->tableW_PrescAndApraz->setItem(i, 0, new QTableWidgetItem(acPrescrList.at(i)));
+        ui->tableW_PrescAndApraz->setItem(i, 1, new QTableWidgetItem(acAprazList.at(i)));
     }
+
+    qDebug() <<"AQUI"<< idActList;
 }
 
-//NEW OBJECT
-ActAss *act= new ActAss();
 
 void Intake::on_pb_aprazingInterv_clicked()
 {
-    act->setIdAt(0);
-    act->setApraz(ui->le_aprazingInterv->text());
-    act->setPrescr(ui->le_prescrInt->text());
+    //NEW OBJECT
+    ActAss *act= new ActAss(this);
+    act->setApraz(ui->le_aprazInterv->text());
+    act->setPrescr(ui->td_PrescrInt->toPlainText());
+    ui->le_aprazInterv->clear();
+    ui->td_PrescrInt->clear();
+    act->save();
+
+    update_PresAndAprazList();
+}
+
+void Intake::on_lw_diagASS4interv_itemClicked(QListWidgetItem* item)
+{
+    ui->lw_Activities4diag->clear();
+    QString t = ui->lw_diagASS4interv->currentItem()->text();
+    int u;
+    QSqlQuery p;
+    p.prepare("SELECT idDiag FROM diagnostico WHERE nomeDiag = :nameD");
+    p.bindValue("nameD", t);
+    p.exec();
+    while(p.next()){
+    u = p.value(0).toInt();
+        qDebug()<<"contem ID "<< u;
+    }
+
+    QSqlQuery q;
+    q.prepare("SELECT interName FROM intervencao WHERE idDiagIFK = :idfk");
+    q.bindValue(":idfk", u);
+    q.exec();
+    while(q.next()){
+        QString r = q.value(0).toString();
+        ui->lw_Activities4diag->addItem(r);
+        qDebug()<<"NOMES "<< r;
+    }
+}
+
+void Intake::update_Act4IntervAndApraz(){
+
+}
+
+void Intake::on_pb_CANCEL_FIS_clicked()
+{
+    QMessageBox alertDiagMsg;
+    alertDiagMsg.setText(tr("Deseja Realmente CANCELAR o Exame Físico?"));
+    alertDiagMsg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    int ret = alertDiagMsg.exec();
+    switch (ret) {
+      case QMessageBox::Yes:
+        ui->tabWidget_admissao_2->setTabEnabled(0, true);
+        ui->tabWidget_admissao_2->setTabEnabled(1, false);
+        ui->tabWidget_admissao_2->setTabEnabled(2, false);
+        ui->tabWidget_admissao_2->setTabEnabled(3, false);
+        ui->tabWidget_admissao_2->setTabEnabled(4, false);
+          break;
+      case QMessageBox::No:
+
+          break;
+    }
+}
+
+void Intake::on_pb_CANCEL_anam_clicked()
+{
+    QMessageBox alertDiagMsg;
+    alertDiagMsg.setText(tr("Deseja Realmente CANCELAR a anamnese?"));
+    alertDiagMsg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    int ret = alertDiagMsg.exec();
+    switch (ret) {
+      case QMessageBox::Yes:
+        ui->tabWidget_admissao_2->setTabEnabled(0, true);
+        ui->tabWidget_admissao_2->setTabEnabled(1, false);
+        ui->tabWidget_admissao_2->setTabEnabled(2, false);
+        ui->tabWidget_admissao_2->setTabEnabled(3, false);
+        ui->tabWidget_admissao_2->setTabEnabled(4, false);
+          break;
+      case QMessageBox::No:
+
+          break;
+    }
+}
+
+void Intake::on_pb_CANCEL_Diag_clicked()
+{
+    QMessageBox alertDiagMsg;
+    alertDiagMsg.setText(tr("Deseja Realmente CANCELAR associações?"));
+    alertDiagMsg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    int ret = alertDiagMsg.exec();
+    switch (ret) {
+      case QMessageBox::Yes:
+        ui->tabWidget_admissao_2->setTabEnabled(0, true);
+        ui->tabWidget_admissao_2->setTabEnabled(1, false);
+        ui->tabWidget_admissao_2->setTabEnabled(2, false);
+        ui->tabWidget_admissao_2->setTabEnabled(3, false);
+        ui->tabWidget_admissao_2->setTabEnabled(4, false);
+          break;
+      case QMessageBox::No:
+
+          break;
+    }
+}
+
+void Intake::on_pb_EXCLUDE_DIAG_clicked()
+{
+    ui->lw_diaAssociated->clear();
+    update_DiagListOnIntake();
+}
+
+void Intake::on_pb_CANCEL_INTERV_clicked()
+{
+    QMessageBox alertDiagMsg;
+    alertDiagMsg.setText(tr("Deseja Realmente CANCELAR a prescrição?"));
+    alertDiagMsg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    int ret = alertDiagMsg.exec();
+    switch (ret) {
+      case QMessageBox::Yes:
+        ui->tabWidget_admissao_2->setTabEnabled(0, true);
+        ui->tabWidget_admissao_2->setTabEnabled(1, false);
+        ui->tabWidget_admissao_2->setTabEnabled(2, false);
+        ui->tabWidget_admissao_2->setTabEnabled(3, false);
+        ui->tabWidget_admissao_2->setTabEnabled(4, false);
+          break;
+      case QMessageBox::No:
+
+          break;
+    }
 }

@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "admissao.h"
+#include <QListWidgetItem>
 
 namespace Ui {
     class Intake;
@@ -29,6 +30,12 @@ public slots:
     void updatePatList_OnIntake();
 
 private slots:
+    void on_pb_CANCEL_INTERV_clicked();
+    void on_pb_EXCLUDE_DIAG_clicked();
+    void on_pb_CANCEL_Diag_clicked();
+    void on_pb_CANCEL_anam_clicked();
+    void on_pb_CANCEL_FIS_clicked();
+    void on_lw_diagASS4interv_itemClicked(QListWidgetItem* item);
     void on_pb_aprazingInterv_clicked();
     void on_pb_InterventionOK_clicked();
     void on_pb_SAVEassociatedDIAG_clicked();
@@ -41,6 +48,7 @@ private slots:
 
     void update_DiagListOnIntake();
     void update_DiagList4interv();
+    void update_Act4IntervAndApraz();
     void update_PresAndAprazList();
 };
 

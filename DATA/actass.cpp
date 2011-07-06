@@ -33,3 +33,12 @@ QString ActAss::apraz() const{
 void ActAss::setApraz(const QString & apraz){
     m_apraz = apraz;
 }
+
+void ActAss::setExamplesOfActivitiesAndApraz(){
+    ActAss * ac = new ActAss();
+    //ac->setIdAt(0);
+    ac->setIdIntakeFK(1);
+    ac->setPrescr("Reflow the Blood");
+    ac->setApraz("Before Sleep");
+    ac->save();
+}
