@@ -62,6 +62,13 @@ void Admissao::setHasFinished(const bool & hasFinished){
     m_hasFinished = hasFinished;
 }
 
+bool Admissao::hasStarted() const{
+    return m_hasStarted;
+}
+void Admissao::setHasStarted(const bool &hasStarted){
+    m_hasStarted = hasStarted;
+}
+
 QString Admissao::assocDiag() const {
     return m_assocDiag;
 }

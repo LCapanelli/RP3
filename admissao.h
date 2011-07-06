@@ -13,6 +13,7 @@ class Admissao : public QDjangoModel{
             Q_PROPERTY (QString anam READ anam WRITE setAnam)
             Q_PROPERTY (QString prescr READ prescr WRITE setPrescr)
             Q_PROPERTY (bool hasFinished READ hasFinished WRITE setHasFinished)
+            Q_PROPERTY (bool hasStarted READ hasStarted WRITE setHasStarted)
             //work-around
             Q_PROPERTY (QString assocDiag READ assocDiag WRITE setAssocDiag)
             Q_PROPERTY (QDateTime assocDiagTime READ assocDiagTime WRITE setAssocDiagTime)
@@ -28,6 +29,7 @@ public:
         QString anam() const;
         QString prescr() const;
         bool hasFinished() const;
+        bool hasStarted() const;
         QString assocDiag() const;
         QDateTime assocDiagTime() const;
 
@@ -38,6 +40,7 @@ public:
         void setAnam(const QString & anam);
         void setPrescr(const QString & prescr);
         void setHasFinished(const bool & hasFinished);
+        void setHasStarted(const bool & hasStarted);
         void setAssocDiag(const QString & assocDiag);
         void setAssocDiagTime(const QDateTime & assocDiagTime);
 
@@ -49,6 +52,7 @@ private:
         QString m_anam;
         QString m_prescr;
         bool m_hasFinished;
+        bool m_hasStarted;
         QString m_assocDiag;
         QDateTime m_assocDiagTime;
 };

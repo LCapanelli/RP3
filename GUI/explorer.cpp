@@ -5,7 +5,7 @@
 #include "DATA/model_diagnostable.h"
 #include <QHeaderView>
 #include <QTableWidgetItem>
-
+#include <QString>
 
 Explorer::Explorer(QWidget *parent) :
     QWidget(parent),
@@ -14,8 +14,9 @@ Explorer::Explorer(QWidget *parent) :
     ui->setupUi(this);
     ui->tW_showDiagnosReadyOnly->setColumnCount(8);
     QStringList labelList;
-    labelList << "ID"<< "Cadastro" << "Título" << "Ano" << "Domínio"
-            << "Definição" << "Características Definidoras" << "Fatores Relacionados";
+
+    labelList << tr("ID") << tr("Cadastro") << tr("Título") << tr("Ano") << tr("Domínio")
+            << tr("Definição") << tr("Características Definidoras") << tr("Fatores Relacionados");
     ui->tW_showDiagnosReadyOnly->setHorizontalHeaderLabels(labelList);
     listUpdate();
     }
@@ -27,7 +28,7 @@ Explorer::~Explorer()
 
 void Explorer::listUpdate(){
     QDjangoQuerySet <Diagnostico> idDiag ,nomeD, num01, num02, idDom, definicao, cDefin, fRelac;
-    QList<qint32> idList;
+        QList<qint32> idList;
     QList <int> idDomList;
     QStringList nameList, num01List, num02List, defList, cDList, fRelList;
 

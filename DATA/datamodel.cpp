@@ -5,8 +5,9 @@
 DataModel::DataModel()
 {
 criarConexao();
-Diagnostico exD; Usuario exUs; Paciente exPc;
+Diagnostico exD; Usuario exUs; Paciente exPc; Intervencao in;
 exD.setExamples();
 exUs.setUserExamples();
 exPc.setPatExamples();
+in.setExamplesOfInterventions();
 }

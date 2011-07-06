@@ -25,9 +25,28 @@ void Intervencao::setIdDiagFK(const QString &idDiagFK){
     m_idDiagFK = idDiagFK;
 }
 
+qint32 Intervencao::idDiagIFK() const {
+    return m_idDiagIFK;
+}
+void Intervencao::setIdDiagIFK(const qint32 &idDiagIFK){
+    m_idDiagIFK = idDiagIFK;
+}
+
 QString Intervencao::interName() const {
     return m_interName;
 }
 void Intervencao::setInterName(const QString &interName){
     m_interName = interName;
+}
+
+void Intervencao::setExamplesOfInterventions(){
+    Intervencao * interv = new Intervencao(this);
+    interv->setIdInter(1);
+    interv->setIdDiagIFK(2);
+    interv->setInterName("Manter a cabeceira da cama elevada entre 30 e 45 graus durante e após a alimentação.");
+    interv->save();
+    interv->setIdInter(2);
+    interv->setIdDiagIFK(2);
+    interv->setInterName("Manter ");
+    interv->save();
 }

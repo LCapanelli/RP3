@@ -5,23 +5,30 @@
 #include "admissao.h"
 #include "diagnostico.h"
 #include "DATA/diagass.h"
+#include "DATA/actass.h"
 #include <QMessageBox>
+#include <QtSql/qsql.h>
 
 Intake::Intake(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Intake)
 {
     ui->setupUi(this);
+
+    QStringList labelList;
+    labelList << "ID" << "Prescrição" << "Aprazamento";
+    ui->tableW_PrescAndApraz->setHorizontalHeaderLabels(labelList);
+
     updatePatList_OnIntake();
     update_DiagListOnIntake();
+    update_DiagList4interv();
+    update_PresAndAprazList();
 }
 
 Intake::~Intake()
 {
     delete ui;
 }
-
-QListWidgetItem * itemFoo = new QListWidgetItem();
 
 //! Refresh patient list and provide filter by ID or Name
 void Intake::updatePatList_OnIntake(){
@@ -34,13 +41,9 @@ if (!ui->le_SEARCHpatbyName->text().isEmpty())
          pat = pat.filter(QDjangoWhere("pront", QDjangoWhere::Contains, ui->le_SEARCHpatByID->text()));
 
     for (int i = 0; i < pat.count(); ++i){
-        //Atribuindo valores a view pelo modelo
     QListWidgetItem * itemP = new QListWidgetItem(pat.at(i)->nameP(), ui->lw_PatList_INTAKE);
     itemP->setData(Qt::UserRole, pat.at(i)->pront());
-
-    qDebug()<< "DEBUG UserRole " <<itemP;
-    //itemFoo = itemP;
-}
+    }
 }
 
 void Intake::on_le_SEARCHpatbyName_returnPressed()
@@ -58,28 +61,37 @@ void Intake::on_le_SEARCHpatByID_returnPressed()
     updatePatList_OnIntake();
 }
 
-    Admissao *intake = new Admissao();
+//NEW OBJECT
+Admissao *intake = new Admissao();
+
 //! NEW INTAKE -- get the Name of the selected Patient to a new Table Intake
 void Intake::on_pb_NEWINTAKE_clicked()
 {
     intake->setPatNameFK(ui->lw_PatList_INTAKE->currentItem()->text());
-    tempNameP = ui->lw_PatList_INTAKE->currentItem()->type();
-    QListWidgetItem* item = ui->lw_PatList_INTAKE->takeItem(ui->lw_PatList_INTAKE->currentRow());
-    intake->setProntPK(ui->lw_PatList_INTAKE->currentItem()->type());
-
-
-    qDebug()<<" NOVO ITEM    "<< tempNameP << item;
-
+    tempNameP = ui->lw_PatList_INTAKE->currentItem()->text();
+    //tempIdFromIntake = intake->idIntake();
+   qDebug()<< tempNameP <<"  <<<<<<< NOME ADM Quando CLicar em ADMITIR";
+    QSqlQuery q;
+    q.prepare("SELECT pront FROM paciente WHERE nameP = :name");
+    q.bindValue(":name", tempNameP);
+    q.exec();
+    while(q.next()){
+        tempPront = q.value(0).toInt();
+        intake->setProntPK(tempPront);
+    }
     intake->setHasFinished(false);
+    intake->setHasStarted(true);
     ui->tabWidget_admissao_2->setTabEnabled(0, false);
     intake->save();
 }
 
 void Intake::on_pb_SAVEexFIS_clicked()
 {
+
         intake->setFis(ui->qtext_exFisics->toPlainText());
         ui->tabWidget_admissao_2->setTabEnabled(1, false);
         intake->save();
+
 }
 
 void Intake::on_pb_SAVEAnamnese_clicked()
@@ -107,13 +119,23 @@ void Intake::update_DiagListOnIntake(){
     ui->lw_diaAssociated->setDragDropOverwriteMode(0);
 }
 
-void Intake::on_pq_SAVEassociatedDIAG_clicked()
+DiagAss *assD = new DiagAss();
+//! Associates a list of Diagnosis
+//Fazer boolean para garantir integridade (if started)
+void Intake::on_pb_SAVEassociatedDIAG_clicked()
 {
-    DiagAss *assD = new DiagAss(this);
     assD->setIdDiagAss(0);
     assD->setPatientNameIntakeFK(tempNameP);
-    assD->setDiagAssNAME(ui->lw_diaAssociated->currentItem()->text());
     assD->setDhour(ui->dateb_DateHourFromDiag->dateTime());
+    assD->setDiagAssNAME(ui->lw_diaAssociated->currentItem()->text());
+    QSqlQuery q;
+    q.prepare("SELECT idIntake FROM admissao WHERE patNameFK = :name");
+    q.bindValue(":name", tempNameP);
+    q.exec();
+    while(q.next()){
+        tempIdFromIntake = q.value(0).toInt();
+    }
+    assD->setIdIntakeFK(tempIdFromIntake);
     assD->save();
 }
 
@@ -128,10 +150,65 @@ void Intake::on_pb_InterventionOK_clicked()
       case QMessageBox::Ok:
           // Save was clicked
         ui->tabWidget_admissao_2->setTabEnabled(3, false);
+        update_DiagList4interv();
           break;
       case QMessageBox::Cancel:
           // Cancel was clicked
                   ui->tabWidget_admissao_2->setTabEnabled(3, true);
           break;
     }
+}
+
+//! UPDATE the Associated Diagnosis list on Intervations tab
+void Intake::update_DiagList4interv(){
+    ui->lw_diagASS4interv->clear();
+
+    QSqlQuery q;
+    q.prepare("SELECT idIntake FROM admissao WHERE patNameFK = :name");
+    q.bindValue(":name", tempNameP);
+    q.exec();
+    while(q.next()){
+        tempIdFromIntake = q.value(0).toInt();
+    }
+
+    QDjangoQuerySet<DiagAss> dia;
+    dia = dia.filter(QDjangoWhere("idIntakeFK", QDjangoWhere::Equals, tempIdFromIntake));
+
+    qDebug() <<"TEMP<<<<"<< tempNameP << "ID >> " << tempIdFromIntake;
+    for (int i = 0; i < dia.count(); ++i){
+    QListWidgetItem * itemAss = new QListWidgetItem(dia.at(i)->diagAssNAME(), ui->lw_diagASS4interv);
+    itemAss->setData(Qt::UserRole, dia.at(i)->idDiagAss());
+    }
+}
+
+//! UPDATE list of Prescriptions and Time
+void Intake::update_PresAndAprazList(){
+    QDjangoQuerySet<ActAss> idAct, acPrescr, acApraz;
+    QStringList acPrescrList, acAprazList;
+    QList<qint32> idActList;
+
+    //Fills QLists withe content from ActAss ORM table
+    for (int i = 0; i < idAct.count() && acPrescr.count() && acApraz.count(); ++i){
+        idActList << idAct.at(i)->idAt();
+        acPrescrList << acPrescr.at(i)->prescr();
+        acAprazList << acApraz.at(i)->apraz();
+    }
+
+    //Fills the GUI TableWidget by column from QLists
+    for (int i = 0; i < acPrescr.count(); ++i){
+        ui->tableW_PrescAndApraz->setRowCount(acPrescr.count());
+        ui->tableW_PrescAndApraz->setItem(i, 0, new QTableWidgetItem(idActList.at(i)));
+        ui->tableW_PrescAndApraz->setItem(i, 1, new QTableWidgetItem(acPrescrList.at(i)));
+        ui->tableW_PrescAndApraz->setItem(i, 2, new QTableWidgetItem(acAprazList.at(i)));
+    }
+}
+
+//NEW OBJECT
+ActAss *act= new ActAss();
+
+void Intake::on_pb_aprazingInterv_clicked()
+{
+    act->setIdAt(0);
+    act->setApraz(ui->le_aprazingInterv->text());
+    act->setPrescr(ui->le_prescrInt->text());
 }

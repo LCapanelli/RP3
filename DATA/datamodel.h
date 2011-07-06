@@ -9,6 +9,7 @@
 #include "admissao.h"
 #include "diagass.h"
 #include "actass.h"
+#include "intervencao.h"
 #include <QtSql/QSqlDatabase>
 
 class DataModel

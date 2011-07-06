@@ -20,18 +20,11 @@ void ActAss::setIdIntakeFK(const qint32 & idIntakeFK){
     m_idIntakeFK = idIntakeFK;
 }
 
-QString ActAss::intervNameFK() const{
-    return m_intervNameFK;
+QString ActAss::prescr() const{
+    return m_prescr;
 }
-void ActAss::setIntervNameFK(const QString & intervNameFK){
-    m_intervNameFK = intervNameFK;
-}
-
-QString ActAss::atList() const{
-    return m_atList;
-}
-void ActAss::setAtList(const QString & atList){
-    m_atList = atList;
+void ActAss::setPrescr(const QString & prescr){
+    m_prescr = prescr;
 }
 
 QString ActAss::apraz() const{

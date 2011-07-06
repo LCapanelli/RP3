@@ -13,6 +13,13 @@ void DiagAss::setIdDiagAss(const qint32 & idDiagAss){
     m_idDiagAss = idDiagAss;
 }
 
+qint32 DiagAss::idIntakeFK() const{
+    return m_idIntakeFK;
+}
+void DiagAss::setIdIntakeFK(const qint32 & idIntakeFK){
+    m_idIntakeFK = idIntakeFK;
+}
+
 QString DiagAss::patientNameIntakeFK() const{
     return m_patientNameIntakeFK;
 }

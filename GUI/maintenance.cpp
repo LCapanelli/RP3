@@ -129,6 +129,7 @@ void Maintenance::on_pb_NICSAVE_clicked()
     if(!ui->le_NIC_register->text().isEmpty()){
         in->setInterName(ui->le_NIC_register->text());
         in->setIdDiagFK(ui->lw_DiagNIC->currentItem()->text());
+        in->setIdInter(0);
         in->save();
     }
 }
