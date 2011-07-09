@@ -73,11 +73,11 @@ void Paciente::setDbornP(const QDate & dBornP){
     m_dBornP = dBornP;
 }
 
-QString Paciente::race() const {
-    return m_race;
+QString Paciente::ethn() const {
+    return m_ethn;
 }
-void Paciente::setRace(const QString & race){
-    m_race = race;
+void Paciente::setEthn(const QString & ethn){
+    m_ethn = ethn;
 }
 
 QString Paciente::relig() const {
@@ -138,67 +138,67 @@ void Paciente::setObsP(const QString & obsP){
 
 //Another methods
 void Paciente::setPatExamples(){
-    Paciente *p = new Paciente(this);
-    p->setPront(1);
-    p->setNameP("TEST Patient");
-    p->setJobP("Unemployed");
-    p->setProced("UNKNOW");
-    p->setRg("190190190");
-    p->setProven("House");
-    p->setSex(1);
-    p->setBlood(2);
-    QDate data = QDate::currentDate();
-    p->setDbornP(data);
-    p->setRace("Caucasian");
-    p->setRelig("Unreligious");
-    p->setCivilS(1);
-    p->setMailP("StreetView, 111, FuuTown");
-    p->setTelR("55-112233");
-    p->setTelC("55-998877");
-    p->setCellP("55-9191919");
-    p->setAlerg("NOT detected");
-    p->setObsP("No observations");
-    p->save();
+//    Paciente *p = new Paciente(this);
+//    p->setPront(1);
+//    p->setNameP("TEST Patient");
+//    p->setJobP("Unemployed");
+//    p->setProced("UNKNOW");
+//    p->setRg("190190190");
+//    p->setProven("House");
+//    p->setSex(1);
+//    p->setBlood(2);
+//    QDate data = QDate::currentDate();
+//    p->setDbornP(data);
+//    p->setEthn("Caucasian");
+//    p->setRelig("Unreligious");
+//    p->setCivilS(1);
+//    p->setMailP("StreetView, 111, FuuTown");
+//    p->setTelR("55-112233");
+//    p->setTelC("55-998877");
+//    p->setCellP("55-9191919");
+//    p->setAlerg("NOT detected");
+//    p->setObsP("No observations");
+//    p->save();
 
-    p->setPront(2);
-    p->setNameP("Patient 2");
-    p->setJobP("Unemployed TO");
-    p->setProced("UNKNOW");
-    p->setRg("XXXXX");
-    p->setProven("From Job");
-    p->setSex(1);
-    p->setBlood(2);
-    QDate data2 = QDate::currentDate();
-    p->setDbornP(data2);
-    p->setRace("Indian");
-    p->setRelig("Undefined");
-    p->setCivilS(1);
-    p->setMailP("StreetView, 112, FuuTown");
-    p->setTelR("NO");
-    p->setTelC("NO");
-    p->setCellP("NO");
-    p->setAlerg("Skin alergy");
-    p->setObsP("No observations");
-    p->save();
+//    p->setPront(2);
+//    p->setNameP("Patient 2");
+//    p->setJobP("Unemployed TO");
+//    p->setProced("UNKNOW");
+//    p->setRg("XXXXX");
+//    p->setProven("From Job");
+//    p->setSex(1);
+//    p->setBlood(2);
+//    QDate data2 = QDate::currentDate();
+//    p->setDbornP(data2);
+//    p->setEthn("Indian");
+//    p->setRelig("Undefined");
+//    p->setCivilS(1);
+//    p->setMailP("StreetView, 112, FuuTown");
+//    p->setTelR("NO");
+//    p->setTelC("NO");
+//    p->setCellP("NO");
+//    p->setAlerg("Skin alergy");
+//    p->setObsP("No observations");
+//    p->save();
 
-    p->setPront(3);
-    p->setNameP("Mr. Panda");
-    p->setJobP("Fighter");
-    p->setProced("Animalia");
-    p->setRg("77777");
-    p->setProven("From a Fight");
-    p->setSex(0);
-    p->setBlood(0);
-    QDate data3 = QDate::currentDate();
-    p->setDbornP(data3);
-    p->setRace("Animal");
-    p->setRelig("Unrage");
-    p->setCivilS(0);
-    p->setMailP("PandaHood");
-    p->setTelR("NO");
-    p->setTelC("NO");
-    p->setCellP("Yes");
-    p->setAlerg("Breez alergies");
-    p->setObsP("Nothign detected");
-    p->save();
+//    p->setPront(3);
+//    p->setNameP("Mr. Panda");
+//    p->setJobP("Fighter");
+//    p->setProced("Animalia");
+//    p->setRg("77777");
+//    p->setProven("From a Fight");
+//    p->setSex(0);
+//    p->setBlood(0);
+//    QDate data3 = QDate::currentDate();
+//    p->setDbornP(data3);
+//    p->setEthn("Animal");
+//    p->setRelig("Unrage");
+//    p->setCivilS(0);
+//    p->setMailP("PandaHood");
+//    p->setTelR("NO");
+//    p->setTelC("NO");
+//    p->setCellP("Yes");
+//    p->setAlerg("Breez alergies");
+//    p->setObsP("Nothign detected");
+//    p->save();
 }

@@ -10,6 +10,7 @@
 #include "diagass.h"
 #include "actass.h"
 #include "intervencao.h"
+#include "dom.h"
 #include <QtSql/QSqlDatabase>
 
 class DataModel
@@ -35,6 +36,7 @@ public:
     QDjango::registerModel<Admissao>();
     QDjango::registerModel<DiagAss>();
     QDjango::registerModel<ActAss>();
+    QDjango::registerModel<Dom>();
     QDjango::createTables();
 
 //    if (!db.open()) {

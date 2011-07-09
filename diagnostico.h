@@ -9,8 +9,7 @@ class Diagnostico : public QDjangoModel{
             Q_PROPERTY (QString nomeDiag READ nomeDiag WRITE setNomeDiag)
             Q_PROPERTY (QString num01 READ num01 WRITE setNum01)
             Q_PROPERTY (QString num02 READ num02 WRITE setNum02)
-            Q_PROPERTY (int idDom READ idDom WRITE setIdDom)
-            //Q_PROPERTY (int idClasse READ idClasse WRITE setIdClasse)
+            Q_PROPERTY (qint32 idDom READ idDom WRITE setIdDom)
             Q_PROPERTY (QString definicao READ definicao WRITE setDefinicao)
             Q_PROPERTY (QString cDefin READ cDefin WRITE setCDefin)
             Q_PROPERTY (QString fRelac READ fRelac WRITE setFRelac)
@@ -22,8 +21,7 @@ public:
     QString nomeDiag() const;
     QString num01() const;
     QString num02() const;
-    int idDom() const;
-    //int idClasse() const;
+    qint32 idDom() const;
     QString definicao() const;
     QString cDefin() const;
     QString fRelac() const;
@@ -33,7 +31,6 @@ public:
     void setNum01(const QString & num01);
     void setNum02(const QString & num02);
     void setIdDom(const int & idDom);
-    //void setIdClasse(const int & idClasse);
     void setDefinicao(const QString & definicao);
     void setCDefin(const QString & cDefin);
     void setFRelac(const QString & fRelac);
@@ -43,12 +40,10 @@ private:
     QString m_nomeDiag;
     QString m_num01;
     QString m_num02;
-    int m_idDom;
-    //int m_idClasse;
+    qint32 m_idDom;
     QString m_definicao;
     QString m_cDefin;
     QString m_fRelac;
-    //Ui::Form_Principal_QW ui;
 
 public slots:
     void updateViewDiag();

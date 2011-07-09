@@ -18,6 +18,5 @@ int main(int argc, char *argv[])
     data.criarConexao();
     MainWindow main;
     main.showMaximized();
-
     return a.exec();
 }

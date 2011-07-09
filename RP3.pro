@@ -29,7 +29,8 @@ SOURCES += main.cpp \
     GUI/explorer.cpp \
     DATA/model_diagnostable.cpp \
     DATA/diagass.cpp \
-    DATA/actass.cpp
+    DATA/actass.cpp \
+    DATA/dom.cpp
 
 HEADERS  += \
     diagnostico.h \
@@ -50,7 +51,8 @@ HEADERS  += \
     DATA/diagnostableview.h \
     DATA/model_diagnostable.h \
     DATA/diagass.h \
-    DATA/actass.h
+    DATA/actass.h \
+    DATA/dom.h
 
 FORMS    += \
     GUI/PrincipalForm.ui \
@@ -66,3 +68,5 @@ FORMS    += \
 #DBUSER sae sae0192
 
 OTHER_FILES += \
+
+RESOURCES +=

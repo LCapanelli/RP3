@@ -156,11 +156,6 @@
          </item>
          <item>
           <property name="text">
-           <string>Resultados Esperados (avaliação)</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
            <string>Prontuário por período</string>
           </property>
          </item>

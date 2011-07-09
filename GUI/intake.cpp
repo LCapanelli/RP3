@@ -10,18 +10,13 @@
 #include <QMessageBox>
 #include <QtSql/qsql.h>
 #include <QTableWidgetItem>
-//#include <QHeaderView>
+#include "DATA/dom.h"
 
 Intake::Intake(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Intake)
 {
     ui->setupUi(this);
-
-//    ui->tableW_PrescAndApraz->setColumnCount(3);
-//    QStringList labelList;
-//    labelList << tr("ID") << tr("Prescrição") << tr("Aprazamento");
-//    ui->tableW_PrescAndApraz->setHorizontalHeaderLabels(labelList);
 
     updatePatList_OnIntake();
     update_DiagListOnIntake();
@@ -113,6 +108,12 @@ void Intake::on_pb_SAVEAnamnese_clicked()
 //! Upate List of diagnosis on Intake
 void Intake::update_DiagListOnIntake(){
     ui->lw_IntakeDiag->clear();
+    QDjangoQuerySet<Dom> dom;
+    for(int i = 0; i < dom.count(); ++i){
+        QListWidgetItem * itemDom = new QListWidgetItem(dom.at(i)->nameDom(), ui->lw_domDiag);
+        itemDom->setData(Qt::UserRole, dom.at(i)->idDom());
+    }
+
     QDjangoQuerySet <Diagnostico> nomeD;
     for (int i = 0; i < nomeD.count(); ++i){
         QListWidgetItem * item = new QListWidgetItem(nomeD.at(i)->nomeDiag(), ui->lw_IntakeDiag);
@@ -125,7 +126,16 @@ void Intake::update_DiagListOnIntake(){
     ui->lw_IntakeDiag->viewport()->setAcceptDrops(false);
 
     ui->lw_diaAssociated->viewport()->setAcceptDrops(true);
-    ui->lw_diaAssociated->setDragDropOverwriteMode(0);
+    ui->lw_diaAssociated->setDragDropOverwriteMode(false);
+
+    ui->lw_Activities4diag->setSelectionMode(QAbstractItemView::SingleSelection);
+    ui->lw_Activities4diag->setDragDropMode(QAbstractItemView::InternalMove);
+    ui->lw_Activities4diag->setDefaultDropAction(Qt::MoveAction);
+    ui->lw_Activities4diag->setDropIndicatorShown(true);
+    ui->lw_Activities4diag->viewport()->setAcceptDrops(false);
+
+    ui->lw_DROP_ACT->viewport()->setAcceptDrops(true);
+    ui->lw_DROP_ACT->setDragDropOverwriteMode(false);
 }
 
 DiagAss *assD = new DiagAss();
@@ -152,9 +162,10 @@ void Intake::on_pb_SAVEassociatedDIAG_clicked()
         info.exec();
 }
 
-
+//! Go to an Intervention
 void Intake::on_pb_InterventionOK_clicked()
 {
+    ui->lw_diagASS4interv->clear();
     QMessageBox alertDiagMsg;
     alertDiagMsg.setText("Deseja Prosseguir para Intervencoes?");
     alertDiagMsg.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
@@ -222,24 +233,24 @@ void Intake::update_PresAndAprazList(){
 
 void Intake::on_pb_aprazingInterv_clicked()
 {
-    QSqlQuery q;
-    q.prepare("SELECT idIntake FROM admissao WHERE patNameFK = :name");
-    q.bindValue(":name", tempNameP);
-    q.exec();
-    while(q.next()){
-        tempIdFromIntake = q.value(0).toInt();
-    }
-    //NEW OBJECT
-    ActAss *act= new ActAss(this);
-    act->setIdAt(0);
-    act->setIdIntakeFK(tempIdFromIntake);
-    act->setApraz(ui->le_aprazInterv->text());
-    act->setPrescr(ui->td_PrescrInt->toPlainText());
-    ui->le_aprazInterv->clear();
-    ui->td_PrescrInt->clear();
-    act->save();
+//    QSqlQuery q;
+//    q.prepare("SELECT idIntake FROM admissao WHERE patNameFK = :name");
+//    q.bindValue(":name", tempNameP);
+//    q.exec();
+//    while(q.next()){
+//        tempIdFromIntake = q.value(0).toInt();
+//    }
+//    //NEW OBJECT
+//    ActAss *act= new ActAss(this);
+//    act->setIdAt(0);
+//    act->setIdIntakeFK(tempIdFromIntake);
+//    act->setApraz(ui->le_aprazInterv->text());
+//    act->setPrescr(ui->td_PrescrInt->toPlainText());
+//    ui->le_aprazInterv->clear();
+//    ui->td_PrescrInt->clear();
+//    act->save();
 
-    update_PresAndAprazList();
+//    update_PresAndAprazList();
 }
 
 void Intake::on_lw_diagASS4interv_itemClicked(QListWidgetItem* item)
@@ -263,7 +274,6 @@ void Intake::on_lw_diagASS4interv_itemClicked(QListWidgetItem* item)
     while(q.next()){
         QString r = q.value(0).toString();
         ui->lw_Activities4diag->addItem(r);
-        qDebug()<<"NOMES "<< r;
     }
 }
 
@@ -359,7 +369,10 @@ void Intake::on_pb_CANCEL_INTERV_clicked()
 
 void Intake::on_pb_Intake_finished_clicked()
 {
+    Admissao *d = new Admissao();
+    ui->lw_DROP_ACT->clear();
     ui->lw_diagASS4interv->clear();
+    ui->lw_diaAssociated->clearSelection();
     ui->lw_diaAssociated->clear();
     ui->lw_Activities4diag->clear();
     update_DiagListOnIntake();
@@ -384,5 +397,30 @@ void Intake::on_pb_Intake_finished_clicked()
       case QMessageBox::No:
 
           break;
+    }
+}
+
+//! When a Dom is clicked a list of those diagnosis is showed
+void Intake::on_lw_domDiag_itemClicked(QListWidgetItem* item)
+{
+    ui->lw_IntakeDiag->clear();
+    QString t = ui->lw_domDiag->currentItem()->text();
+    int u;
+    QSqlQuery p;
+    p.prepare("SELECT idDom FROM sae.dom WHERE nameDom = :nameD");
+    p.bindValue("nameD", t);
+    p.exec();
+    while(p.next()){
+        u = p.value(0).toInt();
+        qDebug()<<"contem ID "<< u;
+    }
+
+    QSqlQuery q;
+    q.prepare("SELECT nomeDiag FROM sae.diagnostico WHERE idDom = :idDom");
+    q.bindValue(":idDom", u);
+    q.exec();
+    while(q.next()){
+        QString r = q.value(0).toString();
+        ui->lw_IntakeDiag->addItem(r);
     }
 }

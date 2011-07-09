@@ -2,6 +2,7 @@
 #include <QString>
 #include "qdjango/QDjango.h"
 #include "qdjango/QDjangoQuerySet.h"
+#include <QtSql/QSqlDatabase>
 
 /**
 Esta classe serve para criação de Diagnósticos,
@@ -41,19 +42,12 @@ void Diagnostico::setNum02(const QString &num02){
     m_num02 = num02;
 }
 
-int Diagnostico::idDom() const {
+qint32 Diagnostico::idDom() const {
     return m_idDom;
 }
-void Diagnostico::setIdDom(const int &idDom){
+void Diagnostico::setIdDom(const qint32 &idDom){
         m_idDom = idDom;
 }
-
-//int Diagnostico::idClasse() const {
-//    return m_idClasse;
-//}
-//void Diagnostico::setIdClasse(const int &idClasse){
-//    m_idClasse = idClasse;
-//}
 
 QString Diagnostico::definicao() const{
     return m_definicao;
@@ -75,40 +69,22 @@ QString Diagnostico::fRelac() const{
 void Diagnostico::setFRelac(const QString &fRelac){
     m_fRelac = fRelac;
 }
-//Outros métodos
 
 void Diagnostico::setExamples(){
-    Diagnostico *u = new Diagnostico();
-    u->setIdDiag(1);
-    u->setNomeDiag(tr("Padrão Respiratório Ineficaz"));
-    u->setNum01("(00032)");
-    u->setNum02("1980, 1996, 1998");
-    u->setIdDom(4);
-    //u->setIdClasse(4);
-    u->setDefinicao("Inspiração e/ou expiração que não proporciona ventilação adequada.");
-    u->setCDefin("-Alteração na profundidade respiratória\n -Assumir uma posição de três pontos \n -Batimentos de asa do nariz");
-    u->setFRelac("-Ansiedade \n -Danos cognitivos \n -Dano de percepção ");
-    u->save();
-    u->setIdDiag(2);
-    u->setNomeDiag("Nutrição desequilibrada: mais do que as necessidades corporais");
-    u->setNum01("(00000)");
-    u->setNum02("0000");
-    u->setIdDom(1);
-    //u->setIdClasse(4);
-    u->setDefinicao("");
-    u->setCDefin("");
-    u->setFRelac("");
-    u->save();
-    u->setIdDiag(3);
-    u->setNomeDiag("BLAH BLAH");
-    u->setNum01("(38473)");
-    u->setNum02("2011");
-    u->setIdDom(1);
-    //u->setIdClasse(3);
-    u->setDefinicao("SEM DEFINICAO");
-    u->setCDefin("SEM CD");
-    u->setFRelac("SEM FR");
-    u->save();
+//These examples were commented 'cause it will be executed by an external .sql file
+
+//    Diagnostico *u = new Diagnostico();
+//    u->setIdDiag(1);
+//    u->setNomeDiag(tr("Padrão Respiratório Ineficaz"));
+//    u->setNum01("(00032)");
+//    u->setNum02("1980, 1996, 1998");
+//    u->setIdDom(4);
+//    //u->setIdClasse(4);
+//    u->setDefinicao("Inspiração e/ou expiração que não proporciona ventilação adequada.");
+//    u->setCDefin("-Alteração na profundidade respiratória\n -Assumir uma posição de três pontos \n -Batimentos de asa do nariz");
+//    u->setFRelac("-Ansiedade \n -Danos cognitivos \n -Dano de percepção ");
+//    u->save();
+
 }
 
 //QVariant Diagnostico::data(const QModelIndex &index, int role) const{

@@ -137,15 +137,15 @@ p, li { white-space: pre-wrap; }
       <bool>false</bool>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="page_16">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>536</width>
-        <height>342</height>
+        <width>771</width>
+        <height>372</height>
        </rect>
       </property>
       <attribute name="label">
@@ -154,22 +154,6 @@ p, li { white-space: pre-wrap; }
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="0" column="0" colspan="2">
         <layout class="QHBoxLayout" name="horizontalLayout_134">
-         <item>
-          <widget class="QLabel" name="label">
-           <property name="font">
-            <font>
-             <weight>50</weight>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>Filtro </string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="le_FiltroCadDiag"/>
-         </item>
          <item>
           <spacer name="horizontalSpacer_13">
            <property name="orientation">
@@ -499,7 +483,7 @@ p, li { white-space: pre-wrap; }
          </property>
         </widget>
        </item>
-       <item row="7" column="0">
+       <item row="7" column="0" colspan="2">
         <layout class="QHBoxLayout" name="horizontalLayout_136">
          <item>
           <spacer name="horizontalSpacer_8">
@@ -541,7 +525,7 @@ p, li { white-space: pre-wrap; }
        </rect>
       </property>
       <attribute name="label">
-       <string>Cadastro de Cuidados - Baseados no NIC</string>
+       <string>Cadastro de Cuidados</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_4">
        <item row="0" column="0">
@@ -625,7 +609,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>Lista de Atividades</string>
+              <string>Lista de Cuidados</string>
              </property>
             </widget>
            </item>
@@ -703,8 +687,8 @@ p, li { white-space: pre-wrap; }
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>591</width>
-        <height>375</height>
+        <width>756</width>
+        <height>377</height>
        </rect>
       </property>
       <attribute name="label">
@@ -819,7 +803,7 @@ p, li { white-space: pre-wrap; }
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="cb_userType"/>
+          <widget class="QLineEdit" name="lineEdit"/>
          </item>
         </layout>
        </item>

@@ -97,10 +97,10 @@ void Usuario::setCountryUser(const QString &countryUser){
     m_countryUser = countryUser;
 }
 
-int Usuario::uType() const{
+QString Usuario::uType() const{
     return m_uType;
 }
-void Usuario::setUtype(const int &uType){
+void Usuario::setUtype(const QString &uType){
     m_uType = uType;
 }
 
@@ -132,24 +132,24 @@ void Usuario::setDborn(const QDate &dBorn){
     m_dBorn = dBorn;
 }
 void Usuario::setUserExamples(){
-    Usuario *u = new Usuario();
-    u->setIdUser(1);
-    u->setUsername("admin");
-    u->setEmailUser("admin@adm.com");
-    u->setLogin("admin");
-    u->setPassW("admin");
-    u->setStreetUser("Foo Street");
-    u->setStreetNUser("555");
-    u->setCepUser("55055");
-    u->setCityUser("Townsville");
-    u->setBlockUser("Foo square");
-    u->setUfUser("OO");
-    u->setCountryUser("QtLand");
-    u->setUtype(1);
-    u->setTelResUser("55979797");
-    u->setCellUser("557878787");
-    u->setCoren(837847384);
-    QDate data = QDate::currentDate();
-    u->setDborn(data);
-    u->save();
+//    Usuario *u = new Usuario();
+//    u->setIdUser(1);
+//    u->setUsername("admin");
+//    u->setEmailUser("admin@adm.com");
+//    u->setLogin("admin");
+//    u->setPassW("admin");
+//    u->setStreetUser("Foo Street");
+//    u->setStreetNUser("555");
+//    u->setCepUser("55055");
+//    u->setCityUser("Townsville");
+//    u->setBlockUser("Foo square");
+//    u->setUfUser("OO");
+//    u->setCountryUser("QtLand");
+//    u->setUtype(1);
+//    u->setTelResUser("55979797");
+//    u->setCellUser("557878787");
+//    u->setCoren(837847384);
+//    QDate data = QDate::currentDate();
+//    u->setDborn(data);
+//    u->save();
 }

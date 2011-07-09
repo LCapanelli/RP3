@@ -78,16 +78,9 @@
        </rect>
       </property>
       <attribute name="label">
-       <string>NANDA</string>
+       <string>Lista de Diagnósticos </string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0">
-        <widget class="QLabel" name="label_2">
-         <property name="text">
-          <string>Nome Diagnóstico</string>
-         </property>
-        </widget>
-       </item>
        <item row="1" column="0">
         <widget class="QLineEdit" name="lineEdit"/>
        </item>
@@ -98,8 +91,44 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="0" colspan="2">
-        <widget class="QTableWidget" name="tW_showDiagnosReadyOnly"/>
+       <item row="0" column="0">
+        <widget class="QTableWidget" name="tW_showDiagnosReadyOnly">
+         <column>
+          <property name="text">
+           <string>Cadastro</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Título</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Domínio</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Ano</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Definição</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Características Definidoras</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Fatores Relacionados</string>
+          </property>
+         </column>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -113,7 +142,7 @@
        </rect>
       </property>
       <attribute name="label">
-       <string>NIC</string>
+       <string>Lista de Cuidados</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0">
@@ -131,7 +160,7 @@
          <item>
           <widget class="QLabel" name="label_6">
            <property name="text">
-            <string>Intervenção</string>
+            <string>Cuidado</string>
            </property>
           </widget>
          </item>

@@ -19,7 +19,7 @@ class Usuario : public QDjangoModel{
     Q_PROPERTY (QString ufUser READ ufUser WRITE setUfUser)
     Q_PROPERTY (QString blockUser READ blockUser WRITE setBlockUser)
     Q_PROPERTY (QString countryUser READ countryUser WRITE setCountryUser)
-    Q_PROPERTY (int uType READ uType WRITE setUtype)
+    Q_PROPERTY (QString uType READ uType WRITE setUtype)
     Q_PROPERTY (QString telResUser READ telResUser WRITE setTelResUser)
     Q_PROPERTY (QString cellUser READ cellUser WRITE setCellUser)
     Q_PROPERTY (int coren  READ coren WRITE setCoren)
@@ -40,7 +40,7 @@ public:
     QString ufUser() const;
     QString blockUser() const;
     QString countryUser() const;
-    int  uType() const;
+    QString  uType() const;
     QString telResUser() const;
     QString cellUser() const;
     int coren() const;
@@ -58,7 +58,7 @@ public:
     void setUfUser(const QString & ufUser);
     void setBlockUser(const QString & blockUser);
     void setCountryUser(const QString & countryUser);
-    void setUtype(const int & uType);
+    void setUtype(const QString & uType);
     void setTelResUser(const QString & telResUser);
     void setCellUser(const QString & cellUser);
     void setCoren(const int & coren);
@@ -77,7 +77,7 @@ private:
     QString m_ufUser;
     QString m_blockUser;
     QString m_countryUser;
-    int  m_uType;
+    QString  m_uType;
     QString m_telResUser;
     QString m_cellUser;
     int m_coren;

@@ -50,7 +50,7 @@ p, li { white-space: pre-wrap; }
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <property name="elideMode">
       <enum>Qt::ElideMiddle</enum>
@@ -239,7 +239,7 @@ p, li { white-space: pre-wrap; }
          <item>
           <widget class="QLabel" name="label_RE_4">
            <property name="text">
-            <string>Atividades Escolhidas</string>
+            <string>Cuidados Escolhidos</string>
            </property>
            <property name="buddy">
             <cstring>listWidget_reDiag</cstring>
@@ -390,7 +390,7 @@ p, li { white-space: pre-wrap; }
      </widget>
      <widget class="QWidget" name="tab_cuidados_3">
       <attribute name="title">
-       <string>Intervenções</string>
+       <string>Cuidados</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_5">
        <item row="0" column="0">
@@ -487,7 +487,7 @@ p, li { white-space: pre-wrap; }
          <item>
           <widget class="QLabel" name="label_ativiCuid_2">
            <property name="text">
-            <string>Lista de Atividades</string>
+            <string>Lista de Cuidados</string>
            </property>
            <property name="buddy">
             <cstring>textEdit_atividEscolhidasCuid</cstring>

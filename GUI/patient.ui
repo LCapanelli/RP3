@@ -56,6 +56,29 @@
           <widget class="QLineEdit" name="le_patFILTER"/>
          </item>
          <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Prontuário</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="le_prontSearch">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>160</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QPushButton" name="pb_paciente">
            <property name="text">
             <string>Buscar</string>
@@ -70,7 +93,36 @@
           <enum>Qt::Vertical</enum>
          </property>
          <widget class="QListWidget" name="lw_filtredPatients"/>
-         <widget class="QListWidget" name="lw_selectedPatient"/>
+         <widget class="QTableWidget" name="tblW_selectedPatient">
+          <property name="autoFillBackground">
+           <bool>true</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string>Prontuário</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>RG</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nascimento</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Endereço</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Etnia</string>
+           </property>
+          </column>
+         </widget>
         </widget>
        </item>
        <item row="2" column="0">
@@ -96,9 +148,9 @@
           </spacer>
          </item>
          <item>
-          <widget class="QPushButton" name="pb_EditPatient">
+          <widget class="QPushButton" name="pb_cleanPatList">
            <property name="text">
-            <string>Editar Paciente</string>
+            <string>Limpar Lista</string>
            </property>
           </widget>
          </item>
@@ -118,8 +170,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>601</width>
-        <height>422</height>
+        <width>754</width>
+        <height>562</height>
        </rect>
       </property>
       <attribute name="label">
@@ -219,54 +271,6 @@
            </item>
            <item>
             <widget class="QLineEdit" name="le_patRG"/>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-       <item row="1" column="1" colspan="2">
-        <layout class="QVBoxLayout" name="verticalLayout">
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_95">
-           <item>
-            <widget class="QLabel" name="label_procedP_3">
-             <property name="font">
-              <font>
-               <pointsize>12</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Procedência</string>
-             </property>
-             <property name="buddy">
-              <cstring>lineEdit_procedP</cstring>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="le_patPROCED"/>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_71">
-           <item>
-            <widget class="QLabel" name="label_provP_3">
-             <property name="font">
-              <font>
-               <pointsize>12</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Proveniência</string>
-             </property>
-             <property name="buddy">
-              <cstring>lineEdit_provP</cstring>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="le_patPROVEN"/>
            </item>
           </layout>
          </item>
@@ -425,7 +429,7 @@
               </font>
              </property>
              <property name="text">
-              <string> Raça</string>
+              <string>Etnia</string>
              </property>
              <property name="buddy">
               <cstring>lineEdit_racaP_2</cstring>

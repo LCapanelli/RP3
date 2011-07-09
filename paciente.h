@@ -15,7 +15,7 @@ class Paciente : public QDjangoModel{
             Q_PROPERTY (int sex READ sex WRITE setSex)
             Q_PROPERTY (int blood READ blood WRITE setBlood)
             Q_PROPERTY (QDate dBornP READ dBornP WRITE setDbornP)
-            Q_PROPERTY (QString race READ race WRITE setRace)
+            Q_PROPERTY (QString ethn READ ethn WRITE setEthn)
             Q_PROPERTY (QString relig READ relig WRITE setRelig)
             Q_PROPERTY (int civilS READ civilS WRITE setCivilS)
             Q_PROPERTY (QString mailP READ mailP WRITE setMailP)
@@ -37,7 +37,7 @@ public:
             int sex() const;
             int blood() const;
             QDate dBornP() const;
-            QString race() const;
+            QString ethn() const;
             QString relig() const;
             int civilS() const;
             QString mailP() const;
@@ -56,7 +56,7 @@ public:
             void setSex(const int & sex);
             void setBlood(const int & blood);
             void setDbornP(const QDate & dBornP);
-            void setRace(const QString & race);
+            void setEthn(const QString & ethn);
             void setRelig(const QString & relig);
             void setCivilS(const int & civilS);
             void setMailP(const QString & mailP);
@@ -77,7 +77,7 @@ private:
             int m_sex;
             int m_blood;
             QDate m_dBornP;
-            QString m_race;
+            QString m_ethn;
             QString m_relig;
             int m_civilS;
             QString m_mailP;
