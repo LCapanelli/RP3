@@ -33,3 +33,7 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::on_listaOpcoesMenu_2_itemClicked()
+{
+}

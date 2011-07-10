@@ -119,7 +119,7 @@ void Patient::updateTablePatientInfo(){
 //        ui->tblW_selectedPatient->setItem(i, 3, new QTableWidgetItem(ethnList.at(i)));
 //        ui->tblW_selectedPatient->setItem(i, 4, new QTableWidgetItem(mailList.at(i)));
 //    }
-//    qDebug()<< "HEUTE"<<mailList << rgList;
+
 }
 
 //! When a Patient is clicked those informations is showed in a QTableWidget
@@ -129,7 +129,8 @@ void Patient::on_lw_filtredPatients_itemClicked(QListWidgetItem* item)
     ptPront = ptPront.filter(QDjangoWhere("nameP", QDjangoWhere::Equals, ui->lw_filtredPatients->currentItem()->text()));
     for(int i = 0; i < ptPront.count(); ++i){
         QString t;
-        QSqlQuery s; s.prepare("SELECT pront FROM sae.paciente WHERE nameP = :name");
+        QSqlQuery s;
+        s.prepare("SELECT pront FROM sae.paciente WHERE nameP = :name");
         s.bindValue(":name", ui->lw_filtredPatients->currentItem()->text());
         s.exec();
         while (s.next()){

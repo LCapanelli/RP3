@@ -20,6 +20,9 @@ public:
 private:
     Ui::Form_Principal_QW *ui;
 
+
+private slots:
+    void on_listaOpcoesMenu_2_itemClicked();
 };
 
 #endif // MAINWINDOW_H

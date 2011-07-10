@@ -11,6 +11,7 @@ class DiagAss : public QDjangoModel{
             Q_PROPERTY (QString patientNameIntakeFK READ patientNameIntakeFK WRITE setPatientNameIntakeFK)
             Q_PROPERTY (QDateTime dHour READ dHour WRITE setDhour)
             Q_PROPERTY (QString diagAssNAME READ diagAssNAME WRITE setDiagAssNAME)
+            Q_PROPERTY (QString state READ state WRITE setState)
             Q_CLASSINFO("idDiagAss", "primary_key=true auto_increment=true")
 
 public:
@@ -20,12 +21,14 @@ public:
             QString patientNameIntakeFK() const;
             QDateTime dHour() const;
             QString diagAssNAME() const;
+            QString state() const;
 
             void setIdDiagAss(const qint32 & idDiagAss);
             void setIdIntakeFK(const qint32 & idIntakeFK);
             void setPatientNameIntakeFK(const QString & patientNameIntakeFK);
             void setDhour(const QDateTime & dHour);
             void setDiagAssNAME(const QString & diagAssNAME);
+            void setState(const QString & state);
 
 private:
             qint32 m_idDiagAss;
@@ -33,6 +36,7 @@ private:
             QString m_patientNameIntakeFK;
             QDateTime m_dHour;
             QString m_diagAssNAME;
+            QString m_state;
 };
 
 #endif // DIAGASS_H

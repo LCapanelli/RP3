@@ -40,3 +40,10 @@ QString DiagAss::diagAssNAME() const {
 void DiagAss::setDiagAssNAME(const QString &diagAssNAME){
     m_diagAssNAME = diagAssNAME;
 }
+
+QString DiagAss::state() const{
+    return m_state;
+}
+void DiagAss::setState(const QString &state){
+    m_state = state;
+}

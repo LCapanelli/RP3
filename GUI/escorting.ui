@@ -3,7 +3,7 @@
  <class>Escorting</class>
  <widget class="QWidget" name="Escorting">
   <property name="windowModality">
-   <enum>Qt::NonModal</enum>
+   <enum>Qt::WindowModal</enum>
   </property>
   <property name="geometry">
    <rect>
@@ -50,7 +50,7 @@ p, li { white-space: pre-wrap; }
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>1</number>
      </property>
      <property name="elideMode">
       <enum>Qt::ElideMiddle</enum>
@@ -63,7 +63,7 @@ p, li { white-space: pre-wrap; }
      </property>
      <widget class="QWidget" name="tab_Busca_2">
       <attribute name="title">
-       <string>Busca</string>
+       <string>Pacientes Admitidos</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_6">
        <item row="0" column="0">
@@ -117,9 +117,6 @@ p, li { white-space: pre-wrap; }
          </item>
         </layout>
        </item>
-       <item row="1" column="0">
-        <widget class="QListView" name="listView_listaPacientes_7"/>
-       </item>
        <item row="2" column="0">
         <widget class="QLabel" name="label_67">
          <property name="text">
@@ -153,7 +150,7 @@ p, li { white-space: pre-wrap; }
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_confirmarAcomp_2">
+          <widget class="QPushButton" name="pb_EVOLUT_ADD">
            <property name="text">
             <string>Evoluir Paciente</string>
            </property>
@@ -161,417 +158,133 @@ p, li { white-space: pre-wrap; }
          </item>
         </layout>
        </item>
+       <item row="1" column="0">
+        <widget class="QListWidget" name="lw_ESCORTINGpatList"/>
+       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="tab_diagnosticos_2">
       <attribute name="title">
        <string>Diagnósticos</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout_3">
-       <item row="0" column="0">
-        <layout class="QHBoxLayout" name="horizontalLayout_6">
-         <item>
-          <widget class="QLabel" name="label_paciente_7">
-           <property name="text">
-            <string>Paciente</string>
-           </property>
-           <property name="buddy">
-            <cstring>lineEdit_80</cstring>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="lineEdit_81">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_pront_4">
-           <property name="font">
-            <font>
-             <pointsize>12</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>Prontuário</string>
-           </property>
-           <property name="buddy">
-            <cstring>lineEdit_buscaP</cstring>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="lineEdit_82">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="1" column="0">
-        <layout class="QHBoxLayout" name="horizontalLayout_5">
-         <item>
-          <widget class="QLabel" name="label_diagnosticos_4">
-           <property name="text">
-            <string>Diagnósticos e Estados</string>
-           </property>
-           <property name="buddy">
-            <cstring>listWidget_listaDiagnosticos</cstring>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>298</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_RE_4">
-           <property name="text">
-            <string>Cuidados Escolhidos</string>
-           </property>
-           <property name="buddy">
-            <cstring>listWidget_reDiag</cstring>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="2" column="0">
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0" colspan="3">
         <widget class="QSplitter" name="splitter_2">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
-         <widget class="QColumnView" name="cv_diagAndEstates"/>
-         <widget class="QPlainTextEdit" name="pt_ReDescrInDiag"/>
+         <widget class="QTableWidget" name="tw_DIAG2EVO">
+          <column>
+           <property name="text">
+            <string>Prontuário</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Estado</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Diagnóstico</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Horário</string>
+           </property>
+          </column>
+         </widget>
         </widget>
        </item>
-       <item row="3" column="0">
-        <layout class="QHBoxLayout" name="horizontalLayout_4">
-         <item>
-          <layout class="QGridLayout" name="gridLayout_4">
-           <item row="0" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout">
+       <item row="1" column="0">
+        <layout class="QGridLayout" name="gridLayout_4">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetFixedSize</enum>
+         </property>
+         <item row="0" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QComboBox" name="cb_States">
              <item>
-              <widget class="QRadioButton" name="radioButton_6">
-               <property name="text">
-                <string>1</string>
-               </property>
-              </widget>
+              <property name="text">
+               <string>Mantido</string>
+              </property>
              </item>
              <item>
-              <widget class="QLabel" name="label_mantido_2">
-               <property name="text">
-                <string>Mantido</string>
-               </property>
-               <property name="buddy">
-                <cstring>radioButton_01</cstring>
-               </property>
-              </widget>
+              <property name="text">
+               <string>Melhorado</string>
+              </property>
              </item>
              <item>
-              <widget class="QRadioButton" name="radioButton_7">
-               <property name="text">
-                <string>2</string>
-               </property>
-              </widget>
+              <property name="text">
+               <string>Piorado</string>
+              </property>
              </item>
              <item>
-              <widget class="QLabel" name="label_melhorado_2">
-               <property name="text">
-                <string>Melhorado</string>
-               </property>
-               <property name="buddy">
-                <cstring>radioButton_02</cstring>
-               </property>
-              </widget>
+              <property name="text">
+               <string>Encerrado</string>
+              </property>
              </item>
-             <item>
-              <widget class="QRadioButton" name="radioButton_8">
-               <property name="text">
-                <string>3</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="label_piorado_2">
-               <property name="text">
-                <string>Piorado</string>
-               </property>
-               <property name="buddy">
-                <cstring>radioButton_03</cstring>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QRadioButton" name="radioButton_9">
-               <property name="text">
-                <string>4</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="label_resolvido_2">
-               <property name="text">
-                <string>Encerrado</string>
-               </property>
-               <property name="buddy">
-                <cstring>radioButton_04</cstring>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item row="1" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_3">
-             <item>
-              <widget class="QLabel" name="label_horas_2">
-               <property name="text">
-                <string>Horário da Evolução</string>
-               </property>
-               <property name="buddy">
-                <cstring>dateTimeEdit_horasEvDiag</cstring>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QDateTimeEdit" name="dateTimeEdit_horasEvDiag_2"/>
-             </item>
-             <item>
-              <widget class="QPushButton" name="pushButton_evoluirDiag_2">
-               <property name="text">
-                <string>Evoluir Estado</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QGridLayout" name="gridLayout_2">
-           <item row="2" column="1">
-            <widget class="QPushButton" name="pushButton_2">
-             <property name="text">
-              <string>Continuar </string>
-             </property>
             </widget>
            </item>
-           <item row="2" column="0">
-            <widget class="QPushButton" name="pushButton">
+           <item>
+            <widget class="QLabel" name="label_horas_2">
              <property name="text">
-              <string>Replicar Estados</string>
+              <string>Horário da Evolução</string>
              </property>
-            </widget>
-           </item>
-           <item row="0" column="0">
-            <widget class="QPushButton" name="pushButton_excluirDiag_5">
-             <property name="text">
-              <string>Excluir Diagnóstico</string>
+             <property name="buddy">
+              <cstring>dateTimeEdit_horasEvDiag</cstring>
              </property>
             </widget>
            </item>
           </layout>
          </item>
-        </layout>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="tab_cuidados_3">
-      <attribute name="title">
-       <string>Cuidados</string>
-      </attribute>
-      <layout class="QGridLayout" name="gridLayout_5">
-       <item row="0" column="0">
-        <widget class="QLabel" name="label_pacienteCuid_4">
-         <property name="text">
-          <string>Paciente</string>
-         </property>
-         <property name="buddy">
-          <cstring>lineEdit_paciente_2</cstring>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLineEdit" name="lineEdit_paciente_8">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2" colspan="3">
-        <widget class="QLabel" name="label_prontCuid_4">
-         <property name="font">
-          <font>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Prontuário</string>
-         </property>
-         <property name="buddy">
-          <cstring>lineEdit_pront_2</cstring>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="5">
-        <widget class="QLineEdit" name="lineEdit_pront_5">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0" colspan="6">
-        <layout class="QHBoxLayout" name="horizontalLayout_7">
-         <item>
-          <widget class="QLabel" name="label_diagCuid_2">
-           <property name="text">
-            <string>Diagnósticos Associados</string>
-           </property>
-           <property name="buddy">
-            <cstring>listWidget_diagCuid</cstring>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_6">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>568</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-        </layout>
-       </item>
-       <item row="2" column="0" colspan="3">
-        <widget class="QListWidget" name="lw_diagASS4interv"/>
-       </item>
-       <item row="2" column="3" colspan="3">
-        <widget class="QTableWidget" name="tableW_PrescAndApraz">
-         <column>
-          <property name="text">
-           <string>Prescrição</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Aprazamento</string>
-          </property>
-         </column>
-        </widget>
-       </item>
-       <item row="3" column="0" colspan="6">
-        <layout class="QHBoxLayout" name="horizontalLayout_8">
-         <item>
-          <widget class="QLabel" name="label_ativiCuid_2">
-           <property name="text">
-            <string>Lista de Cuidados</string>
-           </property>
-           <property name="buddy">
-            <cstring>textEdit_atividEscolhidasCuid</cstring>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_7">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>608</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-        </layout>
-       </item>
-       <item row="4" column="0" colspan="4">
-        <widget class="QListWidget" name="lw_Activities4diag"/>
-       </item>
-       <item row="4" column="4" colspan="2">
-        <layout class="QFormLayout" name="formLayout">
-         <property name="fieldGrowthPolicy">
-          <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
-         </property>
          <item row="1" column="0">
-          <widget class="QLabel" name="label_aprazamentoCuid_3">
-           <property name="text">
-            <string>Prescrever</string>
-           </property>
-           <property name="buddy">
-            <cstring>lineEdit_aprazamentoCuid</cstring>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="QLineEdit" name="le_aprazInterv"/>
-         </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="label">
-           <property name="text">
-            <string>Aprazamento</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QTextEdit" name="td_PrescrInt"/>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QPushButton" name="pb_EVOstates">
+             <property name="text">
+              <string>Evoluir Estado</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDateTimeEdit" name="dTime_EVO">
+             <property name="buttonSymbols">
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
+             </property>
+             <property name="displayFormat">
+              <string>dd/MM/yyyy HH:mm</string>
+             </property>
+             <property name="calendarPopup">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
         </layout>
        </item>
-       <item row="5" column="0" colspan="6">
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <item>
-          <spacer name="horizontalSpacer_8">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>228</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pb_CANCEL_INTERV">
-           <property name="text">
-            <string>Cancelar</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pb_aprazingInterv">
-           <property name="text">
-            <string>Aprazar e Prescrever</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
+       <item row="1" column="1">
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>353</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="2">
+        <widget class="QPushButton" name="pb_CONT">
+         <property name="text">
+          <string>GO</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -623,41 +336,14 @@ p, li { white-space: pre-wrap; }
          </item>
         </layout>
        </item>
-       <item row="1" column="0" colspan="2">
-        <layout class="QHBoxLayout" name="horizontalLayout_116">
-         <item>
-          <spacer name="horizontalSpacer_5">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_horarioObs_2">
-           <property name="text">
-            <string>Horário </string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QDateTimeEdit" name="dateTimeEdit_horarioObs_2"/>
-         </item>
-        </layout>
-       </item>
-       <item row="2" column="0">
+       <item row="1" column="0">
         <widget class="QLabel" name="label_ocorrencias_2">
          <property name="text">
           <string>Ocorrências</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="1">
+       <item row="3" column="1">
         <layout class="QHBoxLayout" name="horizontalLayout_117">
          <item>
           <widget class="QPushButton" name="pushButton_concluirEvolucao_2">
@@ -668,7 +354,7 @@ p, li { white-space: pre-wrap; }
          </item>
         </layout>
        </item>
-       <item row="3" column="0" colspan="2">
+       <item row="2" column="0" colspan="2">
         <widget class="QPlainTextEdit" name="plainTextEdit_campoObservacoes_2"/>
        </item>
       </layout>

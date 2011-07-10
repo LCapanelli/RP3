@@ -25,6 +25,7 @@ private:
     QString tempAnam;
     int tempPront;
     int tempIdFromIntake;
+    int tempIdOut;
 
 public slots:
     void updatePatList_OnIntake();

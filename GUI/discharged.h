@@ -17,6 +17,11 @@ public:
 
 private:
     Ui::Discharged *ui;
+
+private slots:
+    void on_pb_DISCHARGEaPat_clicked();
+    void on_lw_DISCHpat_itemClicked();
+    void UPDATE_lw_DISCHpat();
 };
 
 #endif // DISCHARGED_H

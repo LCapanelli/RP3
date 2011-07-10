@@ -11,6 +11,7 @@
 #include <QtSql/qsql.h>
 #include <QTableWidgetItem>
 #include "DATA/dom.h"
+#include <QTimer>
 
 Intake::Intake(QWidget *parent) :
     QWidget(parent),
@@ -18,11 +19,18 @@ Intake::Intake(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    ui->tableW_PrescAndApraz->setColumnWidth(0, 130);
+    ui->tableW_PrescAndApraz->setColumnWidth(1, 130);
+    ui->dateb_DateHourFromDiag->setDateTime(QDateTime::currentDateTime());
+
+    QTimer *timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(update_PresAndAprazList()));
+    timer->start(2000);
+
     updatePatList_OnIntake();
     update_DiagListOnIntake();
     update_DiagList4interv();
     update_PresAndAprazList();
-
 }
 
 Intake::~Intake()
@@ -154,6 +162,14 @@ void Intake::on_pb_SAVEassociatedDIAG_clicked()
         while(q.next()){
             tempIdFromIntake = q.value(0).toInt();
         }
+        //wlk.rnd
+        QSqlQuery k;
+        k.prepare("INSERT INTO sae.diagass (idIntakeFK, patientNameIntakeFK, dHour, diagAssNAME) VALUES (:idIntakeFK, :patNameFK, :dH, :dName)");
+        k.bindValue(":idIntakeFK", tempIdFromIntake);
+        k.bindValue(":patNameFK", tempNameP);
+        k.bindValue(":dH", ui->dateb_DateHourFromDiag->dateTime());
+        k.bindValue(":dName", ui->lw_diaAssociated->currentItem()->text());
+        //wlk.rnd END
         assD->setIdIntakeFK(tempIdFromIntake);
         assD->save();
         QMessageBox info;
@@ -205,53 +221,32 @@ void Intake::update_DiagList4interv(){
     }
 }
 
-//! UPDATE list of Prescriptions and Time
-void Intake::update_PresAndAprazList(){
-
-    QDjangoQuerySet<ActAss> idAct, acPrescr, acApraz;
-    QStringList acPrescrList, acAprazList;
-    QList<qint32> idActList;
-
-    //Fills QLists with content from ActAss ORM table
-    for (int i = 0; i < idAct.count() /*&& acPrescr.count() && acApraz.count()*/; ++i){
-        idActList << idAct.at(i)->idAt();
-        acPrescrList << acPrescr.at(i)->prescr();
-        acAprazList << acApraz.at(i)->apraz();
-    }
-
-    //Fills the GUI TableWidget by column from QLists
-    for (int i = 0; i < idActList.count(); ++i){
-        ui->tableW_PrescAndApraz->setRowCount(idActList.count());
-        //ui->tableW_PrescAndApraz->setItem(i, 0, new QTableWidgetItem(idActList.at(i)));
-        ui->tableW_PrescAndApraz->setItem(i, 0, new QTableWidgetItem(acPrescrList.at(i)));
-        ui->tableW_PrescAndApraz->setItem(i, 1, new QTableWidgetItem(acAprazList.at(i)));
-    }
-
-    qDebug() <<"AQUI"<< idActList;
-}
-
-
+//! Make a association with de Intervantions and the aprazing time for an Intake
 void Intake::on_pb_aprazingInterv_clicked()
 {
-//    QSqlQuery q;
-//    q.prepare("SELECT idIntake FROM admissao WHERE patNameFK = :name");
-//    q.bindValue(":name", tempNameP);
-//    q.exec();
-//    while(q.next()){
-//        tempIdFromIntake = q.value(0).toInt();
-//    }
-//    //NEW OBJECT
-//    ActAss *act= new ActAss(this);
-//    act->setIdAt(0);
-//    act->setIdIntakeFK(tempIdFromIntake);
-//    act->setApraz(ui->le_aprazInterv->text());
-//    act->setPrescr(ui->td_PrescrInt->toPlainText());
-//    ui->le_aprazInterv->clear();
-//    ui->td_PrescrInt->clear();
-//    act->save();
+    int tempId;
+    QSqlQuery q;
+    q.prepare("SELECT idIntake FROM sae.admissao WHERE patNameFK = :name");
+    q.bindValue(":name", tempNameP);
+    q.exec();
+    while(q.next()){
+        tempId = q.value(0).toInt();
+    }
+    QSqlQuery w;
+    w.prepare("INSERT INTO sae.actass (idIntakeFK, prescr, apraz) VALUES (:id, :pr, :apraz)");
+    w.bindValue("id", tempId);
+    w.bindValue(":pr", ui->lw_DROP_ACT->currentItem()->text());
+    w.bindValue(":apraz", ui->le_aprazInterv->text());
+    w.exec();
 
-//    update_PresAndAprazList();
+    ui->le_aprazInterv->clear();
+    tempId = tempIdOut;
 }
+
+//! UPDATE list of Prescriptions and aprazing Time
+void Intake::update_PresAndAprazList(){
+
+        }
 
 void Intake::on_lw_diagASS4interv_itemClicked(QListWidgetItem* item)
 {
@@ -386,7 +381,7 @@ void Intake::on_pb_Intake_finished_clicked()
         tempExFis.clear();
         tempNameP.clear();
 
-        intake->setHasFinished(true);
+        intake->setHasFinished(false    );
         intake->save();
         ui->tabWidget_admissao_2->setTabEnabled(0, true);
         ui->tabWidget_admissao_2->setTabEnabled(1, false);
