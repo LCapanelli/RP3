@@ -36,6 +36,7 @@ Escorting::~Escorting()
 //! Catch an User
 void Escorting::on_lw_ESCORTINGpatList_itemClicked()
 {
+    ui->tw_DIAG2EVO->clearContents();
     tempIdName = ui->lw_ESCORTINGpatList->currentItem()->text();
     QSqlQuery q;
     bool tr = true;
