@@ -19,13 +19,13 @@ Intake::Intake(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->tableW_PrescAndApraz->setColumnWidth(0, 130);
+    ui->tableW_PrescAndApraz->setColumnWidth(0, 330);
     ui->tableW_PrescAndApraz->setColumnWidth(1, 130);
     ui->dateb_DateHourFromDiag->setDateTime(QDateTime::currentDateTime());
 
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(update_PresAndAprazList()));
-    timer->start(2000);
+    timer->start(1000);
 
     updatePatList_OnIntake();
     update_DiagListOnIntake();
@@ -77,10 +77,9 @@ void Intake::on_pb_NEWINTAKE_clicked()
 {
     intake->setPatNameFK(ui->lw_PatList_INTAKE->currentItem()->text());
     tempNameP = ui->lw_PatList_INTAKE->currentItem()->text();
-    //tempIdFromIntake = intake->idIntake();
    qDebug()<< tempNameP <<"  <<<<<<< NOME ADM Quando CLicar em ADMITIR";
     QSqlQuery q;
-    q.prepare("SELECT pront FROM paciente WHERE nameP = :name");
+    q.prepare("SELECT pront FROM sae.paciente WHERE nameP = :name");
     q.bindValue(":name", tempNameP);
     q.exec();
     while(q.next()){
@@ -243,9 +242,22 @@ void Intake::on_pb_aprazingInterv_clicked()
     tempId = tempIdOut;
 }
 
-//! UPDATE list of Prescriptions and aprazing Time
+//! UPDATE list of Prescriptions and aprazing Times
 void Intake::update_PresAndAprazList(){
+    QStringList actAssNList, aprazList;
+    QDjangoQuerySet <ActAss> actAssN, apraz;
+    actAssN = actAssN.filter(QDjangoWhere("idIntakeFK", QDjangoWhere::Equals, tempIdFromIntake));
+    apraz = apraz.filter(QDjangoWhere("idIntakeFK", QDjangoWhere::Equals, tempIdFromIntake));
 
+    for(int i = 0;i < actAssN.count();++i){
+        actAssNList << actAssN.at(i)->prescr();
+        aprazList << apraz.at(i)->apraz();
+    }
+    for(int i = 0; i < actAssNList.count(); ++i){
+        ui->tableW_PrescAndApraz->setRowCount(actAssNList.count());
+        ui->tableW_PrescAndApraz->setItem(i, 0, new QTableWidgetItem(actAssNList.at(i)));
+        ui->tableW_PrescAndApraz->setItem(i, 1, new QTableWidgetItem(aprazList.at(i)));
+    }
         }
 
 void Intake::on_lw_diagASS4interv_itemClicked(QListWidgetItem* item)
@@ -380,6 +392,10 @@ void Intake::on_pb_Intake_finished_clicked()
         tempAnam.clear();
         tempExFis.clear();
         tempNameP.clear();
+        ui->tableW_PrescAndApraz->clearContents();
+        ui->lw_diagASS4interv->clear();
+        ui->lw_Activities4diag->clear();
+        tempIdFromIntake = 0;
 
         intake->setHasFinished(false    );
         intake->save();
@@ -417,5 +433,18 @@ void Intake::on_lw_domDiag_itemClicked(QListWidgetItem* item)
     while(q.next()){
         QString r = q.value(0).toString();
         ui->lw_IntakeDiag->addItem(r);
+    }
+}
+
+//! Catch a temp. ID from a non Intaked clicked User
+void Intake::on_lw_PatList_INTAKE_itemClicked()
+{
+    tempNameP = ui->lw_PatList_INTAKE->currentItem()->text();
+    QSqlQuery q;
+    q.prepare("SELECT idIntake FROM sae.admissao WHERE patNameFK = :dName AND hasFinished = FALSE");
+    q.bindValue(":dName", tempNameP);
+    q.exec();
+    while (q.next()){
+        tempIdFromIntake = q.value(0).toInt();
     }
 }

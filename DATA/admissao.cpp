@@ -41,13 +41,6 @@ void Admissao::setAnam(const QString & anam){
     m_anam = anam;
 }
 
-QString Admissao::prescr() const{
-    return m_prescr;
-}
-void Admissao::setPrescr(const QString & prescr){
-    m_prescr = prescr;
-}
-
 QString Admissao::patNameFK() const{
     return m_patNameFK;
 }
@@ -67,18 +60,4 @@ bool Admissao::hasStarted() const{
 }
 void Admissao::setHasStarted(const bool &hasStarted){
     m_hasStarted = hasStarted;
-}
-
-QString Admissao::assocDiag() const {
-    return m_assocDiag;
-}
-void Admissao::setAssocDiag(const QString & assocDiag){
-    m_assocDiag = assocDiag;
-}
-
-QDateTime Admissao::assocDiagTime() const{
-    return m_assocDiagTime;
-}
-void Admissao::setAssocDiagTime(const QDateTime & assocDiagTime){
-    m_assocDiagTime = assocDiagTime;
 }

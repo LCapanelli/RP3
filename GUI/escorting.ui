@@ -282,7 +282,7 @@ p, li { white-space: pre-wrap; }
        <item row="1" column="2">
         <widget class="QPushButton" name="pb_CONT">
          <property name="text">
-          <string>GO</string>
+          <string>Limpar Campos</string>
          </property>
         </widget>
        </item>

@@ -3,6 +3,8 @@
 
 #include <QWidget>
 
+//! @author Lucas Pereira Capanelli
+
 namespace Ui {
     class Escorting;
 }

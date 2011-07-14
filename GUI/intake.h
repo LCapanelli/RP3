@@ -23,14 +23,15 @@ private:
     QString tempNameP;
     QString tempExFis;
     QString tempAnam;
-    int tempPront;
-    int tempIdFromIntake;
-    int tempIdOut;
+    qint32 tempPront;
+    qint32 tempIdFromIntake;
+    qint32 tempIdOut;
 
 public slots:
     void updatePatList_OnIntake();
 
 private slots:
+    void on_lw_PatList_INTAKE_itemClicked();
     void on_lw_domDiag_itemClicked(QListWidgetItem* item);
     void on_pb_Intake_finished_clicked();
     void on_pb_CANCEL_INTERV_clicked();

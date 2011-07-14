@@ -6,6 +6,7 @@
 #include <QDebug>
 #include <qdjango/QDjangoQuerySet.h>
 #include <QTableWidgetItem>
+#include "admissao.h"
 
 Escorting::Escorting(QWidget *parent) :
     QWidget(parent),
@@ -47,7 +48,7 @@ void Escorting::on_lw_ESCORTINGpatList_itemClicked()
     while (q.next()){
         tempIdFK = q.value(0).toInt();
         tempCount = q.value(1).toInt();
-        qDebug() << tempIdFK;
+        qDebug() << tempIdFK << tempIdName;
     }
 }
 
@@ -89,18 +90,9 @@ void Escorting::on_pb_EVOLUT_ADD_clicked()
 
 //! UPDATE the diagn. table from an User Intake TO an Evol.
 void Escorting::UPDATE_tb_DiagASS(){
-//    QString blah, state;
-//    QString dt;
+    ui->tw_DIAG2EVO->clearContents();
+
    QSqlQuery q, u;
-//    q.prepare("SELECT state, diagAssNAME, dHour FROM sae.diagass WHERE idIntakeFK = :idI AND patientNameIntakeFK = :pName");
-//    q.bindValue(":idI", tempIdFK);
-//    q.bindValue(":pName", tempIdName);
-//    q.exec();
-//    while(q.next()){
-//        state = q.value(0).toString();
-//        blah = q.value(1).toString();
-//        dt = q.value(2).toString();
-//    }
     u.prepare("SELECT COUNT(idIntakeFK) FROM sae.diagass WHERE idIntakeFK = :fk");
     u.bindValue(":fk", tempIdFK);
     u.exec();
@@ -108,19 +100,20 @@ void Escorting::UPDATE_tb_DiagASS(){
     tempCount2 = u.value(0).toInt();
     }
 
-//    ui->tw_DIAG2EVO->setRowCount(tempCount2);
-//    for (int i = 0; i < tempCount2 ; ++i){
-//        ui->tw_DIAG2EVO->setRowHeight(i, 65);
+    q.prepare("SELECT a.prontPK FROM sae.admissao a, sae.diagass s WHERE s.idIntakeFK = a.idIntake AND patientNameIntakeFK = :idName");
+    q.bindValue(":idName", tempIdName);
+    q.exec();
+    QStringList prontList;
+    while(q.next()){
+        prontList << q.value(0).toString();
+    }
 
-//        //ui->tw_DIAG2EVO->setItem(i, 0, new QTableWidgetItem(foo));
-//        ui->tw_DIAG2EVO->setItem(i, 1, new QTableWidgetItem(state));
-//        ui->tw_DIAG2EVO->setItem(i, 2, new QTableWidgetItem(blah));
-//        ui->tw_DIAG2EVO->setItem(i, 3, new QTableWidgetItem(dt));
-//        qDebug()<<blah<< "BLAH";
-//    }
     QStringList diagAList, stateList;
     QList <QDateTime> dHList;
     QDjangoQuerySet <DiagAss> diagAssN, state, dHour;
+    diagAssN = diagAssN.filter(QDjangoWhere("idIntakeFK", QDjangoWhere::Equals, tempIdFK));
+    state = state.filter(QDjangoWhere("idIntakeFK", QDjangoWhere::Equals, tempIdFK));
+    dHour = dHour.filter(QDjangoWhere("idIntakeFK", QDjangoWhere::Equals, tempIdFK));
 
     for(int i = 0;i < diagAssN.count();++i){
         stateList << state.at(i)->state();
@@ -129,6 +122,7 @@ void Escorting::UPDATE_tb_DiagASS(){
     }
     for(int i = 0; i < diagAList.count(); ++i){
         ui->tw_DIAG2EVO->setRowCount(diagAList.count());
+        ui->tw_DIAG2EVO->setItem(i, 0, new QTableWidgetItem(prontList.at(i)));
         ui->tw_DIAG2EVO->setItem(i, 1, new QTableWidgetItem(stateList.at(i)));
         ui->tw_DIAG2EVO->setItem(i, 2, new QTableWidgetItem(diagAList.at(i)));
         ui->tw_DIAG2EVO->setItem(i, 3, new QTableWidgetItem(dHList.at(i).toString("dd / MM / yyyy - HH:mm:ss")));
@@ -137,6 +131,7 @@ void Escorting::UPDATE_tb_DiagASS(){
 
 void Escorting::on_pb_CONT_clicked()
 {
+    ui->tw_DIAG2EVO->clearContents();
     Escorting::tempCount = 0;
     Escorting::tempCount2 = 0;
 }

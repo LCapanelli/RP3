@@ -602,7 +602,7 @@ p, li { white-space: pre-wrap; }
        <item row="5" column="3">
         <widget class="QPushButton" name="pb_InterventionOK">
          <property name="text">
-          <string>Intervir</string>
+          <string>Intervir Cuidados</string>
          </property>
         </widget>
        </item>
@@ -812,6 +812,11 @@ p, li { white-space: pre-wrap; }
         </layout>
        </item>
       </layout>
+     </widget>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Observações</string>
+      </attribute>
      </widget>
     </widget>
    </item>
